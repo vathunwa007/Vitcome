@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+
+        <h1><b>แบบฟอร์มยืนหัวข้อการทำวิจัย</b></h1>
+        <br><br><br>
+        <form asp-action="Detail" name="myform" method="POST">
+            <span>ชื่อ</span><input type="text" name="name" value="">
+            <span>นามสกุล</span><input type="text" name="lastname" value="">
+            <span>รหัสนักศึกษา</span><input type="text" name="idstudent" value="">
+            <span>นามแฝง</span><input type="text" name="supername" value="">
+
+
+            <button type="submit">ส่งข้อมูล</button>
+        </form>
+        <br>
+        <br>
+        <p>@ViewBag.name</p>
+        <br>
+        <p>@ViewBag.lastname</p>
+        <br>
+        <p>@ViewBag.idstudent</p>
+        </n>
+
+    </div>
+</div>
