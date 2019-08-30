@@ -1,9 +1,14 @@
 @model List<Techer>
-
+<style>
+        body {
+            background-image: url('https://images.pexels.com/photos/875858/pexels-photo-875858.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        }
+    </style>
+    <!---->
     <div class="container">
         <div class="row">
             <div class="mx-auto">
-                <h1>เลือกอาจารย์ที่ปรึกษาวิจัย</h1>
+                <h1 style="color:white;">เลือกอาจารย์ที่ปรึกษาวิจัย</h1>
             </div>
 
 
@@ -19,8 +24,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for(int i=0; i < Model.Count(); i++){ 
-                        <tr>
+                    @for(int i=0; i
+                    < Model.Count(); i++){ <tr onclick="window.open('Privacy','_self','');">
                         <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"> </th>
                         <td>@Model[i].Id</td>
                         <td>@Model[i].Name</td>
@@ -33,7 +38,7 @@
                 </tbody>
             </table>
 
-            <%@ Page Language="C#" Inherits="System.Web.UI.Page" %>
+
 
         </div>
     </div>
