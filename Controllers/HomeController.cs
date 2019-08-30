@@ -31,6 +31,37 @@ namespace netcore.Controllers
 
             return View();
         }
+        public IActionResult Techer()
+        {
+
+            var techer = new List<Techer>();
+            techer.Add(new Techer(){
+                 Id = 1,
+                 Name = "รวินทร์ คงอำไพ",
+                 Skill = "๋Java langust",
+                 Status = "ยังไม่เต็ม"
+
+
+            });
+            techer.Add(new Techer(){
+                 Id = 2,
+                 Name = "เบนซ์ เรสซิ่ง",
+                 Skill = "๋PyThon langules",
+                 Status = "ยังไม่เต็ม"
+
+
+            });
+            techer.Add(new Techer(){
+                 Id = 3,
+                 Name = "ตรีพล งงมากๆ",
+                 Skill = "๋WalkPlay",
+                 Status = "ยังไม่เต็ม"
+
+
+            });
+            
+            return View(techer);
+        }
 
         
 

@@ -2976,6 +2976,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Home\\Techer.cshtml",
+      "TargetPath": "Views\\Home\\Techer.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -2998,11 +3003,6 @@
     {
       "FilePath": "Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Home\\Show.cshtml",
-      "TargetPath": "Views\\Home\\Show.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -29,3 +29,4 @@ C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netco
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.pdb
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.csproj.CopyComplete
 c:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Detail.g.cshtml.cs
+c:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Techer.g.cshtml.cs

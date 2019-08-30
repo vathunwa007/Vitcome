@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\netcore.csproj": {}
+    "C:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\netcore.csproj": {}
   },
   "projects": {
-    "c:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\netcore.csproj": {
+    "C:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\netcore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\netcore.csproj",
+        "projectUniqueName": "C:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\netcore.csproj",
         "projectName": "netcore",
-        "projectPath": "c:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\netcore.csproj",
+        "projectPath": "C:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\netcore.csproj",
         "packagesPath": "C:\\Users\\vathu\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\obj\\",
+        "outputPath": "C:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
