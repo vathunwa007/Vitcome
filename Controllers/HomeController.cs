@@ -13,12 +13,24 @@ namespace netcore.Controllers
         public IActionResult Index()
         {
             return View();
-           
+
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            var order = new List<Order>();
+            new Order()
+            {
+            Id = 1,
+            Name = "Thunwa"
+            };
+            new Order(){
+                Id = 2,
+                Name ="Nisama"
+            };
+
+
+            return View(order);
         }
        // [Route("Home/Detail/{name}")]
         public IActionResult Detail (string name,string lastname,string idstudent,string supername)
@@ -27,7 +39,7 @@ namespace netcore.Controllers
             ViewBag.lastname = lastname;
             ViewBag.idstudent = idstudent;
             ViewBag.supername = supername;
-        
+
 
             return View();
         }
@@ -59,11 +71,11 @@ namespace netcore.Controllers
 
 
             });
-            
+
             return View(techer);
         }
 
-        
+
 
 
 
@@ -72,7 +84,7 @@ namespace netcore.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        
+
     }
-    
+
 }
