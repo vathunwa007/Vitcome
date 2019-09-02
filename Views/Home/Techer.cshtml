@@ -2,7 +2,7 @@
 
     <style>
         body {
-            background-image: url('https://images.pexels.com/photos/875858/pexels-photo-875858.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+           /* background-image: url('https://images.pexels.com/photos/875858/pexels-photo-875858.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');*/
         }
     </style>
     <!---->
@@ -15,24 +15,28 @@
             </div>
 
 
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">ลำดับ</th>
-                        <th scope="col">ชื่ออาจารย์</th>
-                        <th scope="col">สกิล</th>
-                        <th scope="col">สถานะ</th>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    @for(int i=0; i < Model.Count(); i++){ <tr onclick="window.open('Privacy','_self','');">
-                        <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"> </th>
-                        <td>@Model[i].Id</td>
-                        <td>@Model[i].Name</td>
-                        <td>@Model[i].Skill</td>
-                        <td>@Model[i].Status</td>
+                <table class="table table-hover">
+                <form asp-controller="Home" asp-action="Detail" method="GET">
+                    <thead>
+                        <tr>
+                            <!--<th scope="col">#</th>-->
+                            <th scope="col">ลำดับ</th>
+                            <th scope="col">ชื่ออาจารย์</th>
+                            <th scope="col">สกิล</th>
+                            <th scope="col">สถานะ</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                       <tr onclick="window.open('Privacy','_self','');">
+                        <!--<tr>-->
+                           <!-- <th scope="row"><input type="checkbox" name="check" value="@item.Id"aria-label="Checkbox for following text input"> </th>-->
+                            <td >@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Skill</td>
+                            <td>@item.Status</td>
                         </tr>
                         }
 
@@ -40,11 +44,11 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td><button type="button" class="btn btn-success">ส่งข้อมูลการเลือก</button></td>
+                            <td><button type="submit" class="btn btn-success">ส่งข้อมูลการเลือก</button></td>
                         </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                    </form>
+                </table>
 
 
 

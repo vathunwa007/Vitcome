@@ -1,6 +1,10 @@
 ﻿@model List<Order>
 @{ ViewData["Title"] = "Privacy Policy";}
 <h1>@ViewData["Title"]</h1>
-<h2>@Model[1].Id</h2>
-<h2>@Model[0].Name</h2>
+
+@foreach(var item in Model)
+{
+<h2>@item.Id</h2>
+
+}
 <p>Use this page to detail your site's privacy policy.</p>

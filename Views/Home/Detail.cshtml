@@ -1,16 +1,27 @@
-<div class="container">
-    <div class="row">
-
-        <h1><b>แบบฟอร์มยืนหัวข้อการทำวิจัย</b></h1>
+<h3><b>แบบฟอร์มยืนหัวข้องานวิจัยทางเทคโนโลยีสารสนเทศ <br>คณะวิทยาศาสตร์ มหาวิทยาลัยราชภัฎจันทรเกษม</h3>
         <br><br><br>
         <form asp-action="Detail" name="myform" method="POST">
-            <span>ชื่อ</span><input type="text" name="name" value="">
-            <span>นามสกุล</span><input type="text" name="lastname" value="">
-            <span>รหัสนักศึกษา</span><input type="text" name="idstudent" value="">
-            <span>นามแฝง</span><input type="text" name="supername" value="">
-
+                <div class="form-group">
+        <span>รหัสนักศึกษา</span><input class="form-control" type="text" name="idstudent" value="">
+            <span>ชื่อ</span><input class="form-control" type="text" name="name" value="">
+            <span>นามสกุล</span><input class="form-control" type="text" name="lastname" value="">
+            <span>ภาคในเวลา</span><input class="form-control" type="checkbox">
+            <span>ภาคนอกเวลา</span><input class="form-control" type="checkbox">
+            <span>ชื่อหัวข้อที่นำเสนอ</span><br>
+            <span>ภาษาไทย</span><input class="form-control"  type="text">
+            <span>ภาษาอังกฤษ</span><input class="form-control" type="text">
+            <span>ความเป็นมาและความสำคัญ</span><textarea class="form-control" name="textarea class="form-control"" id="" cols="50" rows="30"></textarea class="form-control">
+            <span>วัตถุประสงค์</span>
+            <textarea class="form-control" name="textarea class="form-control"2" id="" cols="30" rows="10"></textarea class="form-control">
+            <span>หลักการทฤษฎีและเหตุผล</span>
+            <textarea class="form-control" name="textarea class="form-control"3" id="" cols="30" rows="10"></textarea class="form-control">
+            <span>ระยะเวลาดำเนินการ</span>
+            <input class="form-control" type="file" name="file" id="">
+            <span>แผนการดำเนินงาน ขอบเขตการศึกษา</span>
+            <textarea class="form-control" name="textarea class="form-control"4" id="" cols="30" rows="10"></textarea class="form-control">
 
             <button type="submit">ส่งข้อมูล</button>
+                </div>
         </form>
         <br>
         <br>
@@ -19,7 +30,4 @@
         <p>@ViewBag.lastname</p>
         <br>
         <p>@ViewBag.idstudent</p>
-        </n>
-
-    </div>
-</div>
+        <p>@ViewBag.supername</p>
