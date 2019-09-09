@@ -32,3 +32,5 @@ c:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor
 c:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Techer.g.cshtml.cs
 c:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Select\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Checkstatus\index.g.cshtml.cs
