@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{F743ED9E-D3F2-4395-8385-951DDFF7BCF8}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Detail.cshtml">
+    <Files>
+      <File FileName="Controllers/TeacherController.cs" Line="11" Column="35" />
+      <File FileName="Views/Home/Detail.cshtml" Line="34" Column="34" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="netcore" expanded="True">
+            <Node name="netcore" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True">
+                  <Node name="Detail.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.netcore PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
