@@ -12933,28 +12933,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/runkanchano/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\vathu\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/runkanchano/Desktop/Vitcome/netcore.csproj",
+      "projectUniqueName": "C:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\netcore.csproj",
       "projectName": "netcore",
-      "projectPath": "/Users/runkanchano/Desktop/Vitcome/netcore.csproj",
-      "packagesPath": "/Users/runkanchano/.nuget/packages/",
-      "outputPath": "/Users/runkanchano/Desktop/Vitcome/obj/",
+      "projectPath": "C:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\netcore.csproj",
+      "packagesPath": "C:\\Users\\vathu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vathu\\OneDrive\\เอกสาร\\netcore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/runkanchano/.config/NuGet/NuGet.Config"
+        "C:\\Users\\vathu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
