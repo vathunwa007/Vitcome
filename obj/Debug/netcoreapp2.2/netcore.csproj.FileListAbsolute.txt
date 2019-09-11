@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:/Users/vathu/OneDrive/เอกสาร/netcore/bin/Debug/netcoreapp2.2/netcore.deps.json
 C:/Users/vathu/OneDrive/เอกสาร/netcore/bin/Debug/netcoreapp2.2/netcore.runtimeconfig.json
 C:/Users/vathu/OneDrive/เอกสาร/netcore/bin/Debug/netcoreapp2.2/netcore.runtimeconfig.dev.json
@@ -72,3 +73,41 @@ C:/Users/vathu/OneDrive/เอกสาร/netcore/obj/Debug/netcoreapp2.2/Razor
 C:/Users/vathu/OneDrive/เอกสาร/netcore/obj/Debug/netcoreapp2.2/Razor/Views/Checkstatus/index.g.cshtml.cs
 >>>>>>> 982824c14c9a316737877a7a999c5271dc4c99c9
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/Razor/Views/Checkstatus/index.g.cshtml.cs
+=======
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\netcore.deps.json
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\netcore.runtimeconfig.json
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\netcore.runtimeconfig.dev.json
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\netcore.dll
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\netcore.pdb
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\netcore.Views.dll
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\netcore.Views.pdb
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.csprojAssemblyReference.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.csproj.CoreCompileInputs.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.RazorAssemblyInfo.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.RazorAssemblyInfo.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.AssemblyInfoInputs.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.AssemblyInfo.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.TagHelpers.input.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.TagHelpers.output.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.RazorCoreGenerate.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.RazorTargetAssemblyInfo.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.RazorTargetAssemblyInfo.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.Views.pdb
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.dll
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.pdb
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.csproj.CopyComplete
+c:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Detail.g.cshtml.cs
+c:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Techer.g.cshtml.cs
+c:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Select\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Checkstatus\index.g.cshtml.cs
+>>>>>>> 982824c14c9a316737877a7a999c5271dc4c99c9
