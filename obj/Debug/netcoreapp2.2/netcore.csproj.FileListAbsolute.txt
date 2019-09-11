@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:/Users/vathu/OneDrive/เอกสาร/netcore/bin/Debug/netcoreapp2.2/netcore.deps.json
 C:/Users/vathu/OneDrive/เอกสาร/netcore/bin/Debug/netcoreapp2.2/netcore.runtimeconfig.json
 C:/Users/vathu/OneDrive/เอกสาร/netcore/bin/Debug/netcoreapp2.2/netcore.runtimeconfig.dev.json
@@ -66,3 +67,8 @@ C:/Users/vathu/OneDrive/เอกสาร/netcore/obj/Debug/netcoreapp2.2/Razor
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/netcore.dll
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/netcore.pdb
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/netcore.csproj.CopyComplete
+=======
+C:/Users/vathu/OneDrive/เอกสาร/netcore/obj/Debug/netcoreapp2.2/Razor/Views/Teacher/Index.g.cshtml.cs
+C:/Users/vathu/OneDrive/เอกสาร/netcore/obj/Debug/netcoreapp2.2/Razor/Views/Checkstatus/index.g.cshtml.cs
+>>>>>>> 982824c14c9a316737877a7a999c5271dc4c99c9
+/Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/Razor/Views/Checkstatus/index.g.cshtml.cs

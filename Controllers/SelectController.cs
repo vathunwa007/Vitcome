@@ -30,7 +30,7 @@ namespace netcore.Controllers
             if (idstudent == 1)
             {
 
-                return RedirectToAction("Techer", "Home");
+                return RedirectToAction("index", "Select");
             }
             else { return RedirectToAction("Index", "Home"); }
 

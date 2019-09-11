@@ -18,7 +18,7 @@
                 <h1 style="color:white;">เลือกอาจารย์ที่ปรึกษาวิจัย</h1>
             </div>
                 <table class="table table-hover">
-                <form asp-controller="Home" asp-action="Detail" method="GET">
+                <form asp-controller="Teacher" asp-action="index" method="GET">
                     <thead>
                         <tr>
                             <!--<th scope="col">#</th>-->
@@ -31,7 +31,7 @@
                     </thead>
                     <tbody>
                         @foreach (var item in Model) {
-                       <tr onclick="window.open('Privacy','_self','');">
+                       <tr onclick="window.open('../Teacher','_self','');">
                         <!--<tr>-->
                            <!-- <th scope="row"><input type="checkbox" name="check" value="@item.Id"aria-label="Checkbox for following text input"> </th>-->
                             <td >@item.Id</td>
