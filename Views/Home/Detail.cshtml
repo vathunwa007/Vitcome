@@ -1,91 +1,92 @@
 
 
-    <style>
-        .form-check {
-        display:inline;
-        }
-
-    </style>
+<style>
+    .form-check {
+        display: inline;
+    }
+</style>
 <h3 style="text-align:center;"><b>แบบฟอร์มยืนหัวข้องานวิจัยทางเทคโนโลยีสารสนเทศ <br>คณะวิทยาศาสตร์ มหาวิทยาลัยราชภัฎจันทรเกษม</h3>
 <div class="card-body card ">
     <form>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputEmail4">ชื่อ</label>
-            <input type="email" class="form-control" name="name" placeholder="ชื่อ">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">ชื่อ</label>
+                <input type="email" class="form-control" name="name" placeholder="ชื่อ">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">นามสกุล</label>
+                <input type="password" class="form-control" name="lastname" placeholder="นามสกุล">
+            </div>
         </div>
-        <div class="form-group col-md-6">
-            <label for="inputPassword4">นามสกุล</label>
-            <input type="password" class="form-control" name="lastname" placeholder="นามสกุล">
+        <div class="row">
+            <div class="form-group col-lg-6">
+                <label for="inputAddress">รหัสนักศึกษา</label>
+                <input type="text" class="form-control " name="idstudent" placeholder="รหัสนักศึกษา">
+            </div>
+            <div class="form-group col-lg-6" style="display:inline-block;padding-top:3%;">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        ภาคในเวลา
+                    </label>
+
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        ภาคนอกเวลา
+                    </label>
+
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-    <div class="form-group col-lg-6">
-        <label for="inputAddress">รหัสนักศึกษา</label>
-        <input type="text" class="form-control " name="idstudent" placeholder="รหัสนักศึกษา">
-    </div>
-    <div class="form-group col-lg-6"style="display:inline-block;padding-top:3%;">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-                ภาคในเวลา
-            </label>
+        <div class="row">
+            <div class="form-group col-lg-6">
+                <label for="inputAddress2">ชื่อหัวข้อที่นำเสนอ</label>
+                <input type="text" class="form-control" name="headder" placeholder="กรุณาใส่ชื่อหัวข้อ">
+            </div>
+            <div class="form-group col-lg-6">
+                <label for="inputAddress2">ชื่อหัวข้อที่นำเสนอภาษาอังกฤษ</label>
+                <input type="text" class="form-control" name="headdereng" placeholder="กรุณาใส่ชื่อหัวข้อภาษาอังกฤษ">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress2">ความเป็นมาและความสำคัญ</label>
+            <textarea class="form-control" aria-label="With textarea" name="text1" placeholder="กรุณาใส่ความเป็นมาและความสำคัญ"></textarea>
 
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-                ภาคนอกเวลา
-            </label>
+        <div class="form-group">
+            <label for="inputAddress2">วัตถุประสงค์</label>
+            <textarea class="form-control" aria-label="With textarea" name="text2" placeholder="กรุณาใส่วัตถุประสงค์"></textarea>
 
         </div>
-    </div>
+        <div class="form-group">
+            <label for="inputAddress2">หลักการทถษฏีและเหตุผล</label>
+            <textarea class="form-control" aria-label="With textarea" name="text3" placeholder="กรุณาใส่หลักการทฤษฏีและเหตุผล"></textarea>
+
         </div>
-     <div class="row">
-    <div class="form-group col-lg-6">
-        <label for="inputAddress2">ชื่อหัวข้อที่นำเสนอ</label>
-        <input type="text" class="form-control" name="headder" placeholder="กรุณาใส่ชื่อหัวข้อ">
-    </div>
-    <div class="form-group col-lg-6">
-        <label for="inputAddress2">ชื่อหัวข้อที่นำเสนอภาษาอังกฤษ</label>
-        <input type="text" class="form-control"name="headdereng" placeholder="กรุณาใส่ชื่อหัวข้อภาษาอังกฤษ">
-    </div>
+        <label for="inputAddress2">ระยะเวลาดำเนินการ</label>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+            <label class="custom-file-label" for="inputGroupFile01">กรุณาใส่แผนภาพGantChart หรือไฟล์.CSV</label>
         </div>
-    <div class="form-group">
-        <label for="inputAddress2">ความเป็นมาและความสำคัญ</label>
-        <textarea class="form-control" aria-label="With textarea"name="text1"placeholder="กรุณาใส่ความเป็นมาและความสำคัญ"></textarea>
+        <div class="form-group">
+            <label for="inputAddress2">แผนการดำเนินงาน ขอบเขตการศึกษา</label>
+            <textarea class="form-control" aria-label="With textarea" name="text4" placeholder="กรุณาใส่แผนการดำเนินงาน และขอบเขตการศึกษา"></textarea>
 
-    </div>
-    <div class="form-group">
-        <label for="inputAddress2">วัตถุประสงค์</label>
-        <textarea class="form-control" aria-label="With textarea"name="text2"placeholder="กรุณาใส่วัตถุประสงค์"></textarea>
-
-    </div>
-    <div class="form-group">
-        <label for="inputAddress2">หลักการทถษฏีและเหตุผล</label>
-        <textarea class="form-control" aria-label="With textarea"name="text3"placeholder="กรุณาใส่หลักการทฤษฏีและเหตุผล"></textarea>
-
-    </div>
-    <label for="inputAddress2">ระยะเวลาดำเนินการ</label>
-    <div class="custom-file">
-        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-        <label class="custom-file-label" for="inputGroupFile01">กรุณาใส่แผนภาพGantChart หรือไฟล์.CSV</label>
-    </div>
-    <div class="form-group">
-        <label for="inputAddress2">แผนการดำเนินงาน ขอบเขตการศึกษา</label>
-        <textarea class="form-control" aria-label="With textarea"name="text4"placeholder="กรุณาใส่แผนการดำเนินงาน และขอบเขตการศึกษา"></textarea>
-
-    </div>
+        </div>
 
 
 
-    <button type="submit" class="btn btn-info btn-lg btn-block"style="color:white;">บันทึกฟอร์ม CS1</button>
+        <button type="submit" class="btn btn-info btn-lg btn-block" style="color:white;">บันทึกฟอร์ม CS1</button>
     </form>
+    <a  href="Printpdf">Print</a>
 </div>
-        <br>
-        <p>@ViewBag.name</p>
-        <br>
-        <p>@ViewBag.lastname</p>
-        <br>
-        <p>@ViewBag.idstudent</p>
-        <p>@ViewBag.supername</p>
+<br>
+<p>@ViewBag.name</p>
+<br>
+<p>@ViewBag.lastname</p>
+<br>
+<p>@ViewBag.idstudent</p>
+<p>@ViewBag.supername</p>
+

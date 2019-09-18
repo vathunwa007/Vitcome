@@ -31,13 +31,20 @@
                     </thead>
                     <tbody>
                         @foreach (var item in Model) {
-                       <tr onclick="window.open('../Teacher','_self','');">
-                        <!--<tr>-->
-                           <!-- <th scope="row"><input type="checkbox" name="check" value="@item.Id"aria-label="Checkbox for following text input"> </th>-->
-                            <td >@item.Id</td>
+                        <tr onclick="window.open('../Teacher?id=@item.Id','_self','');">
+                            <!--<tr>-->
+                            <!-- <th scope="row"><input type="checkbox" name="check" value="@item.Id"aria-label="Checkbox for following text input"> </th>-->
+                            <td>@item.Id</td>
                             <td>@item.Name</td>
                             <td>@item.Skill</td>
-                            <td>@item.Status</td>
+                            @if (@item.Status >= 5)
+                            {
+                                <td><p style="color:red;">@item.Status/5</p></td>
+                            }
+                            else
+                            {
+                                <td><p style="color:blue;">@item.Status/5</p></td>
+                            }
                         </tr>
                         }
 
