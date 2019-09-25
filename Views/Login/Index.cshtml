@@ -1,0 +1,68 @@
+﻿@{ ViewData["Title"] = "ระบบยืนสมัครวิจัยวิทยาการคอมพิวเตอร์"; }
+
+
+
+<div class="row" style="padding-top: 60px;">
+    <div class="col-md-6">
+        <div style=" border: 1px solid;
+        padding: 10px;
+        box-shadow: 5px 10px;">
+            <h1 style="text-align: center;">สมัครสมาชิก</h1>
+            <form asp-controller="Select" asp-action="Save" method="GET">
+                <div class="form-group ">
+                    <label for="exampleInputEmail1">รหัสนักศึกษา</label>
+                    <input type="number" class="form-control" name="idstudent" aria-describedby="emailHelp" placeholder="Enter IDstudent">
+                    <small id="emailHelp" class="form-text text-muted">กรุณากรอกรหัสนักศึกษา.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">รหัสผ่าน</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">ชื่อและนามสกุล</span>
+                    </div>
+                    <input type="text" aria-label="First name"name="name" class="form-control" placeholder="ชื่อ">
+                    <input type="text" aria-label="Last name" name="lastname"class="form-control" placeholder="นามสกุล">
+                </div>
+                <div class="form-group col-md-12" style="padding-top:8px; text-align: center;">
+                    <div class="mx-auto form-control ">
+                        <input type="checkbox" aria-label="Checkbox for following text input" name="year" value="3"> <span>ปี3</span>
+                        <input type="checkbox" aria-label="Checkbox for following text input"name="year" value="4"><span>ปี4</span>
+                        <input type="checkbox" aria-label="Checkbox for following text input"name="year" value="5"> <span>ภาคนอกเวลา</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">อีเมล</label>
+                    <input type="email" class="form-control" name="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">เบอร์โทรติดต่อได้</label>
+                    <input type="number" class="form-control" name="telephone" placeholder="Telephone">
+                </div>
+
+                <button style="display: block;margin-left: auto;margin-right: auto;" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div style=" border: 1px solid;
+            padding: 10px;
+            box-shadow: 5px 10px;">
+            <h1 style="text-align: center;">เข้าสู่ระบบ</h1>
+            <form>
+                <div class="form-group ">
+                    <label for="exampleInputEmail1">รหัสนักศึกษา</label>
+                    <input name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter IDstudent">
+                    <small id="emailHelp" class="form-text text-muted">กรุณากรอกรหัสนักศึกษา.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">รหัสผ่าน</label>
+                    <input name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

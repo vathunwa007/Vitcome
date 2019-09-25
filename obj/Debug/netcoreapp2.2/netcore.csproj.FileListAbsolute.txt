@@ -5,7 +5,6 @@ C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\netco
 C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\netcore.pdb
 C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\netcore.Views.dll
 C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\netcore.Views.pdb
-C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.csprojAssemblyReference.cache
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.csproj.CoreCompileInputs.cache
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.RazorAssemblyInfo.cache
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.RazorAssemblyInfo.cs
@@ -14,12 +13,19 @@ C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netco
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.TagHelpers.input.cache
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.TagHelpers.output.cache
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.RazorCoreGenerate.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Checkstatus\index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\create.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Detail.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Techer.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Select\Index.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\Index.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.RazorTargetAssemblyInfo.cache
@@ -28,9 +34,3 @@ C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netco
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.dll
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.pdb
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.csproj.CopyComplete
-c:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Detail.g.cshtml.cs
-c:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Techer.g.cshtml.cs
-c:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs
-C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Select\Index.g.cshtml.cs
-C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\Index.g.cshtml.cs
-C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Checkstatus\index.g.cshtml.cs

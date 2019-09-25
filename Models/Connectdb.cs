@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Microsoft.Extensions.DependencyInjection;
 using System.Data;
+using netcore.Models;
 
 namespace netcore.Models
 {
@@ -60,7 +61,7 @@ namespace netcore.Models
             MySqlConnection conn = GetConnection();
             MySqlCommand objCmd = new MySqlCommand();
 
-            strSQL = "INSERT INTO `student`(`idstudent`,`password`,`username`,`lastname`,`year`,`email`,`telephone`) VALUES ('" + regis.Idstudent+"','"+regis.Password + "','"+ regis.Name + "','"+regis.Lastname + "','"+regis.Year + "','"+regis.Email + "','"+regis.Telephone+"');";
+            strSQL = "INSERT INTO `student`(`idstudent`,`password`,`username`,`lastname`,`year`,`email`,`telephone`) VALUES ('" + regis.idstudent+"','"+regis.password + "','"+ regis.name + "','"+regis.suranme + "','"+regis.year + "','"+regis.email + "','"+regis.telnumber+"');";
 
             conn.Open();
             objCmd.Connection = conn;

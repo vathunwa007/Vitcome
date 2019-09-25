@@ -1,21 +1,18 @@
 ﻿<Properties StartupConfiguration="{F743ED9E-D3F2-4395-8385-951DDFF7BCF8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Teacher/Index.cshtml">
-    <Files>
-      <File FileName="Views/Home/Detail.cshtml" Line="5" Column="100" />
-      <File FileName="Controllers/TeacherController.cs" Line="1" Column="1" />
-      <File FileName="Views/Teacher/Index.cshtml" Line="4" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="netcore" expanded="True">
             <Node name="netcore" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="Checkstatus" expanded="True" />
                 <Node name="Home" expanded="True" />
-                <Node name="Teacher" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>

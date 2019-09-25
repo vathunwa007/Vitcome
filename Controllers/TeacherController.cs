@@ -21,11 +21,6 @@ namespace netcore.Controllers
 
             
         }
-        public void insertsql() {
-            Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
-
-            context.Insert();
-
-        }
+        
     }
 }

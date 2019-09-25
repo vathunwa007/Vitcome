@@ -21,4 +21,16 @@
   <ItemGroup>
     <Folder Include="Views\Teacher\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Class\Database.cs" />
+    <Compile Remove="Class\EncodeString.cs" />
+    <Compile Remove="Models\EmptyClass.cs" />
+    <Compile Remove="Models\RegisterModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Models\Student.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="README.md" />
+  </ItemGroup>
 </Project>
