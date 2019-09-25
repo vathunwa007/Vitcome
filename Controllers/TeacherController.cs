@@ -14,12 +14,18 @@ namespace netcore.Controllers
         // GET: /<controller>/
         public IActionResult Index(int id)
         {
-            Showtecher context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Showtecher)) as Showtecher;
+            Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
             ViewBag.id = id;
 
             return View(context.GetAllTecher());
 
             
+        }
+        public void insertsql() {
+            Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+
+            context.Insert();
+
         }
     }
 }

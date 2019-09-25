@@ -5,11 +5,13 @@ using netcore.Models;
 
 
 namespace netcore.Controllers
-{
+{    
     public class HomeController : Controller
     {
+        
         public IActionResult Index()
         {
+          
             return View();
 
         }
@@ -44,7 +46,7 @@ namespace netcore.Controllers
         public IActionResult Techer()
         
             {
-                Showtecher context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Showtecher)) as Showtecher;
+                Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
 
                 return View(context.GetAllTecher());
             }
@@ -58,10 +60,36 @@ namespace netcore.Controllers
         }
 
 
-        public void Printpdf() {
-          
+        
+        [HttpGet]
+        public IActionResult SaveCs1(FormCs1Model saveform) {
+
+            Connectdb saveformdata = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+            saveformdata.Savecs1(saveform);
+           return RedirectToAction("Index");
+        }
+        public IActionResult Login(string idstudent,string password) {
+            Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+            con.login(idstudent, password);
+            if (con.login(idstudent, password) == "login") {
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
 
         }
+
+       /* private bool checklogin() {
+            bool result = false;
+            if (HttpContext.Session.GetString("login")!= null)
+            {
+
+                if (HttpContext.Session.GetString("login") == 1) {
+                    result = true;
+                }
+
+            }
+            return result;
+        }*/
     }
 
 }

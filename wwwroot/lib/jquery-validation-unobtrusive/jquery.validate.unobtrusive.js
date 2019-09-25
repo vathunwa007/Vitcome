@@ -30,16 +30,16 @@
     }
 
     function splitAndTrim(value) {
-        return value.replace(/^\s+|\s+$/g, "").split(/\s*,\s*/g);
+        return value.replace(/^\s|\s$/g, "").split(/\s*,\s*/g);
     }
 
     function escapeAttributeValue(value) {
         // As mentioned on http://api.jquery.com/category/selectors/
-        return value.replace(/([!"#$%&'()*+,./:;<=>?@\[\\\]^`{|}~])/g, "\\$1");
+        return value.replace(/([!"#$%&'()*,./:;<=>?@\[\\\]^`{|}~])/g, "\\$1");
     }
 
     function getModelPrefix(fieldName) {
-        return fieldName.substr(0, fieldName.lastIndexOf(".") + 1);
+        return fieldName.substr(0, fieldName.lastIndexOf(".")  1);
     }
 
     function appendModelPrefix(value, prefix) {
@@ -50,7 +50,7 @@
     }
 
     function onError(error, inputElement) {  // 'this' is the form element
-        var container = $(this).find("[data-valmsg-for='" + escapeAttributeValue(inputElement[0].name) + "']"),
+        var container = $(this).find("[data-valmsg-for='"  escapeAttributeValue(inputElement[0].name)  "']"),
             replaceAttrValue = container.attr("data-valmsg-replace"),
             replace = replaceAttrValue ? $.parseJSON(replaceAttrValue) !== false : null;
 
@@ -153,8 +153,8 @@
                 },
                 attachValidation: function () {
                     $form
-                        .off("reset." + data_validation, onResetProxy)
-                        .on("reset." + data_validation, onResetProxy)
+                        .off("reset."  data_validation, onResetProxy)
+                        .on("reset."  data_validation, onResetProxy)
                         .validate(this.options);
                 },
                 validate: function () {  // a validation function that is called by unobtrusive Ajax
@@ -193,15 +193,15 @@
             valInfo.options.messages[element.name] = messages = {};
 
             $.each(this.adapters, function () {
-                var prefix = "data-val-" + this.name,
+                var prefix = "data-val-"  this.name,
                     message = $element.attr(prefix),
                     paramValues = {};
 
                 if (message !== undefined) {  // Compare against undefined, because an empty message is legal (and falsy)
-                    prefix += "-";
+                    prefix = "-";
 
                     $.each(this.params, function () {
-                        paramValues[this] = $element.attr(prefix + this);
+                        paramValues[this] = $element.attr(prefix  this);
                     });
 
                     this.adapt({
@@ -374,7 +374,7 @@
         var prefix = getModelPrefix(options.element.name),
             other = options.params.other,
             fullOtherName = appendModelPrefix(other, prefix),
-            element = $(options.form).find(":input").filter("[name='" + escapeAttributeValue(fullOtherName) + "']")[0];
+            element = $(options.form).find(":input").filter("[name='"  escapeAttributeValue(fullOtherName)  "']")[0];
 
         setValidationValues(options, "equalTo", element);
     });
@@ -395,7 +395,7 @@
         $.each(splitAndTrim(options.params.additionalfields || options.element.name), function (i, fieldName) {
             var paramName = appendModelPrefix(fieldName, prefix);
             value.data[paramName] = function () {
-                var field = $(options.form).find(":input").filter("[name='" + escapeAttributeValue(paramName) + "']");
+                var field = $(options.form).find(":input").filter("[name='"  escapeAttributeValue(paramName)  "']");
                 // For checkboxes and radio buttons, only pick up values from checked fields.
                 if (field.is(":checkbox")) {
                     return field.filter(":checked").val() || field.filter(":hidden").val() || '';

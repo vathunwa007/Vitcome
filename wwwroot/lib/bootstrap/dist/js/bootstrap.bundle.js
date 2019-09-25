@@ -12,7 +12,7 @@
   $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
+    for (var i = 0; i < props.length; i) {
       var descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
@@ -43,7 +43,7 @@
   }
 
   function _objectSpread(target) {
-    for (var i = 1; i < arguments.length; i++) {
+    for (var i = 1; i < arguments.length; i) {
       var source = arguments[i] != null ? arguments[i] : {};
       var ownKeys = Object.keys(source);
 
@@ -84,7 +84,7 @@
   var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
 
   function toType(obj) {
-    return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
+    return {}.toString.call(obj).match(/\s([a-z])/i)[1].toLowerCase();
   }
 
   function getSpecialTransitionEndEvent() {
@@ -132,7 +132,7 @@
     getUID: function getUID(prefix) {
       do {
         // eslint-disable-next-line no-bitwise
-        prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
+        prefix = ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
       } while (document.getElementById(prefix));
 
       return prefix;
@@ -169,7 +169,7 @@
 
       transitionDuration = transitionDuration.split(',')[0];
       transitionDelay = transitionDelay.split(',')[0];
-      return (parseFloat(transitionDuration) + parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER;
+      return (parseFloat(transitionDuration)  parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER;
     },
     reflow: function reflow(element) {
       return element.offsetHeight;
@@ -192,7 +192,7 @@
           var valueType = value && Util.isElement(value) ? 'element' : toType(value);
 
           if (!new RegExp(expectedTypes).test(valueType)) {
-            throw new Error(componentName.toUpperCase() + ": " + ("Option \"" + property + "\" provided type \"" + valueType + "\" ") + ("but expected type \"" + expectedTypes + "\"."));
+            throw new Error(componentName.toUpperCase()  ": "  ("Option \""  property  "\" provided type \""  valueType  "\" ")  ("but expected type \""  expectedTypes  "\"."));
           }
         }
       }
@@ -231,16 +231,16 @@
   var NAME = 'alert';
   var VERSION = '4.3.1';
   var DATA_KEY = 'bs.alert';
-  var EVENT_KEY = "." + DATA_KEY;
+  var EVENT_KEY = "."  DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var Selector = {
     DISMISS: '[data-dismiss="alert"]'
   };
   var Event = {
-    CLOSE: "close" + EVENT_KEY,
-    CLOSED: "closed" + EVENT_KEY,
-    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
+    CLOSE: "close"  EVENT_KEY,
+    CLOSED: "closed"  EVENT_KEY,
+    CLICK_DATA_API: "click"  EVENT_KEY  DATA_API_KEY
   };
   var ClassName = {
     ALERT: 'alert',
@@ -296,7 +296,7 @@
       }
 
       if (!parent) {
-        parent = $(element).closest("." + ClassName.ALERT)[0];
+        parent = $(element).closest("."  ClassName.ALERT)[0];
       }
 
       return parent;
@@ -396,7 +396,7 @@
   var NAME$1 = 'button';
   var VERSION$1 = '4.3.1';
   var DATA_KEY$1 = 'bs.button';
-  var EVENT_KEY$1 = "." + DATA_KEY$1;
+  var EVENT_KEY$1 = "."  DATA_KEY$1;
   var DATA_API_KEY$1 = '.data-api';
   var JQUERY_NO_CONFLICT$1 = $.fn[NAME$1];
   var ClassName$1 = {
@@ -412,8 +412,8 @@
     BUTTON: '.btn'
   };
   var Event$1 = {
-    CLICK_DATA_API: "click" + EVENT_KEY$1 + DATA_API_KEY$1,
-    FOCUS_BLUR_DATA_API: "focus" + EVENT_KEY$1 + DATA_API_KEY$1 + " " + ("blur" + EVENT_KEY$1 + DATA_API_KEY$1)
+    CLICK_DATA_API: "click"  EVENT_KEY$1  DATA_API_KEY$1,
+    FOCUS_BLUR_DATA_API: "focus"  EVENT_KEY$1  DATA_API_KEY$1  " "  ("blur"  EVENT_KEY$1  DATA_API_KEY$1)
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -550,7 +550,7 @@
   var NAME$2 = 'carousel';
   var VERSION$2 = '4.3.1';
   var DATA_KEY$2 = 'bs.carousel';
-  var EVENT_KEY$2 = "." + DATA_KEY$2;
+  var EVENT_KEY$2 = "."  DATA_KEY$2;
   var DATA_API_KEY$2 = '.data-api';
   var JQUERY_NO_CONFLICT$2 = $.fn[NAME$2];
   var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
@@ -583,19 +583,19 @@
     RIGHT: 'right'
   };
   var Event$2 = {
-    SLIDE: "slide" + EVENT_KEY$2,
-    SLID: "slid" + EVENT_KEY$2,
-    KEYDOWN: "keydown" + EVENT_KEY$2,
-    MOUSEENTER: "mouseenter" + EVENT_KEY$2,
-    MOUSELEAVE: "mouseleave" + EVENT_KEY$2,
-    TOUCHSTART: "touchstart" + EVENT_KEY$2,
-    TOUCHMOVE: "touchmove" + EVENT_KEY$2,
-    TOUCHEND: "touchend" + EVENT_KEY$2,
-    POINTERDOWN: "pointerdown" + EVENT_KEY$2,
-    POINTERUP: "pointerup" + EVENT_KEY$2,
-    DRAG_START: "dragstart" + EVENT_KEY$2,
-    LOAD_DATA_API: "load" + EVENT_KEY$2 + DATA_API_KEY$2,
-    CLICK_DATA_API: "click" + EVENT_KEY$2 + DATA_API_KEY$2
+    SLIDE: "slide"  EVENT_KEY$2,
+    SLID: "slid"  EVENT_KEY$2,
+    KEYDOWN: "keydown"  EVENT_KEY$2,
+    MOUSEENTER: "mouseenter"  EVENT_KEY$2,
+    MOUSELEAVE: "mouseleave"  EVENT_KEY$2,
+    TOUCHSTART: "touchstart"  EVENT_KEY$2,
+    TOUCHMOVE: "touchmove"  EVENT_KEY$2,
+    TOUCHEND: "touchend"  EVENT_KEY$2,
+    POINTERDOWN: "pointerdown"  EVENT_KEY$2,
+    POINTERUP: "pointerup"  EVENT_KEY$2,
+    DRAG_START: "dragstart"  EVENT_KEY$2,
+    LOAD_DATA_API: "load"  EVENT_KEY$2  DATA_API_KEY$2,
+    CLICK_DATA_API: "click"  EVENT_KEY$2  DATA_API_KEY$2
   };
   var ClassName$2 = {
     CAROUSEL: 'carousel',
@@ -840,7 +840,7 @@
 
           _this3.touchTimeout = setTimeout(function (event) {
             return _this3.cycle(event);
-          }, TOUCHEVENT_COMPAT_WAIT + _this3._config.interval);
+          }, TOUCHEVENT_COMPAT_WAIT  _this3._config.interval);
         }
       };
 
@@ -909,7 +909,7 @@
       }
 
       var delta = direction === Direction.PREV ? -1 : 1;
-      var itemIndex = (activeIndex + delta) % this._items.length;
+      var itemIndex = (activeIndex  delta) % this._items.length;
       return itemIndex === -1 ? this._items[this._items.length - 1] : this._items[itemIndex];
     };
 
@@ -1014,8 +1014,8 @@
 
         var transitionDuration = Util.getTransitionDurationFromElement(activeElement);
         $(activeElement).one(Util.TRANSITION_END, function () {
-          $(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(ClassName$2.ACTIVE);
-          $(activeElement).removeClass(ClassName$2.ACTIVE + " " + orderClassName + " " + directionalClassName);
+          $(nextElement).removeClass(directionalClassName  " "  orderClassName).addClass(ClassName$2.ACTIVE);
+          $(activeElement).removeClass(ClassName$2.ACTIVE  " "  orderClassName  " "  directionalClassName);
           _this4._isSliding = false;
           setTimeout(function () {
             return $(_this4._element).trigger(slidEvent);
@@ -1055,7 +1055,7 @@
           data.to(config);
         } else if (typeof action === 'string') {
           if (typeof data[action] === 'undefined') {
-            throw new TypeError("No method named \"" + action + "\"");
+            throw new TypeError("No method named \""  action  "\"");
           }
 
           data[action]();
@@ -1121,7 +1121,7 @@
   $(window).on(Event$2.LOAD_DATA_API, function () {
     var carousels = [].slice.call(document.querySelectorAll(Selector$2.DATA_RIDE));
 
-    for (var i = 0, len = carousels.length; i < len; i++) {
+    for (var i = 0, len = carousels.length; i < len; i) {
       var $carousel = $(carousels[i]);
 
       Carousel._jQueryInterface.call($carousel, $carousel.data());
@@ -1150,7 +1150,7 @@
   var NAME$3 = 'collapse';
   var VERSION$3 = '4.3.1';
   var DATA_KEY$3 = 'bs.collapse';
-  var EVENT_KEY$3 = "." + DATA_KEY$3;
+  var EVENT_KEY$3 = "."  DATA_KEY$3;
   var DATA_API_KEY$3 = '.data-api';
   var JQUERY_NO_CONFLICT$3 = $.fn[NAME$3];
   var Default$1 = {
@@ -1162,11 +1162,11 @@
     parent: '(string|element)'
   };
   var Event$3 = {
-    SHOW: "show" + EVENT_KEY$3,
-    SHOWN: "shown" + EVENT_KEY$3,
-    HIDE: "hide" + EVENT_KEY$3,
-    HIDDEN: "hidden" + EVENT_KEY$3,
-    CLICK_DATA_API: "click" + EVENT_KEY$3 + DATA_API_KEY$3
+    SHOW: "show"  EVENT_KEY$3,
+    SHOWN: "shown"  EVENT_KEY$3,
+    HIDE: "hide"  EVENT_KEY$3,
+    HIDDEN: "hidden"  EVENT_KEY$3,
+    CLICK_DATA_API: "click"  EVENT_KEY$3  DATA_API_KEY$3
   };
   var ClassName$3 = {
     SHOW: 'show',
@@ -1196,10 +1196,10 @@
       this._isTransitioning = false;
       this._element = element;
       this._config = this._getConfig(config);
-      this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"collapse\"][data-target=\"#" + element.id + "\"]")));
+      this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"collapse\"][href=\"#"  element.id  "\"],"  ("[data-toggle=\"collapse\"][data-target=\"#"  element.id  "\"]")));
       var toggleList = [].slice.call(document.querySelectorAll(Selector$3.DATA_TOGGLE));
 
-      for (var i = 0, len = toggleList.length; i < len; i++) {
+      for (var i = 0, len = toggleList.length; i < len; i) {
         var elem = toggleList[i];
         var selector = Util.getSelectorFromElement(elem);
         var filterElement = [].slice.call(document.querySelectorAll(selector)).filter(function (foundElem) {
@@ -1303,11 +1303,11 @@
         $(_this._element).trigger(Event$3.SHOWN);
       };
 
-      var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
-      var scrollSize = "scroll" + capitalizedDimension;
+      var capitalizedDimension = dimension[0].toUpperCase()  dimension.slice(1);
+      var scrollSize = "scroll"  capitalizedDimension;
       var transitionDuration = Util.getTransitionDurationFromElement(this._element);
       $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      this._element.style[dimension] = this._element[scrollSize] + "px";
+      this._element.style[dimension] = this._element[scrollSize]  "px";
     };
 
     _proto.hide = function hide() {
@@ -1326,13 +1326,13 @@
 
       var dimension = this._getDimension();
 
-      this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
+      this._element.style[dimension] = this._element.getBoundingClientRect()[dimension]  "px";
       Util.reflow(this._element);
       $(this._element).addClass(ClassName$3.COLLAPSING).removeClass(ClassName$3.COLLAPSE).removeClass(ClassName$3.SHOW);
       var triggerArrayLength = this._triggerArray.length;
 
       if (triggerArrayLength > 0) {
-        for (var i = 0; i < triggerArrayLength; i++) {
+        for (var i = 0; i < triggerArrayLength; i) {
           var trigger = this._triggerArray[i];
           var selector = Util.getSelectorFromElement(trigger);
 
@@ -1401,7 +1401,7 @@
         parent = document.querySelector(this._config.parent);
       }
 
-      var selector = "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]";
+      var selector = "[data-toggle=\"collapse\"][data-parent=\""  this._config.parent  "\"]";
       var children = [].slice.call(parent.querySelectorAll(selector));
       $(children).each(function (i, element) {
         _this3._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
@@ -1441,7 +1441,7 @@
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
+            throw new TypeError("No method named \""  config  "\"");
           }
 
           data[config]();
@@ -1529,7 +1529,7 @@
 
   var longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
   var timeoutDuration = 0;
-  for (var i = 0; i < longerTimeoutBrowsers.length; i += 1) {
+  for (var i = 0; i < longerTimeoutBrowsers.length; i = 1) {
     if (isBrowser && navigator.userAgent.indexOf(longerTimeoutBrowsers[i]) >= 0) {
       timeoutDuration = 1;
       break;
@@ -1647,7 +1647,7 @@
         overflowX = _getStyleComputedProp.overflowX,
         overflowY = _getStyleComputedProp.overflowY;
 
-    if (/(auto|scroll|overlay)/.test(overflow + overflowY + overflowX)) {
+    if (/(auto|scroll|overlay)/.test(overflow  overflowY  overflowX)) {
       return element;
     }
 
@@ -1816,10 +1816,10 @@
     var scrollTop = getScroll(element, 'top');
     var scrollLeft = getScroll(element, 'left');
     var modifier = subtract ? -1 : 1;
-    rect.top += scrollTop * modifier;
-    rect.bottom += scrollTop * modifier;
-    rect.left += scrollLeft * modifier;
-    rect.right += scrollLeft * modifier;
+    rect.top = scrollTop * modifier;
+    rect.bottom = scrollTop * modifier;
+    rect.left = scrollLeft * modifier;
+    rect.right = scrollLeft * modifier;
     return rect;
   }
 
@@ -1837,11 +1837,11 @@
     var sideA = axis === 'x' ? 'Left' : 'Top';
     var sideB = sideA === 'Left' ? 'Right' : 'Bottom';
 
-    return parseFloat(styles['border' + sideA + 'Width'], 10) + parseFloat(styles['border' + sideB + 'Width'], 10);
+    return parseFloat(styles['border'  sideA  'Width'], 10)  parseFloat(styles['border'  sideB  'Width'], 10);
   }
 
   function getSize(axis, body, html, computedStyle) {
-    return Math.max(body['offset' + axis], body['scroll' + axis], html['client' + axis], html['offset' + axis], html['scroll' + axis], isIE(10) ? parseInt(html['offset' + axis]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Top' : 'Left')]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Bottom' : 'Right')]) : 0);
+    return Math.max(body['offset'  axis], body['scroll'  axis], html['client'  axis], html['offset'  axis], html['scroll'  axis], isIE(10) ? parseInt(html['offset'  axis])  parseInt(computedStyle['margin'  (axis === 'Height' ? 'Top' : 'Left')])  parseInt(computedStyle['margin'  (axis === 'Height' ? 'Bottom' : 'Right')]) : 0);
   }
 
   function getWindowSizes(document) {
@@ -1863,7 +1863,7 @@
 
   var createClass = function () {
     function defineProperties(target, props) {
-      for (var i = 0; i < props.length; i++) {
+      for (var i = 0; i < props.length; i) {
         var descriptor = props[i];
         descriptor.enumerable = descriptor.enumerable || false;
         descriptor.configurable = true;
@@ -1899,7 +1899,7 @@
   };
 
   var _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
+    for (var i = 1; i < arguments.length; i) {
       var source = arguments[i];
 
       for (var key in source) {
@@ -1921,8 +1921,8 @@
    */
   function getClientRect(offsets) {
     return _extends({}, offsets, {
-      right: offsets.left + offsets.width,
-      bottom: offsets.top + offsets.height
+      right: offsets.left  offsets.width,
+      bottom: offsets.top  offsets.height
     });
   }
 
@@ -1944,10 +1944,10 @@
         rect = element.getBoundingClientRect();
         var scrollTop = getScroll(element, 'top');
         var scrollLeft = getScroll(element, 'left');
-        rect.top += scrollTop;
-        rect.left += scrollLeft;
-        rect.bottom += scrollTop;
-        rect.right += scrollLeft;
+        rect.top = scrollTop;
+        rect.left = scrollLeft;
+        rect.bottom = scrollTop;
+        rect.right = scrollLeft;
       } else {
         rect = element.getBoundingClientRect();
       }
@@ -2046,8 +2046,8 @@
     var scrollLeft = !excludeScroll ? getScroll(html, 'left') : 0;
 
     var offset = {
-      top: scrollTop - relativeOffset.top + relativeOffset.marginTop,
-      left: scrollLeft - relativeOffset.left + relativeOffset.marginLeft,
+      top: scrollTop - relativeOffset.top  relativeOffset.marginTop,
+      left: scrollLeft - relativeOffset.left  relativeOffset.marginLeft,
       width: width,
       height: height
     };
@@ -2142,10 +2142,10 @@
             height = _getWindowSizes.height,
             width = _getWindowSizes.width;
 
-        boundaries.top += offsets.top - offsets.marginTop;
-        boundaries.bottom = height + offsets.top;
-        boundaries.left += offsets.left - offsets.marginLeft;
-        boundaries.right = width + offsets.left;
+        boundaries.top = offsets.top - offsets.marginTop;
+        boundaries.bottom = height  offsets.top;
+        boundaries.left = offsets.left - offsets.marginLeft;
+        boundaries.right = width  offsets.left;
       } else {
         // for all the other DOM elements, this one is good
         boundaries = offsets;
@@ -2155,8 +2155,8 @@
     // Add paddings
     padding = padding || 0;
     var isPaddingNumber = typeof padding === 'number';
-    boundaries.left += isPaddingNumber ? padding : padding.left || 0;
-    boundaries.top += isPaddingNumber ? padding : padding.top || 0;
+    boundaries.left = isPaddingNumber ? padding : padding.left || 0;
+    boundaries.top = isPaddingNumber ? padding : padding.top || 0;
     boundaries.right -= isPaddingNumber ? padding : padding.right || 0;
     boundaries.bottom -= isPaddingNumber ? padding : padding.bottom || 0;
 
@@ -2227,7 +2227,7 @@
 
     var variation = placement.split('-')[1];
 
-    return computedPlacement + (variation ? '-' + variation : '');
+    return computedPlacement  (variation ? '-'  variation : '');
   }
 
   /**
@@ -2248,7 +2248,7 @@
   }
 
   /**
-   * Get the outer sizes of the given element (offset size + margins)
+   * Get the outer sizes of the given element (offset size  margins)
    * @method
    * @memberof Popper.Utils
    * @argument {Element} element
@@ -2257,11 +2257,11 @@
   function getOuterSizes(element) {
     var window = element.ownerDocument.defaultView;
     var styles = window.getComputedStyle(element);
-    var x = parseFloat(styles.marginTop || 0) + parseFloat(styles.marginBottom || 0);
-    var y = parseFloat(styles.marginLeft || 0) + parseFloat(styles.marginRight || 0);
+    var x = parseFloat(styles.marginTop || 0)  parseFloat(styles.marginBottom || 0);
+    var y = parseFloat(styles.marginLeft || 0)  parseFloat(styles.marginRight || 0);
     var result = {
-      width: element.offsetWidth + y,
-      height: element.offsetHeight + x
+      width: element.offsetWidth  y,
+      height: element.offsetHeight  x
     };
     return result;
   }
@@ -2309,7 +2309,7 @@
     var measurement = isHoriz ? 'height' : 'width';
     var secondaryMeasurement = !isHoriz ? 'height' : 'width';
 
-    popperOffsets[mainSide] = referenceOffsets[mainSide] + referenceOffsets[measurement] / 2 - popperRect[measurement] / 2;
+    popperOffsets[mainSide] = referenceOffsets[mainSide]  referenceOffsets[measurement] / 2 - popperRect[measurement] / 2;
     if (placement === secondarySide) {
       popperOffsets[secondarySide] = referenceOffsets[secondarySide] - popperRect[secondaryMeasurement];
     } else {
@@ -2355,7 +2355,7 @@
       });
     }
 
-    // use `find` + `indexOf` if `findIndex` isn't supported
+    // use `find`  `indexOf` if `findIndex` isn't supported
     var match = find(arr, function (obj) {
       return obj[prop] === value;
     });
@@ -2471,11 +2471,11 @@
    */
   function getSupportedPropertyName(property) {
     var prefixes = [false, 'ms', 'Webkit', 'Moz', 'O'];
-    var upperProp = property.charAt(0).toUpperCase() + property.slice(1);
+    var upperProp = property.charAt(0).toUpperCase()  property.slice(1);
 
-    for (var i = 0; i < prefixes.length; i++) {
+    for (var i = 0; i < prefixes.length; i) {
       var prefix = prefixes[i];
-      var toCheck = prefix ? '' + prefix + upperProp : property;
+      var toCheck = prefix ? ''  prefix  upperProp : property;
       if (typeof document.body.style[toCheck] !== 'undefined') {
         return toCheck;
       }
@@ -2629,7 +2629,7 @@
       if (['width', 'height', 'top', 'right', 'bottom', 'left'].indexOf(prop) !== -1 && isNumeric(styles[prop])) {
         unit = 'px';
       }
-      element.style[prop] = styles[prop] + unit;
+      element.style[prop] = styles[prop]  unit;
     });
   }
 
@@ -2814,24 +2814,24 @@
       // when offsetParent is <html> the positioning is relative to the bottom of the screen (excluding the scrollbar)
       // and not the bottom of the html element
       if (offsetParent.nodeName === 'HTML') {
-        top = -offsetParent.clientHeight + offsets.bottom;
+        top = -offsetParent.clientHeight  offsets.bottom;
       } else {
-        top = -offsetParentRect.height + offsets.bottom;
+        top = -offsetParentRect.height  offsets.bottom;
       }
     } else {
       top = offsets.top;
     }
     if (sideB === 'right') {
       if (offsetParent.nodeName === 'HTML') {
-        left = -offsetParent.clientWidth + offsets.right;
+        left = -offsetParent.clientWidth  offsets.right;
       } else {
-        left = -offsetParentRect.width + offsets.right;
+        left = -offsetParentRect.width  offsets.right;
       }
     } else {
       left = offsets.left;
     }
     if (gpuAcceleration && prefixedProperty) {
-      styles[prefixedProperty] = 'translate3d(' + left + 'px, ' + top + 'px, 0)';
+      styles[prefixedProperty] = 'translate3d('  left  'px, '  top  'px, 0)';
       styles[sideA] = 0;
       styles[sideB] = 0;
       styles.willChange = 'transform';
@@ -2841,7 +2841,7 @@
       var invertLeft = sideB === 'right' ? -1 : 1;
       styles[sideA] = top * invertTop;
       styles[sideB] = left * invertLeft;
-      styles.willChange = sideA + ', ' + sideB;
+      styles.willChange = sideA  ', '  sideB;
     }
 
     // Attributes
@@ -2878,9 +2878,9 @@
     });
 
     if (!isRequired) {
-      var _requesting = '`' + requestingName + '`';
-      var requested = '`' + requestedName + '`';
-      console.warn(requested + ' modifier is required by ' + _requesting + ' modifier in order to work, be sure to include it before ' + _requesting + '!');
+      var _requesting = '`'  requestingName  '`';
+      var requested = '`'  requestedName  '`';
+      console.warn(requested  ' modifier is required by '  _requesting  ' modifier in order to work, be sure to include it before '  _requesting  '!');
     }
     return isRequired;
   }
@@ -2943,19 +2943,19 @@
       data.offsets.popper[side] -= popper[side] - (reference[opSide] - arrowElementSize);
     }
     // bottom/right side
-    if (reference[side] + arrowElementSize > popper[opSide]) {
-      data.offsets.popper[side] += reference[side] + arrowElementSize - popper[opSide];
+    if (reference[side]  arrowElementSize > popper[opSide]) {
+      data.offsets.popper[side] = reference[side]  arrowElementSize - popper[opSide];
     }
     data.offsets.popper = getClientRect(data.offsets.popper);
 
     // compute center of the popper
-    var center = reference[side] + reference[len] / 2 - arrowElementSize / 2;
+    var center = reference[side]  reference[len] / 2 - arrowElementSize / 2;
 
     // Compute the sideValue using the updated popper offsets
     // take popper margin in account because we don't have this info available
     var css = getStyleComputedProperty(data.instance.popper);
-    var popperMarginSide = parseFloat(css['margin' + sideCapitalized], 10);
-    var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width'], 10);
+    var popperMarginSide = parseFloat(css['margin'  sideCapitalized], 10);
+    var popperBorderSide = parseFloat(css['border'  sideCapitalized  'Width'], 10);
     var sideValue = center - data.offsets.popper[side] - popperMarginSide - popperBorderSide;
 
     // prevent arrowElement from being placed not contiguously to its popper
@@ -3033,7 +3033,7 @@
     var counter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
     var index = validPlacements.indexOf(placement);
-    var arr = validPlacements.slice(index + 1).concat(validPlacements.slice(0, index));
+    var arr = validPlacements.slice(index  1).concat(validPlacements.slice(0, index));
     return counter ? arr.reverse() : arr;
   }
 
@@ -3084,7 +3084,7 @@
     }
 
     flipOrder.forEach(function (step, index) {
-      if (placement !== step || flipOrder.length === index + 1) {
+      if (placement !== step || flipOrder.length === index  1) {
         return data;
       }
 
@@ -3114,14 +3114,14 @@
         data.flipped = true;
 
         if (overlapsRef || overflowsBoundaries) {
-          placement = flipOrder[index + 1];
+          placement = flipOrder[index  1];
         }
 
         if (flippedVariation) {
           variation = getOppositeVariation(variation);
         }
 
-        data.placement = placement + (variation ? '-' + variation : '');
+        data.placement = placement  (variation ? '-'  variation : '');
 
         // this object contains `position`, we want to preserve it along with
         // any additional property we may add in the future
@@ -3163,11 +3163,11 @@
   }
 
   /**
-   * Converts a string containing value + unit into a px value number
+   * Converts a string containing value  unit into a px value number
    * @function
    * @memberof {modifiers~offset}
    * @private
-   * @argument {String} str - Value + unit string
+   * @argument {String} str - Value  unit string
    * @argument {String} measurement - `height` or `width`
    * @argument {Object} popperOffsets
    * @argument {Object} referenceOffsets
@@ -3176,8 +3176,8 @@
    */
   function toValue(str, measurement, popperOffsets, referenceOffsets) {
     // separate value from unit
-    var split = str.match(/((?:\-|\+)?\d*\.?\d*)(.*)/);
-    var value = +split[1];
+    var split = str.match(/((?:\-|\)?\d*\.?\d*)(.*)/);
+    var value = split[1];
     var unit = split[2];
 
     // If it's not a number it's an operator, I guess
@@ -3235,8 +3235,8 @@
     var useHeight = ['right', 'left'].indexOf(basePlacement) !== -1;
 
     // Split the offset string to obtain a list of values and operands
-    // The regex addresses values with the plus or minus sign in front (+10, -20, etc)
-    var fragments = offset.split(/(\+|\-)/).map(function (frag) {
+    // The regex addresses values with the plus or minus sign in front (10, -20, etc)
+    var fragments = offset.split(/(\|\-)/).map(function (frag) {
       return frag.trim();
     });
 
@@ -3252,8 +3252,8 @@
 
     // If divider is found, we divide the list of values and operands to divide
     // them by ofset X and Y.
-    var splitRegex = /\s*,\s*|\s+/;
-    var ops = divider !== -1 ? [fragments.slice(0, divider).concat([fragments[divider].split(splitRegex)[0]]), [fragments[divider].split(splitRegex)[1]].concat(fragments.slice(divider + 1))] : [fragments];
+    var splitRegex = /\s*,\s*|\s/;
+    var ops = divider !== -1 ? [fragments.slice(0, divider).concat([fragments[divider].split(splitRegex)[0]]), [fragments[divider].split(splitRegex)[1]].concat(fragments.slice(divider  1))] : [fragments];
 
     // Convert the values with units to absolute pixels to allow our computations
     ops = ops.map(function (op, index) {
@@ -3261,15 +3261,15 @@
       var measurement = (index === 1 ? !useHeight : useHeight) ? 'height' : 'width';
       var mergeWithPrevious = false;
       return op
-      // This aggregates any `+` or `-` sign that aren't considered operators
-      // e.g.: 10 + +5 => [10, +, +5]
+      // This aggregates any `` or `-` sign that aren't considered operators
+      // e.g.: 10  5 => [10, , 5]
       .reduce(function (a, b) {
-        if (a[a.length - 1] === '' && ['+', '-'].indexOf(b) !== -1) {
+        if (a[a.length - 1] === '' && ['', '-'].indexOf(b) !== -1) {
           a[a.length - 1] = b;
           mergeWithPrevious = true;
           return a;
         } else if (mergeWithPrevious) {
-          a[a.length - 1] += b;
+          a[a.length - 1] = b;
           mergeWithPrevious = false;
           return a;
         } else {
@@ -3286,7 +3286,7 @@
     ops.forEach(function (op, index) {
       op.forEach(function (frag, index2) {
         if (isNumeric(frag)) {
-          offsets[index] += frag * (op[index2 - 1] === '-' ? -1 : 1);
+          offsets[index] = frag * (op[index2 - 1] === '-' ? -1 : 1);
         }
       });
     });
@@ -3312,24 +3312,24 @@
     var basePlacement = placement.split('-')[0];
 
     var offsets = void 0;
-    if (isNumeric(+offset)) {
-      offsets = [+offset, 0];
+    if (isNumeric(offset)) {
+      offsets = [offset, 0];
     } else {
       offsets = parseOffset(offset, popper, reference, basePlacement);
     }
 
     if (basePlacement === 'left') {
-      popper.top += offsets[0];
+      popper.top = offsets[0];
       popper.left -= offsets[1];
     } else if (basePlacement === 'right') {
-      popper.top += offsets[0];
-      popper.left += offsets[1];
+      popper.top = offsets[0];
+      popper.left = offsets[1];
     } else if (basePlacement === 'top') {
-      popper.left += offsets[0];
+      popper.left = offsets[0];
       popper.top -= offsets[1];
     } else if (basePlacement === 'bottom') {
-      popper.left += offsets[0];
-      popper.top += offsets[1];
+      popper.left = offsets[0];
+      popper.top = offsets[1];
     }
 
     data.popper = popper;
@@ -3431,7 +3431,7 @@
 
       var shiftOffsets = {
         start: defineProperty({}, side, reference[side]),
-        end: defineProperty({}, side, reference[side] + reference[measurement] - popper[measurement])
+        end: defineProperty({}, side, reference[side]  reference[measurement] - popper[measurement])
       };
 
       data.offsets.popper = _extends({}, popper, shiftOffsets[shiftvariation]);
@@ -3570,9 +3570,9 @@
      * '10%'
      * '10, 10'
      * '10%, 10'
-     * '10 + 10%'
-     * '10 - 5vh + 3%'
-     * '-10px + 5vh, 5px - 6%'
+     * '10  10%'
+     * '10 - 5vh  3%'
+     * '-10px  5vh, 5px - 6%'
      * ```
      * > **NB**: If you desire to apply offsets to your poppers in a way that may make them overlap
      * > with their reference element, unfortunately, you will have to disable the `flip` modifier.
@@ -4089,7 +4089,7 @@
   var NAME$4 = 'dropdown';
   var VERSION$4 = '4.3.1';
   var DATA_KEY$4 = 'bs.dropdown';
-  var EVENT_KEY$4 = "." + DATA_KEY$4;
+  var EVENT_KEY$4 = "."  DATA_KEY$4;
   var DATA_API_KEY$4 = '.data-api';
   var JQUERY_NO_CONFLICT$4 = $.fn[NAME$4];
   var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
@@ -4104,16 +4104,16 @@
 
   var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
 
-  var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + "|" + ARROW_DOWN_KEYCODE + "|" + ESCAPE_KEYCODE);
+  var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE  "|"  ARROW_DOWN_KEYCODE  "|"  ESCAPE_KEYCODE);
   var Event$4 = {
-    HIDE: "hide" + EVENT_KEY$4,
-    HIDDEN: "hidden" + EVENT_KEY$4,
-    SHOW: "show" + EVENT_KEY$4,
-    SHOWN: "shown" + EVENT_KEY$4,
-    CLICK: "click" + EVENT_KEY$4,
-    CLICK_DATA_API: "click" + EVENT_KEY$4 + DATA_API_KEY$4,
-    KEYDOWN_DATA_API: "keydown" + EVENT_KEY$4 + DATA_API_KEY$4,
-    KEYUP_DATA_API: "keyup" + EVENT_KEY$4 + DATA_API_KEY$4
+    HIDE: "hide"  EVENT_KEY$4,
+    HIDDEN: "hidden"  EVENT_KEY$4,
+    SHOW: "show"  EVENT_KEY$4,
+    SHOWN: "shown"  EVENT_KEY$4,
+    CLICK: "click"  EVENT_KEY$4,
+    CLICK_DATA_API: "click"  EVENT_KEY$4  DATA_API_KEY$4,
+    KEYDOWN_DATA_API: "keydown"  EVENT_KEY$4  DATA_API_KEY$4,
+    KEYUP_DATA_API: "keyup"  EVENT_KEY$4  DATA_API_KEY$4
   };
   var ClassName$4 = {
     DISABLED: 'disabled',
@@ -4428,7 +4428,7 @@
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
+            throw new TypeError("No method named \""  config  "\"");
           }
 
           data[config]();
@@ -4443,7 +4443,7 @@
 
       var toggles = [].slice.call(document.querySelectorAll(Selector$4.DATA_TOGGLE));
 
-      for (var i = 0, len = toggles.length; i < len; i++) {
+      for (var i = 0, len = toggles.length; i < len; i) {
         var parent = Dropdown._getParentFromElement(toggles[i]);
 
         var context = $(toggles[i]).data(DATA_KEY$4);
@@ -4548,7 +4548,7 @@
 
       if (event.which === ARROW_DOWN_KEYCODE && index < items.length - 1) {
         // Down
-        index++;
+        index;
       }
 
       if (index < 0) {
@@ -4584,7 +4584,7 @@
    */
 
 
-  $(document).on(Event$4.KEYDOWN_DATA_API, Selector$4.DATA_TOGGLE, Dropdown._dataApiKeydownHandler).on(Event$4.KEYDOWN_DATA_API, Selector$4.MENU, Dropdown._dataApiKeydownHandler).on(Event$4.CLICK_DATA_API + " " + Event$4.KEYUP_DATA_API, Dropdown._clearMenus).on(Event$4.CLICK_DATA_API, Selector$4.DATA_TOGGLE, function (event) {
+  $(document).on(Event$4.KEYDOWN_DATA_API, Selector$4.DATA_TOGGLE, Dropdown._dataApiKeydownHandler).on(Event$4.KEYDOWN_DATA_API, Selector$4.MENU, Dropdown._dataApiKeydownHandler).on(Event$4.CLICK_DATA_API  " "  Event$4.KEYUP_DATA_API, Dropdown._clearMenus).on(Event$4.CLICK_DATA_API, Selector$4.DATA_TOGGLE, function (event) {
     event.preventDefault();
     event.stopPropagation();
 
@@ -4615,7 +4615,7 @@
   var NAME$5 = 'modal';
   var VERSION$5 = '4.3.1';
   var DATA_KEY$5 = 'bs.modal';
-  var EVENT_KEY$5 = "." + DATA_KEY$5;
+  var EVENT_KEY$5 = "."  DATA_KEY$5;
   var DATA_API_KEY$5 = '.data-api';
   var JQUERY_NO_CONFLICT$5 = $.fn[NAME$5];
   var ESCAPE_KEYCODE$1 = 27; // KeyboardEvent.which value for Escape (Esc) key
@@ -4633,17 +4633,17 @@
     show: 'boolean'
   };
   var Event$5 = {
-    HIDE: "hide" + EVENT_KEY$5,
-    HIDDEN: "hidden" + EVENT_KEY$5,
-    SHOW: "show" + EVENT_KEY$5,
-    SHOWN: "shown" + EVENT_KEY$5,
-    FOCUSIN: "focusin" + EVENT_KEY$5,
-    RESIZE: "resize" + EVENT_KEY$5,
-    CLICK_DISMISS: "click.dismiss" + EVENT_KEY$5,
-    KEYDOWN_DISMISS: "keydown.dismiss" + EVENT_KEY$5,
-    MOUSEUP_DISMISS: "mouseup.dismiss" + EVENT_KEY$5,
-    MOUSEDOWN_DISMISS: "mousedown.dismiss" + EVENT_KEY$5,
-    CLICK_DATA_API: "click" + EVENT_KEY$5 + DATA_API_KEY$5
+    HIDE: "hide"  EVENT_KEY$5,
+    HIDDEN: "hidden"  EVENT_KEY$5,
+    SHOW: "show"  EVENT_KEY$5,
+    SHOWN: "shown"  EVENT_KEY$5,
+    FOCUSIN: "focusin"  EVENT_KEY$5,
+    RESIZE: "resize"  EVENT_KEY$5,
+    CLICK_DISMISS: "click.dismiss"  EVENT_KEY$5,
+    KEYDOWN_DISMISS: "keydown.dismiss"  EVENT_KEY$5,
+    MOUSEUP_DISMISS: "mouseup.dismiss"  EVENT_KEY$5,
+    MOUSEDOWN_DISMISS: "mousedown.dismiss"  EVENT_KEY$5,
+    CLICK_DATA_API: "click"  EVENT_KEY$5  DATA_API_KEY$5
   };
   var ClassName$5 = {
     SCROLLABLE: 'modal-dialog-scrollable',
@@ -5017,11 +5017,11 @@
       var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
 
       if (!this._isBodyOverflowing && isModalOverflowing) {
-        this._element.style.paddingLeft = this._scrollbarWidth + "px";
+        this._element.style.paddingLeft = this._scrollbarWidth  "px";
       }
 
       if (this._isBodyOverflowing && !isModalOverflowing) {
-        this._element.style.paddingRight = this._scrollbarWidth + "px";
+        this._element.style.paddingRight = this._scrollbarWidth  "px";
       }
     };
 
@@ -5032,7 +5032,7 @@
 
     _proto._checkScrollbar = function _checkScrollbar() {
       var rect = document.body.getBoundingClientRect();
-      this._isBodyOverflowing = rect.left + rect.right < window.innerWidth;
+      this._isBodyOverflowing = rect.left  rect.right < window.innerWidth;
       this._scrollbarWidth = this._getScrollbarWidth();
     };
 
@@ -5048,18 +5048,18 @@
         $(fixedContent).each(function (index, element) {
           var actualPadding = element.style.paddingRight;
           var calculatedPadding = $(element).css('padding-right');
-          $(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this9._scrollbarWidth + "px");
+          $(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding)  _this9._scrollbarWidth  "px");
         }); // Adjust sticky content margin
 
         $(stickyContent).each(function (index, element) {
           var actualMargin = element.style.marginRight;
           var calculatedMargin = $(element).css('margin-right');
-          $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this9._scrollbarWidth + "px");
+          $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this9._scrollbarWidth  "px");
         }); // Adjust body padding
 
         var actualPadding = document.body.style.paddingRight;
         var calculatedPadding = $(document.body).css('padding-right');
-        $(document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
+        $(document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding)  this._scrollbarWidth  "px");
       }
 
       $(document.body).addClass(ClassName$5.OPEN);
@@ -5074,7 +5074,7 @@
         element.style.paddingRight = padding ? padding : '';
       }); // Restore sticky content
 
-      var elements = [].slice.call(document.querySelectorAll("" + Selector$5.STICKY_CONTENT));
+      var elements = [].slice.call(document.querySelectorAll(""  Selector$5.STICKY_CONTENT));
       $(elements).each(function (index, element) {
         var margin = $(element).data('margin-right');
 
@@ -5112,7 +5112,7 @@
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
+            throw new TypeError("No method named \""  config  "\"");
           }
 
           data[config](relatedTarget);
@@ -5242,7 +5242,7 @@
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
-  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+/]+=*$/i;
+  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9/]=*$/i;
 
   function allowedAttribute(attr, allowedAttributeList) {
     var attrName = attr.nodeName.toLowerCase();
@@ -5259,7 +5259,7 @@
       return attrRegex instanceof RegExp;
     }); // Check if a regular expression validates the attribute.
 
-    for (var i = 0, l = regExp.length; i < l; i++) {
+    for (var i = 0, l = regExp.length; i < l; i) {
       if (attrName.match(regExp[i])) {
         return true;
       }
@@ -5300,7 +5300,7 @@
       });
     };
 
-    for (var i = 0, len = elements.length; i < len; i++) {
+    for (var i = 0, len = elements.length; i < len; i) {
       var _ret = _loop(i, len);
 
       if (_ret === "continue") continue;
@@ -5318,10 +5318,10 @@
   var NAME$6 = 'tooltip';
   var VERSION$6 = '4.3.1';
   var DATA_KEY$6 = 'bs.tooltip';
-  var EVENT_KEY$6 = "." + DATA_KEY$6;
+  var EVENT_KEY$6 = "."  DATA_KEY$6;
   var JQUERY_NO_CONFLICT$6 = $.fn[NAME$6];
   var CLASS_PREFIX = 'bs-tooltip';
-  var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
+  var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)"  CLASS_PREFIX  "\\S", 'g');
   var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn'];
   var DefaultType$4 = {
     animation: 'boolean',
@@ -5349,7 +5349,7 @@
   };
   var Default$4 = {
     animation: true,
-    template: '<div class="tooltip" role="tooltip">' + '<div class="arrow"></div>' + '<div class="tooltip-inner"></div></div>',
+    template: '<div class="tooltip" role="tooltip">'  '<div class="arrow"></div>'  '<div class="tooltip-inner"></div></div>',
     trigger: 'hover focus',
     title: '',
     delay: 0,
@@ -5369,16 +5369,16 @@
     OUT: 'out'
   };
   var Event$6 = {
-    HIDE: "hide" + EVENT_KEY$6,
-    HIDDEN: "hidden" + EVENT_KEY$6,
-    SHOW: "show" + EVENT_KEY$6,
-    SHOWN: "shown" + EVENT_KEY$6,
-    INSERTED: "inserted" + EVENT_KEY$6,
-    CLICK: "click" + EVENT_KEY$6,
-    FOCUSIN: "focusin" + EVENT_KEY$6,
-    FOCUSOUT: "focusout" + EVENT_KEY$6,
-    MOUSEENTER: "mouseenter" + EVENT_KEY$6,
-    MOUSELEAVE: "mouseleave" + EVENT_KEY$6
+    HIDE: "hide"  EVENT_KEY$6,
+    HIDDEN: "hidden"  EVENT_KEY$6,
+    SHOW: "show"  EVENT_KEY$6,
+    SHOWN: "shown"  EVENT_KEY$6,
+    INSERTED: "inserted"  EVENT_KEY$6,
+    CLICK: "click"  EVENT_KEY$6,
+    FOCUSIN: "focusin"  EVENT_KEY$6,
+    FOCUSOUT: "focusout"  EVENT_KEY$6,
+    MOUSEENTER: "mouseenter"  EVENT_KEY$6,
+    MOUSELEAVE: "mouseleave"  EVENT_KEY$6
   };
   var ClassName$6 = {
     FADE: 'fade',
@@ -5664,7 +5664,7 @@
     };
 
     _proto.addAttachmentClass = function addAttachmentClass(attachment) {
-      $(this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
+      $(this.getTipElement()).addClass(CLASS_PREFIX  "-"  attachment);
     };
 
     _proto.getTipElement = function getTipElement() {
@@ -5675,7 +5675,7 @@
     _proto.setContent = function setContent() {
       var tip = this.getTipElement();
       this.setElementContent($(tip.querySelectorAll(Selector$6.TOOLTIP_INNER)), this.getTitle());
-      $(tip).removeClass(ClassName$6.FADE + " " + ClassName$6.SHOW);
+      $(tip).removeClass(ClassName$6.FADE  " "  ClassName$6.SHOW);
     };
 
     _proto.setElementContent = function setElementContent($element, content) {
@@ -5964,7 +5964,7 @@
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
+            throw new TypeError("No method named \""  config  "\"");
           }
 
           data[config]();
@@ -6035,16 +6035,16 @@
   var NAME$7 = 'popover';
   var VERSION$7 = '4.3.1';
   var DATA_KEY$7 = 'bs.popover';
-  var EVENT_KEY$7 = "." + DATA_KEY$7;
+  var EVENT_KEY$7 = "."  DATA_KEY$7;
   var JQUERY_NO_CONFLICT$7 = $.fn[NAME$7];
   var CLASS_PREFIX$1 = 'bs-popover';
-  var BSCLS_PREFIX_REGEX$1 = new RegExp("(^|\\s)" + CLASS_PREFIX$1 + "\\S+", 'g');
+  var BSCLS_PREFIX_REGEX$1 = new RegExp("(^|\\s)"  CLASS_PREFIX$1  "\\S", 'g');
 
   var Default$5 = _objectSpread({}, Tooltip.Default, {
     placement: 'right',
     trigger: 'click',
     content: '',
-    template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
+    template: '<div class="popover" role="tooltip">'  '<div class="arrow"></div>'  '<h3 class="popover-header"></h3>'  '<div class="popover-body"></div></div>'
   });
 
   var DefaultType$5 = _objectSpread({}, Tooltip.DefaultType, {
@@ -6060,16 +6060,16 @@
     CONTENT: '.popover-body'
   };
   var Event$7 = {
-    HIDE: "hide" + EVENT_KEY$7,
-    HIDDEN: "hidden" + EVENT_KEY$7,
-    SHOW: "show" + EVENT_KEY$7,
-    SHOWN: "shown" + EVENT_KEY$7,
-    INSERTED: "inserted" + EVENT_KEY$7,
-    CLICK: "click" + EVENT_KEY$7,
-    FOCUSIN: "focusin" + EVENT_KEY$7,
-    FOCUSOUT: "focusout" + EVENT_KEY$7,
-    MOUSEENTER: "mouseenter" + EVENT_KEY$7,
-    MOUSELEAVE: "mouseleave" + EVENT_KEY$7
+    HIDE: "hide"  EVENT_KEY$7,
+    HIDDEN: "hidden"  EVENT_KEY$7,
+    SHOW: "show"  EVENT_KEY$7,
+    SHOWN: "shown"  EVENT_KEY$7,
+    INSERTED: "inserted"  EVENT_KEY$7,
+    CLICK: "click"  EVENT_KEY$7,
+    FOCUSIN: "focusin"  EVENT_KEY$7,
+    FOCUSOUT: "focusout"  EVENT_KEY$7,
+    MOUSEENTER: "mouseenter"  EVENT_KEY$7,
+    MOUSELEAVE: "mouseleave"  EVENT_KEY$7
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -6095,7 +6095,7 @@
     };
 
     _proto.addAttachmentClass = function addAttachmentClass(attachment) {
-      $(this.getTipElement()).addClass(CLASS_PREFIX$1 + "-" + attachment);
+      $(this.getTipElement()).addClass(CLASS_PREFIX$1  "-"  attachment);
     };
 
     _proto.getTipElement = function getTipElement() {
@@ -6115,7 +6115,7 @@
       }
 
       this.setElementContent($tip.find(Selector$7.CONTENT), content);
-      $tip.removeClass(ClassName$7.FADE + " " + ClassName$7.SHOW);
+      $tip.removeClass(ClassName$7.FADE  " "  ClassName$7.SHOW);
     } // Private
     ;
 
@@ -6150,7 +6150,7 @@
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
+            throw new TypeError("No method named \""  config  "\"");
           }
 
           data[config]();
@@ -6222,7 +6222,7 @@
   var NAME$8 = 'scrollspy';
   var VERSION$8 = '4.3.1';
   var DATA_KEY$8 = 'bs.scrollspy';
-  var EVENT_KEY$8 = "." + DATA_KEY$8;
+  var EVENT_KEY$8 = "."  DATA_KEY$8;
   var DATA_API_KEY$6 = '.data-api';
   var JQUERY_NO_CONFLICT$8 = $.fn[NAME$8];
   var Default$6 = {
@@ -6236,9 +6236,9 @@
     target: '(string|element)'
   };
   var Event$8 = {
-    ACTIVATE: "activate" + EVENT_KEY$8,
-    SCROLL: "scroll" + EVENT_KEY$8,
-    LOAD_DATA_API: "load" + EVENT_KEY$8 + DATA_API_KEY$6
+    ACTIVATE: "activate"  EVENT_KEY$8,
+    SCROLL: "scroll"  EVENT_KEY$8,
+    LOAD_DATA_API: "load"  EVENT_KEY$8  DATA_API_KEY$6
   };
   var ClassName$8 = {
     DROPDOWN_ITEM: 'dropdown-item',
@@ -6276,7 +6276,7 @@
       this._element = element;
       this._scrollElement = element.tagName === 'BODY' ? window : element;
       this._config = this._getConfig(config);
-      this._selector = this._config.target + " " + Selector$8.NAV_LINKS + "," + (this._config.target + " " + Selector$8.LIST_ITEMS + ",") + (this._config.target + " " + Selector$8.DROPDOWN_ITEMS);
+      this._selector = this._config.target  " "  Selector$8.NAV_LINKS  ","  (this._config.target  " "  Selector$8.LIST_ITEMS  ",")  (this._config.target  " "  Selector$8.DROPDOWN_ITEMS);
       this._offsets = [];
       this._targets = [];
       this._activeTarget = null;
@@ -6316,7 +6316,7 @@
 
           if (targetBCR.width || targetBCR.height) {
             // TODO (fat): remove sketch reliance on jQuery position/offset
-            return [$(target)[offsetMethod]().top + offsetBase, targetSelector];
+            return [$(target)[offsetMethod]().top  offsetBase, targetSelector];
           }
         }
 
@@ -6357,7 +6357,7 @@
           $(config.target).attr('id', id);
         }
 
-        config.target = "#" + id;
+        config.target = "#"  id;
       }
 
       Util.typeCheckConfig(NAME$8, config, DefaultType$6);
@@ -6377,11 +6377,11 @@
     };
 
     _proto._process = function _process() {
-      var scrollTop = this._getScrollTop() + this._config.offset;
+      var scrollTop = this._getScrollTop()  this._config.offset;
 
       var scrollHeight = this._getScrollHeight();
 
-      var maxScroll = this._config.offset + scrollHeight - this._getOffsetHeight();
+      var maxScroll = this._config.offset  scrollHeight - this._getOffsetHeight();
 
       if (this._scrollHeight !== scrollHeight) {
         this.refresh();
@@ -6408,7 +6408,7 @@
       var offsetLength = this._offsets.length;
 
       for (var i = offsetLength; i--;) {
-        var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
+        var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i  1] === 'undefined' || scrollTop < this._offsets[i  1]);
 
         if (isActiveTarget) {
           this._activate(this._targets[i]);
@@ -6422,7 +6422,7 @@
       this._clear();
 
       var queries = this._selector.split(',').map(function (selector) {
-        return selector + "[data-target=\"" + target + "\"]," + selector + "[href=\"" + target + "\"]";
+        return selector  "[data-target=\""  target  "\"],"  selector  "[href=\""  target  "\"]";
       });
 
       var $link = $([].slice.call(document.querySelectorAll(queries.join(','))));
@@ -6435,7 +6435,7 @@
         $link.addClass(ClassName$8.ACTIVE); // Set triggered links parents as active
         // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
 
-        $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_LINKS + ", " + Selector$8.LIST_ITEMS).addClass(ClassName$8.ACTIVE); // Handle special case when .nav-link is inside .nav-item
+        $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_LINKS  ", "  Selector$8.LIST_ITEMS).addClass(ClassName$8.ACTIVE); // Handle special case when .nav-link is inside .nav-item
 
         $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_ITEMS).children(Selector$8.NAV_LINKS).addClass(ClassName$8.ACTIVE);
       }
@@ -6467,7 +6467,7 @@
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
+            throw new TypeError("No method named \""  config  "\"");
           }
 
           data[config]();
@@ -6529,15 +6529,15 @@
   var NAME$9 = 'tab';
   var VERSION$9 = '4.3.1';
   var DATA_KEY$9 = 'bs.tab';
-  var EVENT_KEY$9 = "." + DATA_KEY$9;
+  var EVENT_KEY$9 = "."  DATA_KEY$9;
   var DATA_API_KEY$7 = '.data-api';
   var JQUERY_NO_CONFLICT$9 = $.fn[NAME$9];
   var Event$9 = {
-    HIDE: "hide" + EVENT_KEY$9,
-    HIDDEN: "hidden" + EVENT_KEY$9,
-    SHOW: "show" + EVENT_KEY$9,
-    SHOWN: "shown" + EVENT_KEY$9,
-    CLICK_DATA_API: "click" + EVENT_KEY$9 + DATA_API_KEY$7
+    HIDE: "hide"  EVENT_KEY$9,
+    HIDDEN: "hidden"  EVENT_KEY$9,
+    SHOW: "show"  EVENT_KEY$9,
+    SHOWN: "shown"  EVENT_KEY$9,
+    CLICK_DATA_API: "click"  EVENT_KEY$9  DATA_API_KEY$7
   };
   var ClassName$9 = {
     DROPDOWN_MENU: 'dropdown-menu',
@@ -6712,7 +6712,7 @@
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
+            throw new TypeError("No method named \""  config  "\"");
           }
 
           data[config]();
@@ -6764,14 +6764,14 @@
   var NAME$a = 'toast';
   var VERSION$a = '4.3.1';
   var DATA_KEY$a = 'bs.toast';
-  var EVENT_KEY$a = "." + DATA_KEY$a;
+  var EVENT_KEY$a = "."  DATA_KEY$a;
   var JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
   var Event$a = {
-    CLICK_DISMISS: "click.dismiss" + EVENT_KEY$a,
-    HIDE: "hide" + EVENT_KEY$a,
-    HIDDEN: "hidden" + EVENT_KEY$a,
-    SHOW: "show" + EVENT_KEY$a,
-    SHOWN: "shown" + EVENT_KEY$a
+    CLICK_DISMISS: "click.dismiss"  EVENT_KEY$a,
+    HIDE: "hide"  EVENT_KEY$a,
+    HIDDEN: "hidden"  EVENT_KEY$a,
+    SHOW: "show"  EVENT_KEY$a,
+    SHOWN: "shown"  EVENT_KEY$a
   };
   var ClassName$a = {
     FADE: 'fade',
@@ -6928,7 +6928,7 @@
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
+            throw new TypeError("No method named \""  config  "\"");
           }
 
           data[config](this);

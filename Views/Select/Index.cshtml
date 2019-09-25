@@ -1,41 +1,44 @@
-﻿
+﻿@model Register
 
 @{
     ViewData["Title"] = "เลือกเมนู";
 }
 
-    <style>
-        .card,.row{
-        padding-top:20px;
-        }
-        h3,p{
-        text-align:center;
-        border:20px;
-        }
-     
-    </style>
+<style>
+    .card, .row {
+        padding-top: 20px;
+    }
+
+    h3, p {
+        text-align: center;
+        border: 20px;
+    }
+</style>
 <!--<h1 style="text-align:center;">เมนูเลือก</h1>-->
 
 
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">กรอกบันทึกแบบฟอร์ม</h3>
-                    <p class="card-text">กรอกแบบฟอร์มCS1ก่อนทำการเลือกอาจารย์ที่ปรึกษา.</p>
-
-                </div>
-                <a href="home/detail" style="height:5rem;text-align:center;padding:20px;font-size:2rem;"class="btn btn-primary btn-sm">กรอกบันทึกแบบฟอร์ม</a>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">เลือกอาจารย์ที่ปรึกษา</h3>
-                    <p class="card-text">เลือกอาจารย์ที่ปรึกษาและส่งแบบฟอร์มยืนเสนอหัวข้อ.</p>
-                </div>
-                <a href="home/techer" style="height:5rem;text-align:center;padding:20px;font-size:2rem;" class="btn btn-danger btn-sm">เลือกอาจารย์ที่ปรึกษา</a>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">กรอกบันทึกแบบฟอร์ม</h3>
+                <p class="card-text">กรอกแบบฟอร์มCS1ก่อนทำการเลือกอาจารย์ที่ปรึกษา.</p>
 
             </div>
+            <a href="home/detail" style="height:5rem;text-align:center;padding:20px;font-size:2rem;" class="btn btn-primary btn-sm">กรอกบันทึกแบบฟอร์ม</a>
         </div>
     </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">เลือกอาจารย์ที่ปรึกษา</h3>
+                <p class="card-text">เลือกอาจารย์ที่ปรึกษาและส่งแบบฟอร์มยืนเสนอหัวข้อ.</p>
+            </div>
+            <a href="home/techer" style="height:5rem;text-align:center;padding:20px;font-size:2rem;" class="btn btn-danger btn-sm">เลือกอาจารย์ที่ปรึกษา</a>
+
+        </div>
+    </div>
+</div>
+
+
+

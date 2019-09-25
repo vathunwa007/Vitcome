@@ -2887,6 +2887,15 @@
           "lib/netstandard2.0/MySql.Data.dll": {}
         }
       },
+      "MySql.Data.EntityFramework/8.0.17": {
+        "type": "package",
+        "compile": {
+          "lib/net452/MySql.Data.EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net452/MySql.Data.EntityFramework.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -8201,6 +8210,23 @@
         "lib/netstandard2.0/MySql.Data.xml",
         "mysql.data.8.0.17.nupkg.sha512",
         "mysql.data.nuspec"
+      ]
+    },
+    "MySql.Data.EntityFramework/8.0.17": {
+      "sha512": "XEJSK+QjYK2xaIIZBKKY398NMbHRgTOE5iocAxetET2dXgBG8RV+79TmaNUfJoV7GQteBFFonDaYSYeJvTiNvA==",
+      "type": "package",
+      "path": "mysql.data.entityframework/8.0.17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "contentFiles/any/net452/app.config.transform",
+        "contentFiles/any/net452/web.config.transform",
+        "lib/net452/MySql.Data.EntityFramework.dll",
+        "lib/net452/MySql.Data.EntityFramework.xml",
+        "mysql.data.entityframework.8.0.17.nupkg.sha512",
+        "mysql.data.entityframework.nuspec"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -13596,7 +13622,8 @@
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
-      "MySql.Data >= 8.0.17"
+      "MySql.Data >= 8.0.17",
+      "MySql.Data.EntityFramework >= 8.0.17"
     ]
   },
   "packageFolders": {
@@ -13664,6 +13691,10 @@
           "MySql.Data": {
             "target": "Package",
             "version": "[8.0.17, )"
+          },
+          "MySql.Data.EntityFramework": {
+            "target": "Package",
+            "version": "[8.0.17, )"
           }
         },
         "imports": [
@@ -13673,5 +13704,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MySql.Data.EntityFramework 8.0.17' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
+      "libraryId": "MySql.Data.EntityFramework",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    }
+  ]
 }

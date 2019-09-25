@@ -5,32 +5,36 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using netcore.Models;
 
+
 namespace netcore.Controllers
 {
     public class SelectController : Controller
     {
-        public IActionResult Index(double idstudent, double password, string name, string lastname, int year, string email, double telephone)
+        public IActionResult Index(/*int Idstudent, string Password, string Name, string Lastname, bool Year, string Email, int Telephone*/)
         {
-            var register = new RegisterModel
+         
+            /*var register = new Register
             {
-                Idstudent = idstudent,
-                Password = password,
-                Name = name,
-                Lastname = lastname,
-                Year = year,
-                Email = email,
-                Telephone = telephone
-            };
+                Idstudent = Idstudent,
+                Password = Password,
+                Name = Name,
+                Lastname = Lastname,
+                Year = Year,
+                Email = Email,
+                Telephone = Telephone
+            };*/
 
-            return View(register);
+            return View();
         }
-        public IActionResult Save(double idstudent, double password, string name, string lastname, int year, string email, double telephone)
+        [HttpGet]
+        public async Task<IActionResult> Save(Register regis)
         {
-            
-            if (idstudent == 1)
-            {
 
-                return RedirectToAction("index", "Select");
+            if (ModelState.IsValid)
+            {
+                Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+                context.Register(regis);
+                return RedirectToAction("Index","Select");
             }
             else { return RedirectToAction("Index", "Home"); }
 

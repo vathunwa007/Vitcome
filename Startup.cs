@@ -35,7 +35,7 @@ namespace netcore
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-           services.Add(new ServiceDescriptor(typeof(Showtecher), new Showtecher(Configuration.GetConnectionString("DefaultConnection"))));
+           services.Add(new ServiceDescriptor(typeof(Connectdb), new Connectdb(Configuration.GetConnectionString("DefaultConnection"))));
             //services.AddTransient<Condb>(_ => new Condb(Configuration["ConnectionStrings:DefaultConnection"]));
 
         }
