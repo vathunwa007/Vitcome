@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
+<<<<<<< HEAD
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+=======
+>>>>>>> 2230bf65d695eba34cb4a46c6c97adb994cfb2f2
 using Microsoft.AspNetCore.Mvc;
 
 using netcore.Models;
 using System.Data;
+
 
 namespace netcore.Controllers
 {
@@ -44,11 +47,12 @@ namespace netcore.Controllers
             ViewBag.lastname = lastname;
             ViewBag.idstudent = idstudent;
             ViewBag.supername = supername;
-
+           
 
             return View();
         }
         public IActionResult Techer()
+<<<<<<< HEAD
         {
 
             var techer = new List<Techer>();
@@ -81,6 +85,15 @@ namespace netcore.Controllers
         }
 
        
+=======
+        
+            {
+                Showtecher context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Showtecher)) as Showtecher;
+
+                return View(context.GetAllTecher());
+            }
+
+>>>>>>> 2230bf65d695eba34cb4a46c6c97adb994cfb2f2
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -89,6 +102,11 @@ namespace netcore.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+
+        public void Printpdf() {
+          
+
+        }
     }
 
 }

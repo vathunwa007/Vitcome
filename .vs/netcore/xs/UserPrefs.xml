@@ -1,18 +1,12 @@
 ﻿<Properties StartupConfiguration="{F743ED9E-D3F2-4395-8385-951DDFF7BCF8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/SelectController.cs">
-    <Files>
-      <File FileName="Models/register.cs" Line="26" Column="45" />
-      <File FileName="Views/Home/Index.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Home/Detail.cshtml" Line="1" Column="1" />
-      <File FileName="Controllers/SelectController.cs" Line="14" Column="32" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="netcore" expanded="True">
             <Node name="netcore" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="SelectController.cs" selected="True" />
+                <Node name="HomeController.cs" selected="True" />
               </Node>
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
