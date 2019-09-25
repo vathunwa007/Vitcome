@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+
 using netcore.Models;
+using System.Data;
 
 namespace netcore.Controllers
 {
     public class HomeController : Controller
     {
+
         public IActionResult Index()
         {
-            return View();
-
+            
+                return View();
+           
         }
 
         public IActionResult Privacy()
@@ -75,8 +80,7 @@ namespace netcore.Controllers
             return View(techer);
         }
 
-
-
+       
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

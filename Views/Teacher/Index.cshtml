@@ -1,11 +1,34 @@
-﻿<h3>เลือก อ.ที่ปรึกษา </h3>
-<br><br><br>
+﻿<script>
+    function checksent() {
+        swal({
+  title: "คุณแน่ใจว่าจะส่งแบบเสนอหัวข้อนี้?",
+  text: "กรุณาเช็คข้อมูลให้ถูกต้องก่อนส่งพื่อป้องกันการเกิดปัญหาในภายหลัง!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("คุณได้ทำการส่งฟอร์มCS1เรียบร้อยแล้วครับ!", {
+        icon: "success",
+    });
+      window.location.assign("home/index")
+
+
+  } else {
+    swal("ยกเลิกการส่งสำเร็จ!");
+  }
+});
+    }
+</script>
+<h3 style="text-align:center;">เลือก อ.ที่ปรึกษา </h3>
+
 <form asp-action="Detail" name="myform" method="POST">
-    <div class="form-group">
+    <div class="form-group card-body card">
         <span>ชื่อเรื่องวิจัย</span><input class="form-control" type="text" name="idstudent" value="">
         <span>แนบฟอร์ม CS1 </span>
         <input class="form-control" type="file" name="file" id="">
         </form>
 
     </div>
-<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-info btn-lg btn-block"onclick="checksent()">ส่งเอกสารยื่นหัวข้อCS1</button>
