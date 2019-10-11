@@ -1,4 +1,6 @@
-﻿@model Register
+﻿@model LoginRegisterModel
+
+
 @{ ViewData["Title"] = "ระบบยืนสมัครวิจัยวิทยาการคอมพิวเตอร์"; }
 
 <script>
@@ -36,17 +38,19 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-center" style="z-index: 10000;">
-                <form asp-action="Login" method="get">
+                <form asp-action="Login" method="post">
                 <div class="fdb-box">
                     <div class="row"><div class="col"><h1>Log In</h1></div></div>
                     <div class="row mt-4">
                         <div class="col">
 
-                            <input type="text" class="form-control" placeholder="รหัสนักศึกษา" name="idstudent"value="">
+                            <input type="text" class="form-control" placeholder="รหัสนักศึกษา" asp-for="login.idstudent"value="">
+                            
                         </div>
-                    </div><div class="row mt-4">
+                    </div>
+                    <div class="row mt-4">
                         <div class="col">
-                            <input type="password" class="form-control mb-1" placeholder="รหัสผ่าน"name="password" value="">
+                            <input type="password" class="form-control mb-1" placeholder="รหัสผ่าน"asp-for="login.password" value="">
                             <p class="text-right">
                                 <a href="#section2">สมัครสมาชิก</a>
                             </p>
@@ -71,49 +75,49 @@
                 <div class="fdb-box fdb-touch">
                     <div class="row">
                         <h1 style="display:block;margin:auto;">Register</h1>
-                        <form asp-controller="Select" asp-action="Save" method="get">
+                        <form asp-action="Save" method="post">
                             <div class="form-group ">
                                 <label for="exampleInputEmail1">รหัสนักศึกษา</label>
-                                <input type="number" class="form-control" asp-for="idstudent" aria-describedby="emailHelp" placeholder="Enter IDstudent">
+                                <input type="number" class="form-control" asp-for="regis.idstudent" aria-describedby="emailHelp" placeholder="Enter IDstudent">
                                 <small id="emailHelp" class="form-text text-muted">กรุณากรอกรหัสนักศึกษา.</small>
-                                <span asp-validation-for="idstudent" class="text-danger"></span>
+                                <span asp-validation-for="regis.idstudent" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">รหัสผ่าน</label>
-                                <input type="password" class="form-control" asp-for="password" placeholder="Password">
-                                <span asp-validation-for="password" class="text-danger"></span>
+                                <input type="password" class="form-control" asp-for="regis.password" placeholder="Password">
+                                <span asp-validation-for="regis.password" class="text-danger"></span>
 
                             </div>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">ชื่อและนามสกุล</span>
                                 </div>
-                                <input type="text" aria-label="First name" asp-for="name" class="form-control" placeholder="ชื่อ">
-                                <input type="text" aria-label="Last name" asp-for="suranme" class="form-control" placeholder="นามสกุล">
-                                <span asp-validation-for="name" class="text-danger"></span>
-                                <span asp-validation-for="suranme" class="text-danger"></span>
+                                <input type="text" aria-label="First name" asp-for="regis.name" class="form-control" placeholder="ชื่อ">
+                                <input type="text" aria-label="Last name" asp-for="regis.suranme" class="form-control" placeholder="นามสกุล">
+                                <span asp-validation-for="regis.name" class="text-danger"></span>
+                                <span asp-validation-for="regis.suranme" class="text-danger"></span>
 
 
                             </div>
                             <div class="form-group " style="padding-top:8px; text-align: center;">
                                 <div class="mx-auto form-control ">
-                                    <input type="checkbox" aria-label="Checkbox for following text input" name="year" value="3"> <span>ปี3</span>
-                                    <input type="checkbox" aria-label="Checkbox for following text input" name="year" value="4"><span>ปี4</span>
-                                    <input type="checkbox" aria-label="Checkbox for following text input" name="year" value="5"> <span>ภาคนอกเวลา</span>
-                                    <span asp-validation-for="year" class="text-danger"></span>
+                                    <input type="checkbox" aria-label="Checkbox for following text input" name="regis.year" value="3"> <span>ปี3</span>
+                                    <input type="checkbox" aria-label="Checkbox for following text input" name="regis.year" value="4"><span>ปี4</span>
+                                    <input type="checkbox" aria-label="Checkbox for following text input" name="regis.year" value="5"> <span>ภาคนอกเวลา</span>
+                                    <span asp-validation-for="regis.year" class="text-danger"></span>
 
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">อีเมล</label>
-                                <input type="email" class="form-control" asp-for="email" placeholder="Email">
-                                <span asp-validation-for="email" class="text-danger"></span>
+                                <input type="email" class="form-control" asp-for="regis.email" placeholder="Email">
+                                <span asp-validation-for="regis.email" class="text-danger"></span>
 
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">เบอร์โทรติดต่อได้</label>
-                                <input type="tel" class="form-control" asp-for="telnumber" placeholder="Telephone">
-                                <span asp-validation-for="telnumber" class="text-danger"></span>
+                                <input type="tel" class="form-control" asp-for="regis.telnumber" placeholder="Telephone">
+                                <span asp-validation-for="regis.telnumber" class="text-danger"></span>
 
                             </div>
 

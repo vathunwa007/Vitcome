@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using netcore.Models;
 
@@ -10,34 +11,36 @@ namespace netcore.Controllers
 {
     public class SelectController : Controller
     {
-        public IActionResult Index(/*int Idstudent, string Password, string Name, string Lastname, bool Year, string Email, int Telephone*/)
+        public IActionResult Index()
         {
-         
-            /*var register = new Register
+            
+            if (checklogin() == true)
             {
-                Idstudent = Idstudent,
-                Password = Password,
-                Name = Name,
-                Lastname = Lastname,
-                Year = Year,
-                Email = Email,
-                Telephone = Telephone
-            };*/
+                ViewBag.show = "ล็อกอินสำเร็จ";
+            }
+            else
+            {
+                ViewBag.show = HttpContext.Session.GetString("username");
+            }
 
             return View();
         }
-        [HttpGet]
-        public async Task<IActionResult> Save(Register regis)
-        {
 
-            if (ModelState.IsValid)
+        public bool checklogin()
+        { //--------------------------------------ฟังชั่นทำการเช็คสถานะการล็อกอินเข้ามา---------------------------//
+            bool result = false;
+
+            if (HttpContext.Session.GetString("login") != null)
             {
-                Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
-                context.Register(regis);
-                return RedirectToAction("Index","Select");
-            }
-            else { return RedirectToAction("Index", "Home"); }
 
+                if (HttpContext.Session.GetString("login") == "1")
+                {
+                    result = true;
+                }
+
+            }
+            return result;
         }
+
     }
 }

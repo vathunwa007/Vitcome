@@ -1,11 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
 using netcore.Models;
 
 
 namespace netcore.Controllers
 {    
+    //[CustomAuthenticationFilter]
     public class HomeController : Controller
     {
         
@@ -18,19 +22,9 @@ namespace netcore.Controllers
 
         public IActionResult Privacy()
         {
-            var order = new List<Order>();
-            new Order()
-            {
-            Id = 1,
-            Name = "Thunwa"
-            };
-            new Order(){
-                Id = 2,
-                Name ="Nisama"
-            };
+            
 
-
-            return View(order);
+            return View();
         }
        // [Route("Home/Detail/{name}")]
         public IActionResult Detail (string name,string lastname,string idstudent,string supername)
@@ -40,6 +34,11 @@ namespace netcore.Controllers
             ViewBag.idstudent = idstudent;
             ViewBag.supername = supername;
            
+            if (HttpContext.Session.GetString("login") == "1")
+            {
+                ViewBag.showsession = "login false";
+            }
+            else { ViewBag.showsession = "login pass"; }       
 
             return View();
         }
@@ -58,38 +57,62 @@ namespace netcore.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        [HttpPost]//-------------------------------------------ฟั่งชั่นในการสมัครสมาชิก----------------------------------------------------------------//
+        public async Task<IActionResult> Save(Register regis)
+        {
+
+            if (ModelState.IsValid)
+            {
+                Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+                context.Register(regis);
+                return RedirectToAction("Index", "Select");
+            }
+            else { return RedirectToAction("Index", "Home"); }
+
+        }
 
 
-        
-        [HttpGet]
+        [HttpPost]//----------------------------ฟั่งชั้นบันทึกแบบฟอร์ม CS1 ---------------------//
         public IActionResult SaveCs1(FormCs1Model saveform) {
 
             Connectdb saveformdata = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
             saveformdata.Savecs1(saveform);
            return RedirectToAction("Index");
         }
-        public IActionResult Login(string idstudent,string password) {
+        [HttpPost]//----------------------------ฟั่งชันในการล็อกอิน--------------------------------------//
+        public async Task<IActionResult> Login(LoginModel login) {
+
             Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
-            con.login(idstudent, password);
-            if (con.login(idstudent, password) == "login") {
-                return RedirectToAction("Index");
+            string strSQL;
+            MySqlDataReader dtReader;
+            strSQL = "SELECT * FROM student WHERE idstudent ='"+login.idstudent+"' ";
+            dtReader = con.QueryDataReader(strSQL);
+
+            if (ModelState.IsValid) {
+                if (dtReader.HasRows == true) {
+                    dtReader.Read();
+                    if (dtReader["password"].ToString() == login.password) {
+                       
+                        HttpContext.Session.SetString("login","1");
+                        HttpContext.Session.SetString("idstudent", dtReader["idstudent"].ToString());
+                        HttpContext.Session.SetString("password", dtReader["password"].ToString());
+                        HttpContext.Session.SetString("username", dtReader["username"].ToString());
+                        HttpContext.Session.SetString("lastname", dtReader["lastname"].ToString());
+                        HttpContext.Session.SetString("year", dtReader["year"].ToString());
+                        HttpContext.Session.SetString("email", dtReader["email"].ToString());
+                        HttpContext.Session.SetString("telephone", dtReader["telephone"].ToString());
+
+                        return RedirectToAction("Index","Select") ;
+                    }
+                   
+                }
+                
             }
             return RedirectToAction("Index");
 
         }
 
-       /* private bool checklogin() {
-            bool result = false;
-            if (HttpContext.Session.GetString("login")!= null)
-            {
-
-                if (HttpContext.Session.GetString("login") == 1) {
-                    result = true;
-                }
-
-            }
-            return result;
-        }*/
+     
     }
 
 }

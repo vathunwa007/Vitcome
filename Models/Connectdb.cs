@@ -54,14 +54,14 @@ namespace netcore.Models
             return list;
         }
      
-        [Microsoft.AspNetCore.Mvc.HttpGet]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public void Register(Register regis) {
 
             String strSQL;
             MySqlConnection conn = GetConnection();
             MySqlCommand objCmd = new MySqlCommand();
 
-            strSQL = "INSERT INTO `student`(`idstudent`,`password`,`username`,`lastname`,`year`,`email`,`telephone`) VALUES ('" + regis.idstudent+"','"+regis.password + "','"+ regis.name + "','"+regis.suranme + "','"+regis.year + "','"+regis.email + "','"+regis.telnumber+"');";
+            strSQL = "INSERT INTO `student`(`idstudent`,`password`,`username`,`lastname`,`year`,`email`,`telephone`) VALUES ('"+regis.idstudent+ "','" + regis.password + "','"+ regis.name + "','"+regis.suranme + "','"+regis.year + "','"+regis.email + "','"+regis.telnumber+ "');";
 
             conn.Open();
             objCmd.Connection = conn;
@@ -273,6 +273,12 @@ namespace netcore.Models
             objConn.Close();
             objConn = null;
         }
+
+
+       
+
+        
     }
+    
 
 }
