@@ -16,22 +16,9 @@ namespace netcore.Controllers
 
         }
 
-        public IActionResult Privacy()
-        {
-            var order = new List<Order>();
-            new Order()
-            {
-            Id = 1,
-            Name = "Thunwa"
-            };
-            new Order(){
-                Id = 2,
-                Name ="Nisama"
-            };
+        
 
-
-            return View(order);
-        }
+      
        // [Route("Home/Detail/{name}")]
         public IActionResult Detail (string name,string lastname,string idstudent,string supername)
        {
@@ -77,6 +64,19 @@ namespace netcore.Controllers
             return RedirectToAction("Index");
 
         }
+
+        public IActionResult Savefrom(Addfromteacher addfromteacher)
+        {
+            Connectdb saveform = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+            saveform.Addformteacher(addfromteacher);
+            return RedirectToAction("Index");
+        }
+       
+
+
+
+
+
 
        /* private bool checklogin() {
             bool result = false;

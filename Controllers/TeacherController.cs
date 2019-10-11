@@ -21,6 +21,20 @@ namespace netcore.Controllers
 
             
         }
-        
+
+        public IActionResult Teacher()
+        {
+            Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+           
+
+            return View(context.GetAllTecher());
+        }
+
+
+        [HttpGet]
+        public IActionResult saveform(string name,string form)
+        {
+            return RedirectToAction("home","HomeController");
+        }
     }
 }

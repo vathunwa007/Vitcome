@@ -1,20 +1,32 @@
-﻿<h3 style="text-align:center;">นักศึกษา</h3>
+﻿<h3 style="text-align:center;">อาจารย์</h3>
 
-    <p class="text-center">ชื่อ-สกุลนักศึกษา</p>
+    <p class="text-center">ชื่อ-สกุลอาจารย์</p>
 
-    <p class="text-center">   นาง มะลิ </p>
 
 
     <form asp-action="saveform"asp-controller="StudentController"method="get">
         <div class="form-group card-body card">
-            <p>ตรวจสอบสถานะของนักศึกษา</p>
-            <div class="btn-group-toggle" data-toggle="buttons">
+            <p>รายละเอียดForm ของนักศึกษา</p>
+            <span>ชื่อนักศึกษา</span><input class="form-control" type="text" name="Name" value="">
+            <span>ชื่อเรื่องวิจัย</span><input class="form-control" type="text" name="Name" value="">
+            <span>ฟอร์ม CS1 </span>
 
-                <button type="button" class="btn btn-primary btn-sm">Status</button>
 
+            <button type="button" class="btn btn-primary btn-sm">Download</button>
+            <span>ให้สถานะนักศึกษา</span>
+            
 
-            <p>แก้ไขประวัติส่วนตัว</p>
-            <button type="button" class="btn btn-primary btn-sm">Edit</button>
+            <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-lg">Comment</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+
+                <button type="button" class="btn btn-success">Pass</button>
+                <button type="button" class="btn btn-danger">Fail</button>
         </div>
+
             </div>
+
+
 </form>

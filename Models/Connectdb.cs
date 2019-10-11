@@ -141,7 +141,37 @@ namespace netcore.Models
             return null;
         }
 
+        //------------------//
 
+        public void Addformteacher(Addfromteacher result)
+        {
+
+            String strSQL;
+            MySqlConnection conn = GetConnection();
+            MySqlCommand objCmd = new MySqlCommand();
+
+            strSQL = "INSERT INTO `sendform`(`Name`,`Form`) VALUES" +
+                " ('" + result.Name + "','" + result.Form + "'); ";
+
+            conn.Open();
+            objCmd.Connection = conn;
+            objCmd.CommandText = strSQL;
+            objCmd.CommandType = CommandType.Text;
+
+            try
+            {
+                objCmd.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+            conn.Close();
+
+        }
 
 
 

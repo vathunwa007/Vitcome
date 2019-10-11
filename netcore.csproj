@@ -15,22 +15,32 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="MySql.Data" Version="8.0.17" />
-    <PackageReference Include="MySql.Data.EntityFramework" Version="8.0.17" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Views\Teacher\" />
+    <Folder Include="Views\BackendStudent\" />
+    <Folder Include="Views\BackendTeacher\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class\Database.cs" />
     <Compile Remove="Class\EncodeString.cs" />
     <Compile Remove="Models\EmptyClass.cs" />
     <Compile Remove="Models\RegisterModel.cs" />
+    <Compile Remove="Views\Student\student.cs" />
+    <Compile Remove="Models\student.cs" />
+    <Compile Remove="Models\Teacherform.cs" />
+    <Compile Remove="Controllers\StudentController.cs" />
+    <Compile Remove="Controllers\BackendTeacher.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Models\Student.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="README.md" />
+    <None Remove="Views\Student\student.css" />
+    <None Remove="Views\Student\Student.js" />
+    <None Remove="Views\Student\student.html" />
+    <None Remove="Views\BackendTeacher\Index.html" />
   </ItemGroup>
 </Project>
