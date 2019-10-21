@@ -4,10 +4,23 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
 	  <UseNETCoreGenerator>true</UseNETCoreGenerator>
+	  <AssemblyName>netcore</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
+    <DefineConstants></DefineConstants>
+    <Optimize>false</Optimize>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
 
 
   <ItemGroup>
+    <PackageReference Include="DinkToPdf" Version="1.0.8" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.App">
       <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
@@ -15,13 +28,12 @@
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0-preview1-19509-03" />
     <PackageReference Include="MySql.Data" Version="8.0.17" />
     <PackageReference Include="MySql.Data.EntityFramework" Version="8.0.17" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="System\Web\" />
     <Folder Include="Views\Teacher\" />
   </ItemGroup>
   <ItemGroup>
@@ -36,4 +48,38 @@
   <ItemGroup>
     <None Remove="README.md" />
   </ItemGroup>
+
+<ItemGroup>
+  <None Update="log4net.config">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+  </None>
+  <None Update="wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dll">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+  </None>
+  <None Update="wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dylib">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+  </None>
+  <None Update="wkhtmltox\v0.12.4\32 bit\libwkhtmltox.so">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  <None Update="wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dll">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+  </None>
+  <None Update="wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dylib">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+  <None Update="wkhtmltox\v0.12.4\64 bit\libwkhtmltox.so">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+  <None Update="wwwroot\**\*">
+     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
 </Project>

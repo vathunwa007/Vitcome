@@ -14,7 +14,8 @@ namespace netcore.Models
         public string Name { get; set; }
          public string Skill { get; set; }
         public int Status { get; set; }
-          
+
+        
     }
     
 }

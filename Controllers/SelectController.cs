@@ -17,6 +17,8 @@ namespace netcore.Controllers
             if (checklogin() == true)
             {
                 ViewBag.show = "ล็อกอินสำเร็จ";
+                ViewBag.show = HttpContext.Session.GetString("username");
+
             }
             else
             {

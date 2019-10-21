@@ -34,3 +34,9 @@ C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netco
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.pdb
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.csproj.CopyComplete
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netcore.csprojAssemblyReference.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dll
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dylib
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\wkhtmltox\v0.12.4\32 bit\libwkhtmltox.so
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dll
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dylib
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\wkhtmltox\v0.12.4\64 bit\libwkhtmltox.so

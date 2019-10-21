@@ -28,7 +28,7 @@ namespace netcore.Models
             return new MySqlConnection(ConnectionString);
         }
 
-        public List<Techer> GetAllTecher()
+        public  List<Techer> GetAllTecher()
         {
             List<Techer> list = new List<Techer>();
 
@@ -141,7 +141,7 @@ namespace netcore.Models
             return null;
         }
 
-
+        
 
 
 

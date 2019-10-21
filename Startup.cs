@@ -1,32 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using netcore.Models;
-using Netcore.Performance;
-using Microsoft.AspNetCore.Session;
+
+using DinkToPdf.Contracts;
+using DinkToPdf;
+using System.IO;
 
 namespace netcore
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+       // private readonly IConfigurationRoot _appConfiguration;
+        private readonly IHostingEnvironment _hostingEnvironment;
+        /*public Startup(IHostingEnvironment env)
+        {
+           // _appConfiguration = env.GetAppConfiguration();
+            _hostingEnvironment = env;
+        }*/
+
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+            _hostingEnvironment = env;
+
         }
+
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            var architectureFolder = (IntPtr.Size == 8) ? "64 bit" : "32 bit";
+            var wkHtmlToPdfPath = Path.Combine(_hostingEnvironment.ContentRootPath, $"wkhtmltox\\v0.12.4\\{architectureFolder}\\libwkhtmltox");
+            CustomAssemblyLoadContext context1 = new CustomAssemblyLoadContext();
+            context1.LoadUnmanagedLibrary(wkHtmlToPdfPath);
+            services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+            //-------------------------------------------------------------------------------------------
             services.AddMvc(options =>
             {
                 options.Filters.Add(new CustomAuthenticationFilter());         // An instance
@@ -53,16 +69,23 @@ namespace netcore
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
            services.Add(new ServiceDescriptor(typeof(Connectdb), new Connectdb(Configuration.GetConnectionString("DefaultConnection"))));
+            services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+
             //services.AddTransient<Condb>(_ => new Condb(Configuration["ConnectionStrings:DefaultConnection"]));
+
+
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
             else
             {
@@ -84,5 +107,7 @@ namespace netcore
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
+
     }
 }
