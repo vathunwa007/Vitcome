@@ -8,16 +8,19 @@
 
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.App">
       <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
       <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="MySql.Data" Version="8.0.17" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="System\Web\" />
     <Folder Include="Views\Teacher\" />
     <Folder Include="Views\BackendStudent\" />
     <Folder Include="Views\BackendTeacher\" />
@@ -32,9 +35,13 @@
     <Compile Remove="Models\Teacherform.cs" />
     <Compile Remove="Controllers\StudentController.cs" />
     <Compile Remove="Controllers\BackendTeacher.cs" />
+    <Compile Remove="Views\BackendStudent\student.cs" />
+    <Compile Remove="Views\BackendTeacher\MainIndex.cs" />
+    <Compile Remove="Views\BackendTeacher\EmptyClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Models\Student.cshtml" />
+    <Content Remove="Models\AddformModel.json" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="README.md" />
@@ -42,5 +49,11 @@
     <None Remove="Views\Student\Student.js" />
     <None Remove="Views\Student\student.html" />
     <None Remove="Views\BackendTeacher\Index.html" />
+    <None Remove="Views\BackendStudent\student.css" />
+    <None Remove="Views\BackendStudent\student.html" />
+    <None Remove="Views\BackendStudent\Student.js" />
+    <None Remove="Models\BackendTeacher.css" />
+    <None Remove="Views\BackendTeacher\MainIndex.css" />
+    <None Remove="Views\BackendTeacher\EmptyCSSFile.css" />
   </ItemGroup>
 </Project>

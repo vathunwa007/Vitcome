@@ -54,14 +54,14 @@ namespace netcore.Models
             return list;
         }
      
-        [Microsoft.AspNetCore.Mvc.HttpGet]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public void Register(Register regis) {
 
             String strSQL;
             MySqlConnection conn = GetConnection();
             MySqlCommand objCmd = new MySqlCommand();
 
-            strSQL = "INSERT INTO `student`(`idstudent`,`password`,`username`,`lastname`,`year`,`email`,`telephone`) VALUES ('" + regis.idstudent+"','"+regis.password + "','"+ regis.name + "','"+regis.suranme + "','"+regis.year + "','"+regis.email + "','"+regis.telnumber+"');";
+            strSQL = "INSERT INTO `student`(`idstudent`,`password`,`username`,`lastname`,`year`,`email`,`telephone`) VALUES ('"+regis.idstudent+ "','" + regis.password + "','"+ regis.name + "','"+regis.suranme + "','"+regis.year + "','"+regis.email + "','"+regis.telnumber+ "');";
 
             conn.Open();
             objCmd.Connection = conn;
@@ -172,6 +172,87 @@ namespace netcore.Models
             conn.Close();
 
         }
+        public void Addcommemt(BackendTeacheraddform result)
+        {
+            String strSQL;
+            MySqlConnection conn = GetConnection();
+            MySqlCommand objCmd = new MySqlCommand();
+
+            strSQL = "INSERT INTO `student`(`comment`) VALUES" +" ('" + result.comment + "''); ";
+
+            conn.Open();
+            objCmd.Connection = conn;
+            objCmd.CommandText = strSQL;
+            objCmd.CommandType = CommandType.Text;
+
+            try
+            {
+                objCmd.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+            conn.Close();
+        }
+
+
+
+        public List<BackendTeacher> BackendTeachers()
+        {
+            List<BackendTeacher> list = new List<BackendTeacher>();
+
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT a.title,a.timeimage,b.username,b.id FROM savecs1 a Inner Join student b ON a.studentid=b.id", conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new BackendTeacher()
+                        {
+                            id=reader.GetInt32("id"),
+                            username = reader.GetString("username"),
+                            title = reader.GetString("title"),
+                            timeimage = reader.GetString("timeimage")
+                        });
+                    }
+                }
+            }
+
+            return list;
+        }
+        //--------------
+        /*public void Checkstatus()
+        {
+
+            var status = new Status();
+            //strSQL = "SELECT a.idstudent a.idTeacher,b.id,b.Skill FORM student a Inner Join techer b ON  a.idTeacher=b.id WHERE a.idstudent= '15' ";
+
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM techer", conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                  
+                        status.Add(new Status
+                        {
+                          Name = reader.GetString("Name"),
+                          Skill = reader.GetString("Skill")
+                        });
+                    
+                }
+            }
+
+            return status;
+
+        }
+        */
 
 
 
@@ -303,6 +384,12 @@ namespace netcore.Models
             objConn.Close();
             objConn = null;
         }
+
+
+       
+
+        
     }
+    
 
 }

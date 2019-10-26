@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:/Users/vathu/OneDrive/เอกสาร/netcore/bin/Debug/netcoreapp2.2/netcore.deps.json
 C:/Users/vathu/OneDrive/เอกสาร/netcore/bin/Debug/netcoreapp2.2/netcore.runtimeconfig.json
 C:/Users/vathu/OneDrive/เอกสาร/netcore/bin/Debug/netcoreapp2.2/netcore.runtimeconfig.dev.json
@@ -57,7 +58,6 @@ C:/Users/vathu/OneDrive/เอกสาร/netcore/obj/Debug/netcoreapp2.2/netco
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/Razor/Views/Home/Index.g.cshtml.cs
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/Razor/Views/Home/Privacy.g.cshtml.cs
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/Razor/Views/Home/Techer.g.cshtml.cs
-/Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/Razor/Views/Login/Index.g.cshtml.cs
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/Razor/Views/Select/Index.g.cshtml.cs
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/Razor/Views/Shared/Error.g.cshtml.cs
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs
@@ -72,3 +72,7 @@ C:/Users/vathu/OneDrive/เอกสาร/netcore/obj/Debug/netcoreapp2.2/netco
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/netcore.csproj.CopyComplete
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/Razor/Views/BackendStudent/Index.g.cshtml.cs
 /Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/Razor/Views/BackendTeacher/Index.g.cshtml.cs
+=======
+C:/Users/vathu/OneDrive/เอกสาร/netcore/obj/Debug/netcoreapp2.2/netcore.csprojAssemblyReference.cache
+>>>>>>> f1d04c11870b9a3cf91c91c6dab21164349833c8
+/Users/runkanchano/Desktop/Vitcome/obj/Debug/netcoreapp2.2/Razor/Views/BackendTeacher/MainIndex.g.cshtml.cs

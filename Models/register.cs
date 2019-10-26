@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,9 +10,11 @@ namespace netcore.Models
 {
     public class Register
     {
-       
-
-        public string idstudent { get; set; }
+        [Key]
+        [Required]
+        [Display(Name = "idstudent")]
+        
+        public Double idstudent { get; set; }
 
         public string password { get; set; }
 
@@ -19,7 +22,7 @@ namespace netcore.Models
 
         public string suranme { get; set; }
 
-        public string year { get; set; }
+        public int year { get; set; }
 
         public string email { get; set; }
 

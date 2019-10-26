@@ -1,32 +1,37 @@
-﻿<h3 style="text-align:center;">อาจารย์</h3>
+﻿@model List<BackendTeacher>
+<h3 style="text-align:center;">อาจารย์</h3>
 
-    <p class="text-center">ชื่อ-สกุลอาจารย์</p>
-
-
-
-    <form asp-action="saveform"asp-controller="StudentController"method="get">
-        <div class="form-group card-body card">
-            <p>รายละเอียดForm ของนักศึกษา</p>
-            <span>ชื่อนักศึกษา</span><input class="form-control" type="text" name="Name" value="">
-            <span>ชื่อเรื่องวิจัย</span><input class="form-control" type="text" name="Name" value="">
-            <span>ฟอร์ม CS1 </span>
-
-
-            <button type="button" class="btn btn-primary btn-sm">Download</button>
-            <span>ให้สถานะนักศึกษา</span>
-            
-
-            <div class="input-group input-group-lg">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-lg">Comment</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-
-                <button type="button" class="btn btn-success">Pass</button>
-                <button type="button" class="btn btn-danger">Fail</button>
-        </div>
-
-            </div>
+ <table class="table table-hover">
+                <form asp-controller="Teacher" asp-action="index" method="get">
+                    <thead>
+                        <tr>
+                            <!--<th scope="col">#</th>-->
+                            <th scope="col">ชื่อ</th>
+                            <th scope="col">ชื่อเรื่องวิจัย</th>
+                            <th scope="col">Form Cs1</th>
 
 
-</form>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                        <tr onclick="window.open('./BackendTeacher/MainIndex?id=@item.id','_self','');">
+                            <!--<tr>-->
+                            <!-- <th scope="row"><input type="checkbox" name="check" value=""aria-label="Checkbox for following text input"> </th>-->
+                            <td>@item.id</td>
+                            <td>@item.username</td>
+                            <td>@item.title</td>
+                            <td>@item.timeimage</td>
+
+                        </tr>
+                        }
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><!--<button type="submit" class="btn btn-success">ส่งข้อมูลการเลือก</button>--></td>
+                        </tr>
+                    </tbody>
+                    </form>
+                </table>

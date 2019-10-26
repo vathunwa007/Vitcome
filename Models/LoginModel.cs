@@ -1,8 +1,17 @@
+﻿using System.ComponentModel.DataAnnotations;
+
 namespace netcore.Models
 {
     public class LoginModel
     {
-        public int Idstudent {get;set;}
-        public int Password {get;set;}
+        [Required]
+        public string idstudent {get;set;}
+        [Required]
+        [DataType(DataType.Password)]
+        public string password {get;set;}
+        [Display(Name = "remember")]
+        public bool remember { get; set; }
+
+
     }
 }

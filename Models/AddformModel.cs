@@ -2,9 +2,11 @@
 namespace netcore.Models
 {
     public class AddformModel
-    {
-        public AddformModel()
-        {
-        }
+
+    {      
+        public Addfromteacher Addfromteacher { get; set; }
+        public Techer Techer { get; set; }
     }
+    
 }
+

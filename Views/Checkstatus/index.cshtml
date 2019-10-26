@@ -17,10 +17,16 @@
                 <img src="https://pickaface.net/assets/images/slides/slide2.png" class="card-img" alt="..."asp-append-version="true">
             </div>
             <div class="col-md-8">
-                <div class="card-body"style=" position:absolute;bottom:70px;left:50px;">
-                    <h5 class="card-title">ชื่ออาจารย์ : เบิดร์  ธงไทย</h5>
-                    <p class="card-text">ความถนัดพิเศษ :  javaprogramming และ Algrolithem.</p>
-                    <p>สถานะการตอบรับ :<a href="#">ยังไม่ตอบรับ</a></p>
+                <div class="card-body" style=" position:absolute;bottom:70px;left:50px;">
+                    
+                    <p>ชื่ออาจารย์ :@ViewBag.idteacher</p>
+                    <p>ความถนัดพิเศษ : @ViewBag.skill </p>
+                    <p>สถานะการตอบรับ : @if(@ViewBag.status >0)
+                    { <p>Pass</p>  }
+                    else
+                    {<p>Fail</p>  }
+                    <p>Comment: @ViewBag.comment
+                    </p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
