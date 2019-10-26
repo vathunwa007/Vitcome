@@ -1,36 +1,37 @@
- @model List<Techer>
+@model List<Techer>
 
-    <style>
-        body {
-           /* background-image: url('https://images.pexels.com/photos/875858/pexels-photo-875858.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');*/
-        }
-    </style>
-    <!---->
+<style>
+    body {
+        /* background-image: url('https://images.pexels.com/photos/875858/pexels-photo-875858.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');*/
+    }
+</style>
+<!---->
 
 
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <div class="row">
 
-            <div class="mx-auto">
-             <div class="alert alert-warning" role="alert">
-  นักศึกษาสามารถกดที่ชื่ออาจารย์เพื่อเข้าสู่การยื่นเสนอหัวข้อ CS1 ได้โดยคลิ้กที่ตารางข้างล่างนี้
-</div>
-                <h1 style="color:white;">เลือกอาจารย์ที่ปรึกษาวิจัย</h1>
+        <div class="mx-auto">
+            <div class="alert alert-warning" role="alert">
+                นักศึกษาสามารถกดที่ชื่ออาจารย์เพื่อเข้าสู่การยื่นเสนอหัวข้อ CS1 ได้โดยคลิ้กที่ตารางข้างล่างนี้
             </div>
-                <table class="table table-hover">
-                <form asp-controller="Teacher" asp-action="index" method="get">
-                    <thead>
-                        <tr>
-                            <!--<th scope="col">#</th>-->
-                            <th scope="col">ลำดับ</th>
-                            <th scope="col">ชื่ออาจารย์</th>
-                            <th scope="col">สกิล</th>
-                            <th scope="col">สถานะ</th>
+            <h1 style="color:white;">เลือกอาจารย์ที่ปรึกษาวิจัย</h1>
+        </div>
+        <table class="table table-hover">
+            <form asp-controller="Teacher" asp-action="index" method="get">
+                <thead>
+                    <tr>
+                        <!--<th scope="col">#</th>-->
+                        <th scope="col">ลำดับ</th>
+                        <th scope="col">ชื่ออาจารย์</th>
+                        <th scope="col">สกิล</th>
+                        <th scope="col">สถานะ</th>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model) {
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
                         <tr onclick="window.open('../Teacher?id=@item.Id','_self','');">
                             <!--<tr>-->
                             <!-- <th scope="row"><input type="checkbox" name="check" value="@item.Id"aria-label="Checkbox for following text input"> </th>-->
@@ -46,18 +47,23 @@
                                 <td><p style="color:blue;">@item.Status/5</p></td>
                             }
                         </tr>
-                        }
+                    }
 
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><!--<button type="submit" class="btn btn-success">ส่งข้อมูลการเลือก</button>--></td>
-                        </tr>
-                    </tbody>
-                    </form>
-                </table>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><!--<button type="submit" class="btn btn-success">ส่งข้อมูลการเลือก</button>--></td>
+                    </tr>
+                </tbody>
+            </form>
+        </table>
 
-        </div>
-        <a href="../Teacher/insertsql">content</a>
     </div>
+</div>
+<p>@ViewBag.show</p>
+<p>@ViewBag.show1</p>
+<p>@ViewBag.show2</p>
+<p>@ViewBag.show3</p>
+<p>@ViewBag.show4</p>
+

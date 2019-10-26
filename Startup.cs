@@ -10,6 +10,13 @@ using netcore.Models;
 using DinkToPdf.Contracts;
 using DinkToPdf;
 using System.IO;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.Logging;
+using Microsoft.Owin.Logging;
+using LoggerFactory = Microsoft.Extensions.Logging.LoggerFactory;
+using netcore.Controllers;
+using Microsoft.AspNetCore.CookiePolicy;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace netcore
 {
@@ -45,11 +52,12 @@ namespace netcore
             //-------------------------------------------------------------------------------------------
             services.AddMvc(options =>
             {
-                options.Filters.Add(new CustomAuthenticationFilter());         // An instance
+                options.Filters.Add(new AuthorizeFilter());
             });
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
             {
+
                 // Set a short timeout for easy testing.
                 //options.IdleTimeout = TimeSpan.FromMinutes(30);
                 options.IdleTimeout = TimeSpan.FromSeconds(20);
@@ -61,10 +69,15 @@ namespace netcore
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
+                options.CheckConsentNeeded = context => false; //ตอนแรก เป็น true
+                options.MinimumSameSitePolicy = SameSiteMode.Strict;
+               
 
+
+            });
+           
+           
+            //--------------------------------------------------------------------------------
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -72,7 +85,23 @@ namespace netcore
             services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
             //services.AddTransient<Condb>(_ => new Condb(Configuration["ConnectionStrings:DefaultConnection"]));
+            //----------------------------------------------------------------------------------------------------------------------
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
+                options =>
+                {
+                    options.LoginPath = "/Home/Index";
+                    // options.LoginPath = new PathString("/Home");
+                      options.Cookie.Name = "SimpleTalk.AuthCookieAspNetCore";
 
+                      options.LogoutPath = "/Home/Logout";
+                      options.Cookie.HttpOnly = true;
+                      options.Cookie.SecurePolicy = _hostingEnvironment.IsDevelopment()
+                        ? CookieSecurePolicy.None : CookieSecurePolicy.Always;
+                      options.Cookie.SameSite = SameSiteMode.Lax;
+                });
+
+            services.AddSingleton<RequestHandler>();
+            services.AddHttpContextAccessor();
 
 
         }
@@ -80,7 +109,7 @@ namespace netcore
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-
+           
 
             if (env.IsDevelopment())
             {
@@ -98,6 +127,9 @@ namespace netcore
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseSession();
+            app.UseAuthentication();
+
+            //app.UseAuthorization();
 
 
             app.UseMvc(routes =>

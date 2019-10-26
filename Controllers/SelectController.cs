@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using netcore.Models;
@@ -13,18 +14,9 @@ namespace netcore.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.show = User.Identity.Name;
+
             
-            if (checklogin() == true)
-            {
-                ViewBag.show = "ล็อกอินสำเร็จ";
-                ViewBag.show = HttpContext.Session.GetString("username");
-
-            }
-            else
-            {
-                ViewBag.show = HttpContext.Session.GetString("username");
-            }
-
             return View();
         }
 
@@ -32,14 +24,16 @@ namespace netcore.Controllers
         { //--------------------------------------ฟังชั่นทำการเช็คสถานะการล็อกอินเข้ามา---------------------------//
             bool result = false;
 
-            if (HttpContext.Session.GetString("login") != null)
+            try
             {
-
-                if (HttpContext.Session.GetString("login") == "1")
+                if (!string.IsNullOrEmpty(HttpContext.Session.GetString("login")))
                 {
-                    result = true;
+                  return  result = true;
                 }
-
+            }
+            catch (Exception e)
+            {
+                RedirectToAction("Index","Home");
             }
             return result;
         }

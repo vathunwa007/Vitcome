@@ -1,41 +1,51 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Web;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using DinkToPdf;
 using DinkToPdf.Contracts;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using netcore.Models;
 using netcore.Untity;
 
-
-
-
-
 namespace netcore.Controllers
 {
-
-     //[IActionfilter]
-    public class HomeController : Controller
+    //[ValidateAntiForgeryToken]
+   
+    public class HomeController : Controller 
     {
+        private readonly RequestHandler _requestHandler;
         private IConverter _converter;
-
-        public HomeController(IConverter converter)
+        
+        public HomeController(IConverter converter, RequestHandler requestHandler)
         {
             _converter = converter;
+            _requestHandler = requestHandler;
         }
+
+        [AllowAnonymous]
         public IActionResult Index()
         {
+      
 
             return View();
 
         }
-
         public IActionResult Privacy()
         {
-
+            var check = new SelectController();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("login")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
 
             return View();
         }
@@ -47,17 +57,19 @@ namespace netcore.Controllers
             ViewBag.idstudent = idstudent;
             ViewBag.supername = supername;
 
-            if (HttpContext.Session.GetString("login") == "1")
-            {
-                ViewBag.showsession = "login false";
-            }
-            else { ViewBag.showsession = "login pass"; }
-
             return View();
         }
         public IActionResult Techer()
 
         {
+            ViewBag.show = User.FindFirst("username").Value;
+            ViewBag.show1 = User.FindFirst("lastname").Value;
+            ViewBag.show2 = User.FindFirst("year").Value;
+            ViewBag.show3 = User.FindFirst("email").Value;
+
+
+
+
             Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
 
             return View(context.GetAllTecher());
@@ -94,6 +106,7 @@ namespace netcore.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost]//----------------------------ฟั่งชันในการล็อกอิน--------------------------------------//
+        [AllowAnonymous]
         public async Task<IActionResult> Login(LoginModel login)
         {
 
@@ -110,7 +123,7 @@ namespace netcore.Controllers
                     dtReader.Read();
                     if (dtReader["password"].ToString() == login.password)
                     {
-
+                        /*
                         HttpContext.Session.SetString("login", "1");
                         HttpContext.Session.SetString("idstudent", dtReader["idstudent"].ToString());
                         HttpContext.Session.SetString("password", dtReader["password"].ToString());
@@ -119,18 +132,53 @@ namespace netcore.Controllers
                         HttpContext.Session.SetString("year", dtReader["year"].ToString());
                         HttpContext.Session.SetString("email", dtReader["email"].ToString());
                         HttpContext.Session.SetString("telephone", dtReader["telephone"].ToString());
+                        */
 
+                        var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, dtReader["idstudent"].ToString()),
+                        new Claim("username",dtReader["username"].ToString()),
+                        new Claim("lastname",dtReader["lastname"].ToString()),
+                        new Claim("year",dtReader["year"].ToString()),
+                        new Claim("email",dtReader["email"].ToString()),
+                        new Claim("telephone",dtReader["telephone"].ToString())
+                        //วิธีเข้าถึง claim ที่สร้างเอง= User.FindFirst("username").Value;
+                        //วิธีเข้าถึงClaim ของฟังชั่น = User.Identity.Name; 
+                        //ตรวจสอบ  [Authorize]
+                        //ละเว้นการตรวจสอบ    [AllowAnonymous]
+
+
+                       
+                    };
+                        var claimsIdentity = new ClaimsIdentity(
+                        claims,
+                        CookieAuthenticationDefaults.AuthenticationScheme);
+
+                        await HttpContext.SignInAsync(
+                            CookieAuthenticationDefaults.AuthenticationScheme,
+                            new ClaimsPrincipal(claimsIdentity));
                         return RedirectToAction("Index", "Select");
+                    }
+                    else
+                    {
+                        TempData["UserLoginFailed"] = "Login Failed.Please enter correct credentials";                    
+                        return RedirectToAction("Index", "Home");
                     }
 
                 }
 
             }
             return RedirectToAction("Index");
-
         }
-        [HttpGet]
 
+        public async Task<IActionResult> Logout()
+        {
+            HttpContext.SignOutAsync(
+         CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
         public IActionResult CreatePDF()
         {
 
@@ -173,6 +221,11 @@ namespace netcore.Controllers
         }
 
 
+
+
+
+
     }
+
 
 }
