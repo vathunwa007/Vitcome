@@ -46,7 +46,7 @@ namespace netcore.Untity
 
             foreach (var emp in teacher)
             {
-                sb.AppendFormat(@"{0}", emp.Name);
+                sb.AppendFormat($"{emp.Name}");
             }
 
             sb.Append(@"นาย ธันวา เม๊าะหะมะ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</u></p>
