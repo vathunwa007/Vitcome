@@ -6,27 +6,17 @@
       <File FileName="Views/Home/Techer.cshtml" />
       <File FileName="Models/Connectdb.cs" />
       <File FileName="Models/BackendTeacher.cs" />
-      <File FileName="Models/register.cs" Line="21" Column="41" />
+      <File FileName="Models/register.cs" Line="18" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="netcore" expanded="True">
             <Node name="netcore" expanded="True">
-              <Node name="Dependencies" expanded="True" />
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="register.cs" selected="True" />
               </Node>
-              <Node name="Views" expanded="True">
-                <Node name="BackendStudent" expanded="True" />
-                <Node name="BackendTeacher" expanded="True" />
-                <Node name="Checkstatus" expanded="True" />
-                <Node name="Home" expanded="True" />
-                <Node name="Select" expanded="True" />
-                <Node name="Teacher" expanded="True" />
-              </Node>
-              <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>
         </State>
