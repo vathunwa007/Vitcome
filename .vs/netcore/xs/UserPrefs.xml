@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{F743ED9E-D3F2-4395-8385-951DDFF7BCF8}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/BackendTeacherController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/register.cs">
     <Files>
-      <File FileName="Controllers/BackendTeacherController.cs" Line="26" Column="27" />
+      <File FileName="Controllers/BackendTeacherController.cs" Line="10" Column="1" />
       <File FileName="Views/BackendTeacher/Index.cshtml" />
       <File FileName="Views/Home/Techer.cshtml" />
       <File FileName="Models/Connectdb.cs" />
       <File FileName="Models/BackendTeacher.cs" />
+      <File FileName="Models/register.cs" Line="21" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,10 +14,10 @@
           <Node name="netcore" expanded="True">
             <Node name="netcore" expanded="True">
               <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True">
-                <Node name="BackendTeacherController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="register.cs" selected="True" />
               </Node>
-              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="BackendStudent" expanded="True" />
                 <Node name="BackendTeacher" expanded="True" />
