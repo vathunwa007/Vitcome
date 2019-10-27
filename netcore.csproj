@@ -38,7 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="System\Web\" />
     <Folder Include="Views\Teacher\" />
   </ItemGroup>
   <ItemGroup>
