@@ -9,6 +9,8 @@ namespace netcore.Untity
         {
             var teacher = Item.GetAllTeacher();
             var sb = new StringBuilder();
+            string w = "thunwa";
+            //วิธีนำค่าตัวแปลไปใส่ในฟอร์มสตริง // "+$"{ตัวแปร}"+@"   //
             sb.Append(@"<p>
   <br>
 </p>
@@ -44,12 +46,12 @@ namespace netcore.Untity
 <p><strong>&nbsp;</strong></p>
 <p>1. ชื่อ – นามสกุลนักศึกษา/Student name <u>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;");
 
-            foreach (var emp in teacher)
+           /* foreach (var emp in teacher)
             {
                 sb.AppendFormat($"{emp.Name}{emp.Skill}");
-            }
+            }*/   
 
-            sb.Append(@"นาย ธันวา เม๊าะหะมะ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</u></p>
+            sb.Append($"{w}"+@"&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</u></p>
 <p>&nbsp; &nbsp; &nbsp;รหัสประจำตัวนักศึกษา/Student ID<u>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5911501335 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</u>หมู่เรียน วท.บ.<u>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 591(4)/2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</u></p>
 <p>&nbsp; &nbsp; <strong>R</strong> ภาคในเวลาราชการ &nbsp; &nbsp;☐ ภาคนอกเวลาราชการ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; หลักสูตร/Program &nbsp; &nbsp; &nbsp;<u>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</u> ปี/years</p>
 <p>สาขาวิชา/Major <u>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; เทคโนโลยีสารสนเทศ &nbsp;</u>คณะ/Faculty <u>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;วิทยาศาสตร์ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</u></p>
