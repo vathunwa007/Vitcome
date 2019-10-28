@@ -39,3 +39,6 @@ C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\wkhtm
 C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dll
 C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dylib
 C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Debug\netcoreapp2.2\wkhtmltox\v0.12.4\64 bit\libwkhtmltox.so
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\BackendStudent\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\BackendTeacher\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\BackendTeacher\MainIndex.g.cshtml.cs
