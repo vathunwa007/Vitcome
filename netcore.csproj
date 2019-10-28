@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="System\Web\" />
     <Folder Include="Views\Teacher\" />
     <Folder Include="Views\BackendStudent\" />
     <Folder Include="Views\BackendTeacher\" />

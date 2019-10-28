@@ -1,21 +1,23 @@
 ﻿<Properties StartupConfiguration="{F743ED9E-D3F2-4395-8385-951DDFF7BCF8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Connectdb.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
     <Files>
       <File FileName="Views/Checkstatus/index.cshtml" Line="1" Column="1" />
       <File FileName="Views/BackendTeacher/MainIndex.cshtml" Line="29" Column="38" />
       <File FileName="Views/BackendTeacher/Index.cshtml" Line="1" Column="1" />
       <File FileName="Controllers/BackendTeacherController.cs" Line="52" Column="4" />
-      <File FileName="Models/Connectdb.cs" Line="1" Column="1" />
+      <File FileName="Models/Connectdb.cs" Line="230" Column="1" />
+      <File FileName="Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/HomeController.cs" Line="40" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="netcore" expanded="True">
             <Node name="netcore" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="Connectdb.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
               </Node>
+              <Node name="Models" expanded="True" />
               <Node name="System" expanded="True">
                 <Node name="Web" expanded="True" />
               </Node>
