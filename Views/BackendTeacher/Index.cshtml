@@ -1,0 +1,37 @@
+﻿@model List<BackendTeacher>
+<h3 style="text-align:center;">อาจารย์</h3>
+
+ <table class="table table-hover">
+                <form asp-controller="Teacher" asp-action="index" method="get">
+                    <thead>
+                        <tr>
+                            <!--<th scope="col">#</th>-->
+                            <th scope="col">ชื่อ</th>
+                            <th scope="col">ชื่อเรื่องวิจัย</th>
+                            <th scope="col">Form Cs1</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model) {
+                        <tr onclick="window.open('./BackendTeacher/MainIndex?id=@item.id','_self','');">
+                            <!--<tr>-->
+                            <!-- <th scope="row"><input type="checkbox" name="check" value=""aria-label="Checkbox for following text input"> </th>-->
+                            <td>@item.id</td>
+                            <td>@item.username</td>
+                            <td>@item.title</td>
+                            <td>@item.timeimage</td>
+
+                        </tr>
+                        }
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><!--<button type="submit" class="btn btn-success">ส่งข้อมูลการเลือก</button>--></td>
+                        </tr>
+                    </tbody>
+                    </form>
+                </table>
