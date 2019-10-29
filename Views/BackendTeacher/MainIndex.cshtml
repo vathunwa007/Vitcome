@@ -1,0 +1,34 @@
+﻿<h3 style="text-align:center;">อาจารย์</h3>
+<div class="form-group card-body card">
+    <p>รายละเอียดForm ของนักศึกษา</p>
+
+
+    <p>ชื่อนักศึกษา:@ViewBag.username</p>
+    <p>ชื่อเรื่องวิจัย: @ViewBag.title </p>
+    <p>Form cs1>> :@ViewBag.timeimage</p>  <a class="btn btn-primary" href="#" role="button">Download</a>
+
+
+
+    <span>ให้สถานะนักศึกษา</span>
+
+    <form asp-action="saveform" asp-controller="StudentController" method="get">
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Comment</span>
+
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+            <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="1">
+                <label class="custom-control-label" for="customRadio1">Pass</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="0">
+                <label class="custom-control-label" for="customRadio2">Fail</label>
+            </div>
+            <button type="submit" class="btn btn-danger">Comfrim</button>
+        </div>
+    </form>
+</div>
+
+
