@@ -4,6 +4,8 @@ namespace netcore.Models
 {
     public class Register
     {
+        internal readonly string password;
+
         [Key]
         [Required (ErrorMessage="กรุณาป้อนข้อมูลให้ครบ")]
         public double Idstudent {get; set;}
