@@ -39,17 +39,16 @@ namespace netcore.Controllers
             return View();
 
         }
+
         public IActionResult Privacy()
         {
-            var check = new SelectController();
-            if (string.IsNullOrEmpty(HttpContext.Session.GetString("login")))
-            {
-                return RedirectToAction("Index", "Home");
-            }
+           
 
             return View();
         }
         // [Route("Home/Detail/{name}")]
+
+        [Authorize(Roles = "Admin")]
         public IActionResult Detail(string name, string lastname, string idstudent, string supername)
         {
             ViewBag.name = name;
@@ -96,7 +95,6 @@ namespace netcore.Controllers
 
         }
 
-
         [HttpPost]//----------------------------ฟั่งชั้นบันทึกแบบฟอร์ม CS1 ---------------------//
         public IActionResult SaveCs1(FormCs1Model saveform)
         {
@@ -137,6 +135,7 @@ namespace netcore.Controllers
                         var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, dtReader["idstudent"].ToString()),
+                        new Claim(ClaimTypes.Role,"Admin"),
                         new Claim("username",dtReader["username"].ToString()),
                         new Claim("lastname",dtReader["lastname"].ToString()),
                         new Claim("year",dtReader["year"].ToString()),
@@ -206,6 +205,7 @@ namespace netcore.Controllers
                 HtmlContent = TemplateGenerator.GetHTMLString(),
                 //Page = "www.youtube.com",
                 HeaderSettings = { FontName = "Arial", FontSize = 9, Right = "Page [page] of [toPage]", Line = true },
+          
                 FooterSettings = { FontName = "Arial", FontSize = 9, Line = true, Center = "Report CS1" }
 
             };

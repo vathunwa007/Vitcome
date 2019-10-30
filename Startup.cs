@@ -17,6 +17,7 @@ using LoggerFactory = Microsoft.Extensions.Logging.LoggerFactory;
 using netcore.Controllers;
 using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace netcore
 {
@@ -91,15 +92,20 @@ namespace netcore
                 {
                     options.LoginPath = "/Home/Index";
                     // options.LoginPath = new PathString("/Home");
-                      options.Cookie.Name = "SimpleTalk.AuthCookieAspNetCore";
+                    options.Cookie.Name = "SimpleTalk.AuthCookieAspNetCore";
+                    options.LogoutPath = "/Home/Logout";
+                    options.AccessDeniedPath = "/Home/Privacy";
 
-                      options.LogoutPath = "/Home/Logout";
-                      options.Cookie.HttpOnly = true;
-                      options.Cookie.SecurePolicy = _hostingEnvironment.IsDevelopment()
-                        ? CookieSecurePolicy.None : CookieSecurePolicy.Always;
-                      options.Cookie.SameSite = SameSiteMode.Lax;
+                    options.Cookie.HttpOnly = true;
+                    options.Cookie.SecurePolicy = _hostingEnvironment.IsDevelopment()
+                      ? CookieSecurePolicy.None : CookieSecurePolicy.Always;
+                    options.Cookie.SameSite = SameSiteMode.Lax;
+                    options.Cookie.Expiration = TimeSpan.FromMinutes(10);
+                    options.Cookie.MaxAge = TimeSpan.FromDays(2);
+
                 });
-
+            
+            //-----------------------------------------------------------------------------------------------------------
             services.AddSingleton<RequestHandler>();
             services.AddHttpContextAccessor();
 

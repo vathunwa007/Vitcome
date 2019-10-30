@@ -1,31 +1,26 @@
-﻿using Microsoft.Extensions.Configuration;
-using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace netcore.Models
 {
     public class Register
     {
+        internal readonly string password;
+
         [Key]
-        [Required]
-        [Display(Name = "idstudent")]
-        
-        public Double idstudent { get; set; }
+        [Required (ErrorMessage="กรุณาป้อนข้อมูลให้ครบ")]
+        public double Idstudent {get; set;}
+        [Required(ErrorMessage = "กรุณาป้อนข้อมูลให้ครบ")]
+        public string Password {get; set;}
+        [Required(ErrorMessage = "กรุณาป้อนข้อมูลให้ครบ")]
+        public string Name  {get; set;}
+        [Required(ErrorMessage = "กรุณาป้อนข้อมูลให้ครบ")]
+        public string Lastname {get; set;}
+        [Required(ErrorMessage = "กรุณาป้อนข้อมูลให้ครบ")]
+        public int Year {get;set;}
+        [Required(ErrorMessage = "กรุณาป้อนข้อมูลให้ครบ")]
+        public string Email {get; set;}
+        [Required(ErrorMessage = "กรุณาป้อนข้อมูลให้ครบ")]
+        public double Telephone {get;set;}
 
-        public string password { get; set; }
-
-        public string name { get; set; }
-
-        public string suranme { get; set; }
-
-        public int year { get; set; }
-
-        public string email { get; set; }
-
-        public string telnumber { get; set; }
     }
 }
