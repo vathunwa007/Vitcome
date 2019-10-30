@@ -4,13 +4,14 @@ namespace netcore.Models
 {
     public class LoginModel
     {
-        [Required]
+        [Required(ErrorMessage ="กรุณาใส่รหัสนักศึกษาให้ครบถ้วน")]
+        [MaxLength(10, ErrorMessage = "Id length can't be more than 10.")]
         public string idstudent {get;set;}
-        [Required]
+        [Required(ErrorMessage = "กรุณาใส่รหัสผ่านให้ครบถ้วน")]
         [DataType(DataType.Password)]
         public string password {get;set;}
-        [Display(Name = "remember")]
-        public bool remember { get; set; }
+        [Required]
+        public bool checkteacher { get; set; }
 
 
     }

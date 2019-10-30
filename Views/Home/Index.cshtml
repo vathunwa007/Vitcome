@@ -2,7 +2,20 @@
 
 
 @{ ViewData["Title"] = "ระบบยืนสมัครวิจัยวิทยาการคอมพิวเตอร์"; }
-
+    <style>
+     .custom-switch .custom-control-label::before {
+    left: -1.6rem;
+    width: 1.75rem;
+    pointer-events: all;
+    border-radius: 0.5rem;
+}
+        .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+    background-color: #ffd86b;
+    -webkit-transform: translateX(0.75rem);
+    transform: translateX(0.75rem);
+}
+    
+    </style>
 <script>
     function topFunction() {
         document.body.scrollTop = -50;
@@ -52,15 +65,27 @@
                         <div class="col">
 
                             <input type="text" class="form-control" placeholder="รหัสนักศึกษา หรือ รหัสอาจารย์" asp-for="login.idstudent"value="">
-                            
+                            <span asp-validation-for="login.idstudent" class="text-danger"></span>
                         </div>
                     </div>
+
                     <div class="row mt-4">
                         <div class="col">
-                            <input type="password" class="form-control mb-1" placeholder="รหัสผ่าน"asp-for="login.password" value="">
+                            <input type="password" class="form-control mb-1" placeholder="รหัสผ่าน" asp-for="login.password" value="">
+                            <span asp-validation-for="login.password" class="text-danger"></span>
+
                             <p class="text-right">
+                                <!-- Default switch -->
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitches" asp-for="login.checkteacher">
+                                    <label class="custom-control-label" for="customSwitches">&nbsp;เปิดใช้การล็อกอินสำหรับอาจารย์</label>
+                                    <span asp-validation-for="login.checkteacher" class="text-danger"></span>
+
+                                </div>
                                 <a href="#section2">สมัครสมาชิก</a>
                             </p>
+                            <span class="text-danger">@TempData["UserLoginfail"]</span>
+
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -87,7 +112,7 @@
                                 <label for="exampleInputEmail1">รหัสนักศึกษา</label>
                                 <input type="number" class="form-control" asp-for="regis.Idstudent" aria-describedby="emailHelp" placeholder="Enter IDstudent">
                                 <small id="emailHelp" class="form-text text-muted">กรุณากรอกรหัสนักศึกษา.</small>
-                                <span asp-validation-for="regis.Idstudent" class="text-danger"></span>
+                                <span asp-validation-for="regis.Password" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">รหัสผ่าน</label>
@@ -101,11 +126,9 @@
                                 </div>
                                 <input type="text" aria-label="First name" asp-for="regis.Name" class="form-control" placeholder="ชื่อ">
                                 <input type="text" aria-label="Last name" asp-for="regis.Lastname" class="form-control" placeholder="นามสกุล">
-                                <span asp-validation-for="regis.Name" class="text-danger"></span>
-                                <span asp-validation-for="regis.Lastname" class="text-danger"></span>
-
-
                             </div>
+                            <span asp-validation-for="regis.Password" class="text-danger"></span>
+
                             <div class="form-group " style="padding-top:8px; text-align: center;">
                                 <div class="mx-auto form-control ">
                                     <input type="checkbox" aria-label="Checkbox for following text input" name="regis.year" value="3"> <span>ปี3</span>
@@ -128,7 +151,7 @@
 
                             </div>
 
-                            <button style="display: block;margin-left: auto;margin-right: auto;"type="submit" value="submit"class="btn btn-primary">Submit</button>
+                            <button style="display: block;margin-left: auto;margin-right: auto;" type="submit" value="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>

@@ -19,7 +19,6 @@ using netcore.Untity;
 namespace netcore.Controllers
 {
     //[ValidateAntiForgeryToken]
-   
     public class HomeController : Controller 
     {
         private readonly RequestHandler _requestHandler;
@@ -58,6 +57,7 @@ namespace netcore.Controllers
 
             return View();
         }
+        [Authorize(Roles = "Student")]
         public IActionResult Techer()
 
         {
@@ -82,6 +82,7 @@ namespace netcore.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         [HttpPost]//-------------------------------------------ฟั่งชั่นในการสมัครสมาชิก----------------------------------------------------------------//
+        [AllowAnonymous]
         public async Task<IActionResult> Save(Register regis)
         {
 
@@ -91,7 +92,7 @@ namespace netcore.Controllers
                 context.Register(regis);
                 return RedirectToAction("Index", "Select");
             }
-            else { return RedirectToAction("Index", "Home"); }
+            return View("Index"); 
 
         }
 
@@ -105,37 +106,28 @@ namespace netcore.Controllers
         }
         [HttpPost]//----------------------------ฟั่งชันในการล็อกอิน--------------------------------------//
         [AllowAnonymous]
-        public async Task<IActionResult> Login(LoginModel login)
+        public async Task<IActionResult> Index(LoginModel login)
         {
-
-            Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
-            string strSQL;
-            MySqlDataReader dtReader;
-            strSQL = "SELECT * FROM student WHERE idstudent ='" + login.idstudent + "'";
-            dtReader = con.QueryDataReader(strSQL);
 
             if (ModelState.IsValid)
             {
-                if (dtReader.HasRows == true)
+                if (login.checkteacher == false)
                 {
-                    dtReader.Read();
-                    if (dtReader["password"].ToString() == login.password)
-                    {
-                        /*
-                        HttpContext.Session.SetString("login", "1");
-                        HttpContext.Session.SetString("idstudent", dtReader["idstudent"].ToString());
-                        HttpContext.Session.SetString("password", dtReader["password"].ToString());
-                        HttpContext.Session.SetString("username", dtReader["username"].ToString());
-                        HttpContext.Session.SetString("lastname", dtReader["lastname"].ToString());
-                        HttpContext.Session.SetString("year", dtReader["year"].ToString());
-                        HttpContext.Session.SetString("email", dtReader["email"].ToString());
-                        HttpContext.Session.SetString("telephone", dtReader["telephone"].ToString());
-                        */
+                    Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+                    string strSQL;
+                    MySqlDataReader dtReader;
+                    strSQL = "SELECT * FROM student WHERE idstudent ='" + login.idstudent + "'";
+                    dtReader = con.QueryDataReader(strSQL);
 
-                        var claims = new List<Claim>
+                    if (dtReader.HasRows == true)
+                    {
+                        dtReader.Read();
+                        if (dtReader["password"].ToString() == login.password)
+                        {
+                            var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, dtReader["idstudent"].ToString()),
-                        new Claim(ClaimTypes.Role,"Admin"),
+                        new Claim(ClaimTypes.Role,"Student"),
                         new Claim("username",dtReader["username"].ToString()),
                         new Claim("lastname",dtReader["lastname"].ToString()),
                         new Claim("year",dtReader["year"].ToString()),
@@ -149,25 +141,73 @@ namespace netcore.Controllers
 
                        
                     };
-                        var claimsIdentity = new ClaimsIdentity(
-                        claims,
-                        CookieAuthenticationDefaults.AuthenticationScheme);
+                            var claimsIdentity = new ClaimsIdentity(
+                            claims,
+                            CookieAuthenticationDefaults.AuthenticationScheme);
 
-                        await HttpContext.SignInAsync(
-                            CookieAuthenticationDefaults.AuthenticationScheme,
-                            new ClaimsPrincipal(claimsIdentity));
-                        return RedirectToAction("Index", "Select");
+                            await HttpContext.SignInAsync(
+                                CookieAuthenticationDefaults.AuthenticationScheme,
+                                new ClaimsPrincipal(claimsIdentity));
+                            TempData["UserLoginPass"] = "Login Pass";
+                            return RedirectToAction("Index", "Select");
+                        }
+                        else
+                        {
+                            TempData["UserLoginfail"] = "รหัสผ่านหรือพาสเวิดไม่ถูกต้อง";
+                            return View();
+                        }
                     }
-                    else
+
+
+                }
+                else
+                {
+                    Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+                    string strSQL;
+                    MySqlDataReader dtReader;
+                    strSQL = "SELECT * FROM teacher WHERE idteacher ='" + login.idstudent + "'";
+                    dtReader = con.QueryDataReader(strSQL);
+
+                    if (dtReader.HasRows == true)
                     {
-                        TempData["UserLoginFailed"] = "Login Failed.Please enter correct credentials";                    
-                        return RedirectToAction("Index", "Home");
-                    }
+                        dtReader.Read();
+                        if (dtReader["password"].ToString() == login.password)
+                        {
+                            var claims = new List<Claim>
+                    {
+                        
+                        new Claim(ClaimTypes.Role,"Admin", dtReader["idteacher"].ToString()),
+                        new Claim("username",dtReader["Name"].ToString()),
+                        new Claim("lastname",dtReader["skill"].ToString()),
+                       
+                        //วิธีเข้าถึง claim ที่สร้างเอง= User.FindFirst("username").Value;
+                        //วิธีเข้าถึงClaim ของฟังชั่น = User.Identity.Name; 
+                        //ตรวจสอบ  [Authorize]
+                        //ละเว้นการตรวจสอบ    [AllowAnonymous]
 
+
+                       
+                    };
+                            var claimsIdentity = new ClaimsIdentity(
+                            claims,
+                            CookieAuthenticationDefaults.AuthenticationScheme);
+
+                            await HttpContext.SignInAsync(
+                                CookieAuthenticationDefaults.AuthenticationScheme,
+                                new ClaimsPrincipal(claimsIdentity));
+                            return RedirectToAction("Index", "Backendteacher");
+                        }
+                        else
+                        {
+                            TempData["UserLoginfail"] = "Login Failed.Please enter correct NotAdmin";
+                            return RedirectToAction("Index", "Home");
+                        }
+
+                    }
                 }
 
             }
-            return RedirectToAction("Index");
+            return View();
         }
 
         public async Task<IActionResult> Logout()

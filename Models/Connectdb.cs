@@ -35,7 +35,7 @@ namespace netcore.Models
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM techer", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM teacher", conn);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -61,7 +61,7 @@ namespace netcore.Models
             MySqlConnection conn = GetConnection();
             MySqlCommand objCmd = new MySqlCommand();
 
-            strSQL = "INSERT INTO `student`(`idstudent`,`password`,`username`,`lastname`,`year`,`email`,`telephone`) VALUES ('"+regis.Idstudent + "','" + regis.password + "','"+ regis.Name + "','"+regis.Lastname + "','"+regis.Year + "','"+regis.Email + "','"+regis.Telephone+ "');";
+            strSQL = "INSERT INTO `student`(`idstudent`,`password`,`username`,`lastname`,`year`,`email`,`telephone`) VALUES ('"+regis.Idstudent + "','" + regis.Password + "','"+ regis.Name + "','"+regis.Lastname + "','"+regis.Year + "','"+regis.Email + "','"+regis.Telephone+ "');";
 
             conn.Open();
             objCmd.Connection = conn;

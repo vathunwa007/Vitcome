@@ -54,6 +54,11 @@ namespace netcore
             services.AddMvc(options =>
             {
                 options.Filters.Add(new AuthorizeFilter());
+                options.MaxModelValidationErrors = 50;
+                options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(
+          (_) => "The field is required.");
+                options.AllowValidatingTopLevelNodes = false;
+
             });
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
