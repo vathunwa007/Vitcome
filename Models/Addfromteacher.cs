@@ -10,8 +10,9 @@ namespace netcore.Models
 {
     public class Addfromteacher
     {
-            public string Name  { get; set; }
-            public string Form { get; set; }
+            public string name  { get; set; }
+            public string form { get; set; }
+
      }
     
 }

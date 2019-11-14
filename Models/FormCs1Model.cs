@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace netcore.Models
 {
@@ -13,11 +15,10 @@ namespace netcore.Models
         public string sector { get; set; }
         public string title { get; set; }
         public string titleEng { get; set; }
-
-        public string importance { get; set; }
+        public string importance { get; set; } 
         public string objective { get; set; }
         public string reasoning { get; set; }
-        public string timeimage { get; set; }
+        public IFormFile timeimage { get; set; }
         public string scope { get; set; }
         public string studentid { get; set; }
 

@@ -26,10 +26,10 @@
                         <th scope="col">ชื่ออาจารย์</th>
                         <th scope="col">สกิล</th>
                         <th scope="col">สถานะ</th>
-
+                        
                     </tr>
                 </thead>
-                <tbody>
+                <tbody
                     @foreach (var item in Model)
                     {
                         <tr onclick="window.open('../Teacher?id=@item.Id','_self','');">

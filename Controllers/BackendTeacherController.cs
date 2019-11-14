@@ -16,40 +16,81 @@ namespace netcore.Controllers
     {
         public IActionResult Index()
         {
-     
+
             Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
 
             return View(context.BackendTeachers());
         }
-        public IActionResult MainIndex()
+        [HttpGet]
+        public IActionResult MainIndex(int id)
         {
+           
+            Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+            string strSQL;
+            MySqlDataReader dtReader;
+            strSQL = "SELECT a.title,a.timeimage,b.username FROM savecs1 a Inner Join student b ON a.studentid=b.id WHERE a.studentid = '"+id+"' ";
+
+            dtReader = con.QueryDataReader(strSQL);
+
+
+            dtReader.Read();
+
+            ViewBag.id = id;
+            ViewBag.title = dtReader["title"].ToString();
+
+            ViewBag.timeimage = dtReader["timeimage"].ToString();
+
+            ViewBag.Name = dtReader["username"].ToString(); 
             return View();
         }
+        public IActionResult ShowData(showdata showdataform)
+        {
+
+            Connectdb show = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+            show.Showdata(showdataform);
+
+            return View("MainIndex");
+
+        }
+        [HttpGet]
+        public async Task<IActionResult> Comment(string comment,int idstudent,int status)
+        {
+
+            Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+            string strSQL;
+            MySqlDataReader dtReader;
+            strSQL = "UPDATE `student` SET comment = '"+comment+"', status= '"+status+"' WHERE `id` = "+idstudent+" ";
+            //dtReader = con.QueryDataReader(strSQL);
+            con.QueryDataTable(strSQL);
+            return View();
+
+        }
+
     }
 }
 
 
-/*public IActionResult MainIndex()
-{
+        /*public IActionResult MainIndex()
+        {
 
-    Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
-    string strSQL;
-    MySqlDataReader dtReader;
-    strSQL = "SELECT a.title,a.timeimage,b.username FROM savecs1 a Inner Join student b ON a.studentid=b.id WHERE b.idTeacher = 1";
+        Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+        string strSQL;
+        MySqlDataReader dtReader;
+        strSQL = "SELECT a.title,a.timeimage,b.username FROM savecs1 a Inner Join student b ON a.studentid=b.id WHERE b.idTeacher = 1";
 
-    dtReader = con.QueryDataReader(strSQL);
+        dtReader = con.QueryDataReader(strSQL);
 
 
-    dtReader.Read();
+        dtReader.Read();
 
-    ViewBag.username = dtReader["username"].ToString();
+        ViewBag.username = dtReader["username"].ToString();
 
-    ViewBag.title = dtReader["title"].ToString();
+        ViewBag.title = dtReader["title"].ToString();
 
-    ViewBag.timeimage = dtReader["timeimage"].ToString();
+        ViewBag.timeimage = dtReader["timeimage"].ToString();
 
-    return View();
-}*/
+        return View();
+    }*/
 
 
 

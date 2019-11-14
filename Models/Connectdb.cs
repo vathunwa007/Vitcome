@@ -143,15 +143,15 @@ namespace netcore.Models
 
         //------------------//
 
-        public void Addformteacher(Addfromteacher result)
+        /*public void Addformteacher(Addfromteacher result)
         {
 
             String strSQL;
             MySqlConnection conn = GetConnection();
             MySqlCommand objCmd = new MySqlCommand();
 
-            strSQL = "INSERT INTO `sendform`(`Name`,`Form`) VALUES" +
-                " ('" + result.Name + "','" + result.Form + "'); ";
+            strSQL = "INSERT INTO `Sendform`(`Name`,`Form`) VALUES" +
+                " ('" + result.name + "','" + result.form + "'); ";
 
             conn.Open();
             objCmd.Connection = conn;
@@ -171,14 +171,15 @@ namespace netcore.Models
 
             conn.Close();
 
-        }
-        public void Addcommemt(BackendTeacheraddform result)
+        }*/
+        
+        public void Addcommemt(showdata result)
         {
             String strSQL;
             MySqlConnection conn = GetConnection();
             MySqlCommand objCmd = new MySqlCommand();
 
-            strSQL = "INSERT INTO `student`(`comment`) VALUES" +" ('" + result.comment + "''); ";
+            strSQL = "INSERT INTO `student` VALUES" +" ('" + result.comment + "''); ";
 
             conn.Open();
             objCmd.Connection = conn;
@@ -226,6 +227,40 @@ namespace netcore.Models
 
             return list;
         }
+
+
+        public string Showdata(showdata showdataform)
+        {
+           
+            String strSQL;
+            MySqlConnection conn = GetConnection();
+            MySqlCommand objCmd = new MySqlCommand();
+
+            strSQL = "SELECT a.title,a.timeimage,b.username,b.id FROM savecs1 a Inner Join student b ON a.studentid=b.id";
+
+            conn.Open();
+            objCmd.Connection = conn;
+            objCmd.CommandText = strSQL;
+            objCmd.CommandType = CommandType.Text;
+            //MySqlDataReader reader = objCmd.ExecuteReader();
+            objCmd.ExecuteReader();
+
+
+            try
+            {
+                objCmd.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+            return null;
+        }
+
+
 
 
         //--------------

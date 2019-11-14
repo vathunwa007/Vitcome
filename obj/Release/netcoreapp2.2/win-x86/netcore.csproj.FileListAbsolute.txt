@@ -1,0 +1,46 @@
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dll
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dylib
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\wkhtmltox\v0.12.4\32 bit\libwkhtmltox.so
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dll
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dylib
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\wkhtmltox\v0.12.4\64 bit\libwkhtmltox.so
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\netcore.exe
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\netcore.deps.json
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\netcore.runtimeconfig.json
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\netcore.runtimeconfig.dev.json
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\netcore.dll
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\netcore.pdb
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\netcore.Views.dll
+C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\win-x86\netcore.Views.pdb
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.csprojAssemblyReference.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.csproj.CoreCompileInputs.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.RazorAssemblyInfo.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.RazorAssemblyInfo.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.AssemblyInfoInputs.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.AssemblyInfo.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.TagHelpers.input.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.TagHelpers.output.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.RazorCoreGenerate.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\BackendStudent\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\BackendTeacher\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\BackendTeacher\MainIndex.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\Checkstatus\index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\Home\Detail.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\Home\Techer.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\Print\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\Select\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\Teacher\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.RazorTargetAssemblyInfo.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.RazorTargetAssemblyInfo.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.Views.pdb
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.dll
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.pdb
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\win-x86\netcore.csproj.CopyComplete

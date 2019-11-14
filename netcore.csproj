@@ -16,6 +16,8 @@
     <DefineConstants></DefineConstants>
     <Optimize>false</Optimize>
     <DocumentationFile></DocumentationFile>
+	 
+
   </PropertyGroup>
 
 
@@ -54,7 +56,7 @@
     <None Remove="README.md" />
   </ItemGroup>
 
-<ItemGroup>
+	<ItemGroup>
   <None Update="log4net.config">
     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
