@@ -45,11 +45,7 @@ namespace netcore
         public void ConfigureServices(IServiceCollection services)
         {
 
-            var architectureFolder = (IntPtr.Size == 8) ? "64 bit" : "32 bit";
-            var wkHtmlToPdfPath = Path.Combine(_hostingEnvironment.ContentRootPath, $"wkhtmltox\\v0.12.4\\{architectureFolder}\\libwkhtmltox");
-            CustomAssemblyLoadContext context1 = new CustomAssemblyLoadContext();
-            context1.LoadUnmanagedLibrary(wkHtmlToPdfPath);
-            services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+           
             //-------------------------------------------------------------------------------------------
             services.AddMvc(options =>
             {

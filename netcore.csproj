@@ -61,29 +61,6 @@
     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
   </None>
-  <None Update="wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dll">
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-  </None>
-  <None Update="wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dylib">
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-  </None>
-  <None Update="wkhtmltox\v0.12.4\32 bit\libwkhtmltox.so">
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </None>
-  <None Update="wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dll">
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-  </None>
-  <None Update="wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dylib">
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-  </None>
-  <None Update="wkhtmltox\v0.12.4\64 bit\libwkhtmltox.so">
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-  </None>
   <None Update="wwwroot\**\*">
      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

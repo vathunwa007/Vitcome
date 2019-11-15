@@ -8,14 +8,19 @@
 <!---->
 <script>
     function fullteacher() {
-         swal("อาจารย์ท่านนี้มีนักศึกษายื้นหัวข้อครบจำนวนแล้วกรุณาเลือกอาจารย์ท่านอื่น!", {
-                        icon: "warning",
-                    });
+        swal("อาจารย์ท่านนี้มีนักศึกษายื้นหัวข้อครบจำนวนแล้วกรุณาเลือกอาจารย์ท่านอื่น!", {
+            icon: "warning",
+        });
     }
     function noPass() {
-         swal("กรุณาทำการกรอกแบบฟอร์ม CS1 ก่อนเลือกอาจารย์ที่ปรึกษา!", {
-                        icon: "warning",
-                    });
+        swal("กรุณาทำการกรอกแบบฟอร์ม CS1 ก่อนเลือกอาจารย์ที่ปรึกษา!", {
+            icon: "warning",
+        });
+    }
+    function teacherpass() {
+        swal("คุณได้ทำการยืนเสนอหัวข้อให้กับอาจารย์ที่ปรึกษาแล้ว!", {
+            icon: "warning",
+        });
     }
 
 </script>
@@ -39,36 +44,18 @@
                         <th scope="col">ชื่ออาจารย์</th>
                         <th scope="col">สกิล</th>
                         <th scope="col">สถานะ</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
-                    @if (ViewBag.Pass == true)
+                    @if (ViewBag.FormPass == true)
                     {
-                        @foreach (var item in Model)
+                        if (ViewBag.teacherpass == true)
                         {
-                            if (item.Status == 5)
+                            @foreach (var item in Model)
                             {
-                                <tr onclick="fullteacher();">
-                                    <!--<tr>-->
-                                    <!-- <th scope="row"><input type="checkbox" name="check" value="item.Id"aria-label="Checkbox for following text input"> </th>-->
-                                    <td>@item.Id</td>
-                                    <td>@item.Name</td>
-                                    <td>@item.Skill</td>
-                                    @if (@item.Status >= 5)
-                                    {
-                                        <td><p style="color:red;">@item.Status/5</p></td>
-                                    }
-                                    else
-                                    {
-                                        <td><p style="color:blue;">@item.Status/5</p></td>
-                                    }
-                                </tr>
 
-                            }
-                            else
-                            {
-                                <tr onclick="window.open('../Teacher?id=@item.Id ','_self','');">
+                                <tr onclick="teacherpass();">
                                     <!--<tr>-->
                                     <!-- <th scope="row"><input type="checkbox" name="check" value="item.Id"aria-label="Checkbox for following text input"> </th>-->
                                     <td>@item.Id</td>
@@ -83,33 +70,79 @@
                                         <td><p style="color:blue;">@item.Status/5</p></td>
                                     }
                                 </tr>
+                            }
+
+                        }
+                        else
+                        {
+                            @foreach (var item in Model)
+                            {
+                                if (item.Status == 5)
+                                {
+                                    <tr onclick="fullteacher();">
+                                        <!--<tr>-->
+                                        <!-- <th scope="row"><input type="checkbox" name="check" value="item.Id"aria-label="Checkbox for following text input"> </th>-->
+                                        <td>@item.Id</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Skill</td>
+                                        @if (@item.Status >= 5)
+                                        {
+                                            <td><p style="color:red;">@item.Status/5</p></td>
+                                        }
+                                        else
+                                        {
+                                            <td><p style="color:blue;">@item.Status/5</p></td>
+                                        }
+                                    </tr>
+
+                                }
+                                else
+                                {
+                                    <tr onclick="window.open('../Teacher?id=@item.Id ','_self','');">
+                                        <!--<tr>-->
+                                        <!-- <th scope="row"><input type="checkbox" name="check" value="item.Id"aria-label="Checkbox for following text input"> </th>-->
+                                        <td>@item.Id</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Skill</td>
+                                        @if (@item.Status >= 5)
+                                        {
+                                            <td><p style="color:red;">@item.Status/5</p></td>
+                                        }
+                                        else
+                                        {
+                                            <td><p style="color:blue;">@item.Status/5</p></td>
+                                        }
+                                    </tr>
+                                }
                             }
                         }
                     }
+
                     else
                     {
 
                         @foreach (var item in Model)
-                             {
+                        {
 
-                                <tr onclick="noPass();">
-                                    <!--<tr>-->
-                                    <!-- <th scope="row"><input type="checkbox" name="check" value="item.Id"aria-label="Checkbox for following text input"> </th>-->
-                                    <td>@item.Id</td>
-                                    <td>@item.Name</td>
-                                    <td>@item.Skill</td>
-                                    @if (@item.Status >= 5)
-                                    {
-                                        <td><p style="color:red;">@item.Status/5</p></td>
-                                    }
-                                    else
-                                    {
-                                        <td><p style="color:blue;">@item.Status/5</p></td>
-                                    }
-                                </tr>
-                               }
+                            <tr onclick="noPass();">
+                                <!--<tr>-->
+                                <!-- <th scope="row"><input type="checkbox" name="check" value="item.Id"aria-label="Checkbox for following text input"> </th>-->
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Skill</td>
+                                @if (@item.Status >= 5)
+                                {
+                                    <td><p style="color:red;">@item.Status/5</p></td>
+                                }
+                                else
+                                {
+                                    <td><p style="color:blue;">@item.Status/5</p></td>
+                                }
+                            </tr>
+                        }
                     }
-                    </tbody>
+
+                </tbody>
             </form>
         </table>
 

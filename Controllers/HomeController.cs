@@ -14,7 +14,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using netcore.Models;
-using netcore.Untity;
 using System.Data;
 using Microsoft.AspNetCore.Hosting;
 
@@ -96,13 +95,27 @@ namespace netcore.Controllers
             strSQL = "SELECT * FROM savecs1 WHERE studentid = '" + User.FindFirst("id").Value + "' ";
             dtReader = context.QueryDataReader(strSQL);
             dtReader.Read();
+            string strSQL2;
+            MySqlDataReader dtReader2;
+            strSQL2 = "SELECT * FROM student WHERE id = '" + User.FindFirst("id").Value + "' ";
+            dtReader2 = context.QueryDataReader(strSQL2);
+            dtReader2.Read();
+
             if (dtReader.HasRows == true)
             {
-                ViewBag.Pass = true;
+                ViewBag.FormPass = true;
             }
             else {
 
-                ViewBag.Pass = false;
+                ViewBag.FormPass = false;
+            }
+            if (dtReader2.GetInt64("idteacher") != 0) {
+
+                ViewBag.teacherpass = true;
+            }
+            else {
+
+                ViewBag.teacherpass = false;
             }
                 return View(context.GetAllTecher());
         }
@@ -306,49 +319,7 @@ namespace netcore.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpGet]
-        public IActionResult CreatePDF()
-        {
-
-            var globalSettings = new GlobalSettings
-            {
-                ColorMode = ColorMode.Color,
-                Orientation = Orientation.Portrait,
-                PaperSize = PaperKind.A4,
-                Margins = new MarginSettings { Top = 10 },
-                DocumentTitle = "PDF Report",
-                ViewportSize = "1920x1080",
-                DPI = 300
-            };
-
-            var objectSettings = new ObjectSettings
-            {
-                WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(), "assets", "main.css"), },
-
-
-                UseLocalLinks = false,
-                UseExternalLinks = false,
-                ProduceForms = false,
-
-                PagesCount = true,
-                HtmlContent = TemplateGenerator.GetHTMLString(),
-                //Page = "www.youtube.com",
-                HeaderSettings = { FontName = "Arial", FontSize = 9, Right = "Page [page] of [toPage]", Line = true },
-          
-                FooterSettings = { FontName = "Arial", FontSize = 9, Line = true, Center = "Report CS1" }
-
-            };
-
-            var pdf = new HtmlToPdfDocument()
-            {
-                GlobalSettings = globalSettings,
-                Objects = { objectSettings }
-            };
-
-            var file = _converter.Convert(pdf);
-            return File(file, "application/pdf");
-        }
-
+      
 
 
 
