@@ -83,21 +83,28 @@ namespace netcore.Controllers
                 return View();
             }
         }
+
         [Authorize(Roles = "Student")]
+        [HttpGet]
         public IActionResult Techer()
 
         {
-            ViewBag.show = User.FindFirst("username").Value;
-            ViewBag.show1 = User.FindFirst("lastname").Value;
-            ViewBag.show2 = User.FindFirst("year").Value;
-            ViewBag.show3 = User.FindFirst("email").Value;
-
-
-
 
             Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+            string strSQL;
+            MySqlDataReader dtReader;
+            strSQL = "SELECT * FROM savecs1 WHERE studentid = '" + User.FindFirst("id").Value + "' ";
+            dtReader = context.QueryDataReader(strSQL);
+            dtReader.Read();
+            if (dtReader.HasRows == true)
+            {
+                ViewBag.Pass = true;
+            }
+            else {
 
-            return View(context.GetAllTecher());
+                ViewBag.Pass = false;
+            }
+                return View(context.GetAllTecher());
         }
 
 

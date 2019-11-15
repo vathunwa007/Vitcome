@@ -10,10 +10,11 @@ namespace netcore.Models
 {
     public class Techer
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-         public string Skill { get; set; }
-        public int Status { get; set; }
+        public int Id {get; set;}
+        public string Name {get; set;}
+         public string Skill {get; set;}
+        public string image {get; set;}
+        public int Status {get; set;}
 
         
     }

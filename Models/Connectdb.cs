@@ -45,6 +45,7 @@ namespace netcore.Models
                             Id = reader.GetInt32("Id"),
                             Name = reader.GetString("Name"),
                             Skill = reader.GetString("Skill"),
+                            image = reader.GetString("image"),
                             Status = reader.GetInt32("Status")
                         });
                     }
