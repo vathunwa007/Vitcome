@@ -1,9 +1,3 @@
-C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dll
-C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dylib
-C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\wkhtmltox\v0.12.4\32 bit\libwkhtmltox.so
-C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dll
-C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dylib
-C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\wkhtmltox\v0.12.4\64 bit\libwkhtmltox.so
 C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\netcore.deps.json
 C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\netcore.runtimeconfig.json
 C:\Users\vathu\OneDrive\เอกสาร\netcore\bin\Release\netcoreapp2.2\netcore.runtimeconfig.dev.json
@@ -19,7 +13,6 @@ C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\net
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\netcore.TagHelpers.input.cache
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\netcore.TagHelpers.output.cache
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\netcore.RazorCoreGenerate.cache
-C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\Razor\Views\BackendStudent\Index.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\Razor\Views\BackendTeacher\Index.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\Razor\Views\BackendTeacher\MainIndex.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\Razor\Views\Checkstatus\index.g.cshtml.cs
@@ -43,3 +36,4 @@ C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\net
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\netcore.pdb
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\netcore.csproj.CopyComplete
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\netcore.csprojAssemblyReference.cache
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Release\netcoreapp2.2\Razor\Views\Print\Showcs1backend.g.cshtml.cs

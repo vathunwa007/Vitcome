@@ -1,23 +1,26 @@
 ﻿
 @{
     ViewData["Title"] = "index";
-    
+
 }
     <style>
         body {
         background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
     </style>
-<h2 style="text-align:center; color:white;">เช็คสถานะการรับของอาจารย์ที่ปรึกษา</h2>
+<h2 style="text-align:center; color:black;">เช็คสถานะการรับของอาจารย์ที่ปรึกษา</h2>
 <div class="row"style="padding-top:50px;">
-
+    @if (ViewBag.teacherid == null) {
+        <h2 style="color:red;">คุณยังไม่ได้เลือกอาจารย์ที่ปรึกษาในขณะนี้กรุณาไปหน้าเลือกอาจารย์ที่ปรึกษา</h2>
+    }
+    else { 
     <div class="card mb-3" style="width: 100%;">
         <div class="row no-gutters">
-            <div class="col-md-4">
+            <div class="col-4">
                 <img src="@ViewBag.teacherimage" class="card-img" alt="..."asp-append-version="true">
             </div>
-            <div class="col-md-8">
-                <div class="card-body" style=" position:absolute;bottom:70px;left:50px;">
+            <div class="col-8">
+                <div class="card-body" style=" bottom:70px;left:50px; margin-left:auto;">
                     <h5 class="card-title">ชื่ออาจารย์ : @ViewBag.teachername</h5>
                     <p class="card-text">ความถนัดพิเศษ : @ViewBag.teacherskill</p>
                     @if (ViewBag.teacherstatus == "0")
@@ -34,4 +37,5 @@
             </div>
         </div>
     </div>
+    }
 </div>

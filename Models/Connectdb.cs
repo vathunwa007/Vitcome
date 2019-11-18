@@ -203,14 +203,14 @@ namespace netcore.Models
 
 
 
-        public List<BackendTeacher> BackendTeachers()
+        public List<BackendTeacher> BackendTeachers(string idteacher)
         {
             List<BackendTeacher> list = new List<BackendTeacher>();
 
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT a.title,a.timeimage,b.username,b.id FROM savecs1 a Inner Join student b ON a.studentid=b.id", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT a.studentid,a.title,a.timeimage,b.comment,b.username,b.id,b.idteacher FROM savecs1 a Inner Join student b ON a.studentid=b.id WHERE b.idteacher = '" + idteacher+"' ", conn);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -220,7 +220,9 @@ namespace netcore.Models
                             id=reader.GetInt32("id"),
                             username = reader.GetString("username"),
                             title = reader.GetString("title"),
-                            timeimage = reader.GetString("timeimage")
+                            timeimage = reader.GetString("timeimage"),
+                            comment = reader.GetString("comment")
+
                         });
                     }
                 }

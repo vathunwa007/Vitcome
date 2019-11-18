@@ -18,8 +18,8 @@ namespace netcore.Controllers
         {
 
             Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
-
-            return View(context.BackendTeachers());
+            var idteacher = User.Identity.Name;
+            return View(context.BackendTeachers(idteacher));
         }
         [HttpGet]
         public IActionResult MainIndex(int id)
@@ -55,15 +55,41 @@ namespace netcore.Controllers
         [HttpGet]
         public async Task<IActionResult> Comment(string comment,int idstudent,int status)
         {
+            if (status == null)
+            {
 
-            Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
-            string strSQL;
-            MySqlDataReader dtReader;
-            strSQL = "UPDATE `student` SET comment = '"+comment+"', status= '"+status+"' WHERE `id` = "+idstudent+" ";
-            //dtReader = con.QueryDataReader(strSQL);
-            con.QueryDataTable(strSQL);
-            return View();
+                Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+                string strSQL;
+                MySqlDataReader dtReader;
+                strSQL = "UPDATE `student` SET comment = '" + comment + "', status= '" + status + "' WHERE `id` = " + idstudent + " ";
+                //dtReader = con.QueryDataReader(strSQL);
+                con.QueryDataTable(strSQL);
+                return RedirectToAction("Index", "BackendTeacher");
 
+            }
+            else
+            {
+                if (status == 2)
+                {
+                    Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+                    string strSQL;
+                    MySqlDataReader dtReader;
+                    strSQL = "UPDATE `student` SET idteacher = 0 ,comment = '', status= 0 WHERE `id` = " + idstudent + " ";
+                    //dtReader = con.QueryDataReader(strSQL);
+                    con.QueryDataTable(strSQL);
+                    return RedirectToAction("Index", "BackendTeacher");
+                }
+                else
+                {
+                    Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+                    string strSQL;
+                    MySqlDataReader dtReader;
+                    strSQL = "UPDATE `student` SET comment = '" + comment + "', status= '" + status + "' WHERE `id` = " + idstudent + " ";
+                    //dtReader = con.QueryDataReader(strSQL);
+                    con.QueryDataTable(strSQL);
+                    return RedirectToAction("Index","BackendTeacher");
+                }
+            }
         }
 
     }

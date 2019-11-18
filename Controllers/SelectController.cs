@@ -14,7 +14,6 @@ namespace netcore.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.show = User.Identity.Name;
 
 
             return View();

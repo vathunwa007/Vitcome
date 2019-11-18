@@ -6,28 +6,34 @@
 
     <p>ชื่อนักศึกษา:@ViewBag.name</p>
     <p>ชื่อเรื่องวิจัย:@ViewBag.title </p>
-    <p>Form cs1>> : @ViewBag.timeimage  </p> <a class="btn btn-primary" href="#" role="button">Download</a>
+    <p>Form cs1>> : @ViewBag.timeimage  </p>
+    <a class="btn btn-primary" href="../print/Showcs1backend?idstudent=@ViewBag.id" role="button">ดูข้อมูลCs1</a>
 
 
 
     <span>ให้สถานะนักศึกษา</span>
 
-    <form asp-action="Comment"  asp-controller="BackendTeacher" method="get">
+    <form asp-action="Comment" asp-controller="BackendTeacher" method="get">
         <div class="input-group input-group-lg">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-lg">Comment</span>
                 <input type="hidden" value="@ViewBag.id" id="idstudent" name="idstudent">
             </div>
-            <input type="text"  class="form-control" asp-for="comment" value="" placeholder="comment">
-            <p><input  type="radio" class="btn btn-lg " id="status"  name="status" value="1"> Pass<br></p>
-            <p><input type="radio" id="status"  name="status" value="0"> Fail<br></p>
+            <input type="text" class="form-control" asp-for="comment" value="" placeholder="comment">
+            <p><input type="radio" class="btn btn-lg " id="status" name="status" value="1"> Pass<br></p>
+            <p><input type="radio" id="status" name="status" value="2"> Fail<br></p>
 
 
 
 
-           <button type="submit" class="btn btn-danger">Comfrim</button>
-        </div>
-    </form>
+            <button type="submit" class="btn btn-danger">Comfrim</button>
+            <!--</div>
+     <div class="row">
+         <div class="col-4"><a href="#" class="btn btn-danger " style="width:100%;">ไม่รับนักศึกษาคนนี้</a></div>
+         <div class="col-4"><a href="#" class="btn btn-info " style="width:100%;">ไม่รับนักศึกษาคนนี้</a></div>
+         <div class="col-4"><a href="#" class="btn btn-success " style="width:100%;">ไม่รับนักศึกษาคนนี้</a></div>
+     </div>-->
+</form>
 </div>
 
 

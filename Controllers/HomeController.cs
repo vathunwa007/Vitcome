@@ -21,14 +21,14 @@ using Microsoft.AspNetCore.Hosting;
 namespace netcore.Controllers
 {
     //[ValidateAntiForgeryToken]
-    public class HomeController : Controller 
+    public class HomeController : Controller
     {
         private readonly RequestHandler _requestHandler;
         private IConverter _converter;
         private IHostingEnvironment _hostingEnvironment;
 
 
-        public HomeController(IConverter converter, RequestHandler requestHandler,IHostingEnvironment hostingEnvironment)
+        public HomeController(IConverter converter, RequestHandler requestHandler, IHostingEnvironment hostingEnvironment)
         {
             _converter = converter;
             _requestHandler = requestHandler;
@@ -38,7 +38,7 @@ namespace netcore.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
-      
+
 
             return View();
 
@@ -46,7 +46,7 @@ namespace netcore.Controllers
 
         public IActionResult Privacy()
         {
-           
+
 
             return View();
         }
@@ -59,12 +59,12 @@ namespace netcore.Controllers
             Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
             string strSQL;
             MySqlDataReader dtReader;
-            strSQL = "SELECT * FROM savecs1 WHERE studentid = '"+User.FindFirst("id").Value+"' ";
+            strSQL = "SELECT * FROM savecs1 WHERE studentid = '" + User.FindFirst("id").Value + "' ";
             dtReader = con.QueryDataReader(strSQL);
             dtReader.Read();
             if (dtReader.HasRows == true)
             {
-               
+
                 ViewBag.name = dtReader["name"].ToString();
                 ViewBag.lastname = dtReader["lastname"].ToString();
                 ViewBag.idstudent = dtReader["idstudent"].ToString();
@@ -77,8 +77,8 @@ namespace netcore.Controllers
                 ViewBag.timeimage = dtReader["timeimage"].ToString();
                 ViewBag.scope = dtReader["scope"].ToString();
                 return View();
-            }else{
-               
+            } else {
+
                 return View();
             }
         }
@@ -117,7 +117,7 @@ namespace netcore.Controllers
 
                 ViewBag.teacherpass = false;
             }
-                return View(context.GetAllTecher());
+            return View(context.GetAllTecher());
         }
 
 
@@ -138,7 +138,7 @@ namespace netcore.Controllers
                 context.Register(regis);
                 return RedirectToAction("Index", "Select");
             }
-            return View("Index"); 
+            return View("Index");
 
         }
 
@@ -160,12 +160,12 @@ namespace netcore.Controllers
             string strSQL;
             MySqlDataReader dtReader;
             strSQL = "INSERT INTO `savecs1`(`name`,`lastname`,`idstudent`,`sector`,`title`,`titleEng`,`importance`,`objective`,`reasoning`,`timeimage`,`scope`,`studentid`) VALUES" +
-                " ('" + result.name + "','" + result.lastname + "','" + result.idstudent + "','" + result.sector + "','" + result.title + "','" + result.titleEng + "','" + result.importance + "','" + result.objective + "','" + result.reasoning + "','" +namenew+ "','" + result.scope + "','" + User.FindFirst("id").Value + "'); ";
+                " ('" + result.name + "','" + result.lastname + "','" + result.idstudent + "','" + result.sector + "','" + result.title + "','" + result.titleEng + "','" + result.importance + "','" + result.objective + "','" + result.reasoning + "','" + namenew + "','" + result.scope + "','" + User.FindFirst("id").Value + "'); ";
 
             con.QueryDataSet(strSQL);
 
-           
-            
+
+
             return RedirectToAction("Detail", new { savecs1 = "success" });
         }
         [HttpPost]//----------------------------ฟั่งชั้นบันทึกแบบฟอร์ม CS1 ---------------------//
@@ -201,8 +201,8 @@ namespace netcore.Controllers
                 con.QueryDataSet(strSQL);
                 return RedirectToAction("Detail", new { update = "success" });
             }
-          
-           
+
+
         }
 
         [HttpPost]//----------------------------ฟั่งชันในการล็อกอิน--------------------------------------//
@@ -277,7 +277,7 @@ namespace netcore.Controllers
                         {
                             var claims = new List<Claim>
                     {
-                        
+                        new Claim(ClaimTypes.Name, dtReader["Id"].ToString()),
                         new Claim(ClaimTypes.Role,"Admin", dtReader["idteacher"].ToString()),
                         new Claim("username",dtReader["Name"].ToString()),
                         new Claim("lastname",dtReader["skill"].ToString()),
@@ -311,7 +311,7 @@ namespace netcore.Controllers
             }
             return View();
         }
-
+        [AllowAnonymous]
         public async Task<IActionResult> Logout()
         {
             HttpContext.SignOutAsync(

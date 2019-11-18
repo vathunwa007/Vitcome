@@ -36,3 +36,4 @@ C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\netco
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\BackendTeacher\Index.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\BackendTeacher\MainIndex.g.cshtml.cs
 C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Print\Index.g.cshtml.cs
+C:\Users\vathu\OneDrive\เอกสาร\netcore\obj\Debug\netcoreapp2.2\Razor\Views\Print\Showcs1backend.g.cshtml.cs

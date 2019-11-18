@@ -11,6 +11,6 @@
     <WebStackScaffolding_ControllerDialogWidth>600</WebStackScaffolding_ControllerDialogWidth>
     <WebStackScaffolding_DbContextDialogWidth>600</WebStackScaffolding_DbContextDialogWidth>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
-    <NameOfLastUsedPublishProfile>CustomProfile1</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>netcore20191117045542 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
