@@ -62,7 +62,7 @@ namespace netcore.Models
             MySqlConnection conn = GetConnection();
             MySqlCommand objCmd = new MySqlCommand();
 
-            strSQL = "INSERT INTO `student`(`idstudent`,`password`,`username`,`lastname`,`year`,`email`,`telephone`) VALUES ('"+regis.Idstudent + "','" + regis.Password + "','"+ regis.Name + "','"+regis.Lastname + "','"+regis.Year + "','"+regis.Email + "','"+regis.Telephone+ "');";
+            strSQL = "INSERT INTO `student`(`idstudent`,`password`,`username`,`lastname`,`year`,`email`,`telephone`,`idteacher`,`status`,`comment`) VALUES ('" + regis.Idstudent + "','" + regis.Password + "','"+ regis.Name + "','"+regis.Lastname + "','"+regis.Year + "','"+regis.Email + "','"+regis.Telephone+ "','0','0','0');";
 
             conn.Open();
             objCmd.Connection = conn;

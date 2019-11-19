@@ -311,6 +311,7 @@ namespace netcore.Controllers
             }
             return View();
         }
+        
         [AllowAnonymous]
         public async Task<IActionResult> Logout()
         {

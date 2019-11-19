@@ -48,17 +48,26 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Select" asp-action="index">เมนูหลัก</a>
                             </li>
+                            <div class="dropdown">
+                                <button class="nav-link text-dark dropdown-toggle"style="border:none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    เมนูยื่นเสนอหัวข้อวิจัย
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Techer">เลือกอาจารย์ที่ปรึกษา</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="detail">กรอกแบบฟอร์มCS1</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Checkstatus" asp-action="Index">เช็คผลการตอบรับ</a>
-                            </li>
 
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Techer">เลือกอาจารย์ที่ปรึกษา</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="detail">กรอกแบบฟอร์มCS1</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Checkstatus" asp-action="Index">เช็คผลการตอบรับ</a>
+                                    </li>
+
+
+                                </div>
+                            </div>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">ออกจากระบบ</a>
                             </li>
