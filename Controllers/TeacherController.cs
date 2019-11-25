@@ -14,7 +14,7 @@ namespace netcore.Controllers
     {
         // GET: /<controller>/
         [HttpGet]
-        public IActionResult Index(int id)
+        public IActionResult Index(int id,int idteacher)
         {
             Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
             string strSQL;
@@ -23,6 +23,7 @@ namespace netcore.Controllers
             dtReader = context.QueryDataReader(strSQL);
             dtReader.Read();
             ViewBag.id = id;
+            ViewBag.idteacher = idteacher;
             ViewBag.title = dtReader["title"].ToString();
             ViewBag.titleEng = dtReader["titleEng"].ToString();
             return View(context.GetAllTecher());
@@ -32,9 +33,12 @@ namespace netcore.Controllers
         public IActionResult Saveidteacher(int idteacher)
         {
             Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
-            string strSQL;
+            string strSQL, strSQL2;
             strSQL = "UPDATE `student` SET idteacher = '" + idteacher + "'WHERE id =  '"+User.FindFirst("id").Value+"'";
+            strSQL2 = "UPDATE `teacher` SET `Status` = Status+1 WHERE `teacher`.`Id` = '"+idteacher+"'";
+
             con.QueryDataSet(strSQL);
+            con.QueryDataSet(strSQL2);
 
             return RedirectToAction("Index","Checkstatus");
         }

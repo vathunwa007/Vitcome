@@ -22,29 +22,36 @@
             });
     }
 </script>
-<h3 style="text-align:center;">เลือก อ.ที่ปรึกษา </h3>
+<h3 style="text-align:center;">อาจารย์ที่ปรึกษา </h3>
 
 
-<form asp-action="saveidteacher" name="myForm"id="myForm" method="POST">
-    <div class="form-group card-body card">
-        <div class="row">
-            <div class="col-6">
-                <img src="@Model[@ViewBag.Id - 1].image" alt="Alternate Text" width="250" height="250" style="display:inline"/>
-               
+<form asp-action="saveidteacher" name="myForm" id="myForm" method="POST">
+
+    <div class="card" style="">
+        <div class="card-header">
+            ประวัติข้อมูลของอาจารย์ที่ปรึกษา
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                    <img src="@Model[@ViewBag.Id - 1].image" alt="Alternate Text" width="250" height="250" style="display:inline" />
+
+                </div>
+                <div class="col-6">
+                    <input type="hidden" name="idteacher" value="@ViewBag.idteacher" />
+                    <p>ลำดับที่ @ViewBag.Id</p>
+                    <p>ชื่ออาจารย์ : @Model[@ViewBag.Id - 1].Name</p>
+                    <p>ความถนัดด้านภาษา : @Model[@ViewBag.Id - 1].Skill</p>
+                    <span>ชื่อเรื่องวิจัยของคุณ</span>
+                    <span>@ViewBag.title @ViewBag.titleEng</span><br />
+                    <span>แนบฟอร์ม CS1 </span>
+                    <a href="../Print/Index" target="_blank" class=" btn-lg btn btn-info btn-warning btn-block">ดูฟอร์มCS1ของคุณ</a>
+                </div>
             </div>
-            <div class="col-6">
-                <input type="hidden" name="idteacher" value="@ViewBag.Id" />
-                <p>ลำดับที่ @ViewBag.Id</p>
-                <p>ชื่ออาจารย์ : @Model[@ViewBag.Id - 1].Name</p>
-                <p>ความถนัดด้านภาษา : @Model[@ViewBag.Id - 1].Skill</p>
-                <span>ชื่อเรื่องวิจัยของคุณ</span>
-                <span>@ViewBag.title @ViewBag.titleEng</span><br />
-                <span>แนบฟอร์ม CS1 </span>
-                <a href="../Print/Index" target="_blank" class=" btn-lg btn btn-info btn-warning btn-block">ดูฟอร์มCS1ของคุณ</a>
-            </div>
-            </div>
-        <button type="button" class="btn btn-info btn-lg btn-block" onclick="checksent()">ส่งเอกสารยื่นหัวข้อCS1</button>
-            </div>
+            <button type="button" class="btn btn-info btn-lg btn-block" onclick="checksent()">ส่งเอกสารยื่นหัวข้อCS1</button>
+
+        </div>
+
+    </div>
 
 </form>
-

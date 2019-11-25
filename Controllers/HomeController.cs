@@ -127,17 +127,51 @@ namespace netcore.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        [HttpPost]//-------------------------------------------ฟั่งชั่นในการสมัครสมาชิก----------------------------------------------------------------//
+        [HttpPost]//-------------------------------------------ฟั่งชั่นในการสมัครสมาชิกนักเรียน----------------------------------------------------------------//
         [AllowAnonymous]
-        public async Task<IActionResult> Save(Register regis)
+        public async Task<IActionResult> Registerstudent(Register regis)
         {
 
             if (ModelState.IsValid)
             {
                 Connectdb context = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
                 context.Register(regis);
-                return RedirectToAction("Index", "Select");
+                return RedirectToAction("Index", new { success = "success" });
             }
+            return View("Index");
+
+        }
+        //--------------------------------------------------สมัครสมาชิกสำหรับอาจารย์-----------------------------------------------------------------/
+        [AllowAnonymous]
+        public async Task<IActionResult> Registerteacher(Registerteacher registeacher,string lastname)
+        {
+
+            if (ModelState.IsValid)
+            {
+                Connectdb con = HttpContext.RequestServices.GetService(typeof(netcore.Models.Connectdb)) as Connectdb;
+                string strSQL;
+                MySqlDataReader dtReader;
+                strSQL = "INSERT INTO `teacher`(`idteacher`,`password`,`name`,`skill`,`email`,`telephone`,`image`) VALUES" +
+                    " ('" + registeacher.idteacher + "','" + registeacher.password + "','" + registeacher.name + lastname + "','" + registeacher.skill + "','" + registeacher.email + "','" + registeacher.telephone + "','" + registeacher.image + "'); ";
+               
+                    
+                try
+                {
+                    con.QueryDataTable(strSQL);
+
+                }
+                catch (Exception e)
+                {
+
+                    return RedirectToAction("Index", new { eror = "eror" });
+
+                }
+
+                con.Close();
+                return RedirectToAction("Index", new { success = "success" });
+
+            }
+
             return View("Index");
 
         }
@@ -188,6 +222,7 @@ namespace netcore.Controllers
 
                 con.QueryDataSet(strSQL);
                 return RedirectToAction("Detail", new { update = "success" });
+
             }
             else {
                 //------------------------------------------------------------อัพเดทข้อมูลในระบบถ้าไม่มีรูป--------------------------

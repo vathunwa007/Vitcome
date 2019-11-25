@@ -19,6 +19,8 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=K2D&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
     <style>
@@ -29,8 +31,16 @@
 
 
 
-    </style>
 
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('a').hover(
+                function () { $(this).addClass('animated infinite flash') },
+                function () { $(this).removeClass('animated infinite flash') }
+            )
+        });
+    </script>
 </head>
 
 <body>
@@ -42,14 +52,14 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav ">
                         @if (User.IsInRole("Student"))
                         {
-                            <li class="nav-item">
+                            <li class="nav-item ">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Select" asp-action="index">เมนูหลัก</a>
                             </li>
                             <div class="dropdown">
-                                <button class="nav-link text-dark dropdown-toggle"style="border:none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="nav-link text-dark dropdown-toggle" style="border:none;background-color:white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     เมนูยื่นเสนอหัวข้อวิจัย
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -68,9 +78,26 @@
 
                                 </div>
                             </div>
+                            <span class="glyphicon glyphicon-user"></span>
+
+
+
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">ออกจากระบบ</a>
                             </li>
+                            <div class="dropdown">
+                                <button class="nav-link text-dark dropdown-toggle " style="border:none;background-color:white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user"></i>
+
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link text-dark">@User.FindFirst("username").Value @User.FindFirst("lastname").Value</a>
+                                    </li>
+
+                                </div>
+                            </div>
+
                         }
                         @if (User.IsInRole("Admin"))
                         {
@@ -81,6 +108,18 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">ออกจากระบบ</a>
                             </li>
+                            <div class="dropdown">
+                                <button class="nav-link text-dark dropdown-toggle " style="border:none;background-color:white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user"></i>
+
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link text-dark">@User.FindFirst("username").Value</a>
+                                    </li>
+
+                                </div>
+                            </div>
                         }
                     </ul>
                 </div>

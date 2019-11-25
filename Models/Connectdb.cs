@@ -78,6 +78,7 @@ namespace netcore.Models
             {
 
                throw e;
+
             }
 
             conn.Close();
@@ -142,37 +143,6 @@ namespace netcore.Models
             return null;
         }
 
-        //------------------//
-
-        /*public void Addformteacher(Addfromteacher result)
-        {
-
-            String strSQL;
-            MySqlConnection conn = GetConnection();
-            MySqlCommand objCmd = new MySqlCommand();
-
-            strSQL = "INSERT INTO `Sendform`(`Name`,`Form`) VALUES" +
-                " ('" + result.name + "','" + result.form + "'); ";
-
-            conn.Open();
-            objCmd.Connection = conn;
-            objCmd.CommandText = strSQL;
-            objCmd.CommandType = CommandType.Text;
-
-            try
-            {
-                objCmd.ExecuteNonQuery();
-
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-
-            conn.Close();
-
-        }*/
         
         public void Addcommemt(showdata result)
         {
@@ -262,38 +232,6 @@ namespace netcore.Models
 
             return null;
         }
-
-
-
-
-        //--------------
-        /*public void Checkstatus()
-        {
-
-            var status = new Status();
-            //strSQL = "SELECT a.idstudent a.idTeacher,b.id,b.Skill FORM student a Inner Join techer b ON  a.idTeacher=b.id WHERE a.idstudent= '15' ";
-
-            using (MySqlConnection conn = GetConnection())
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM techer", conn);
-                using (MySqlDataReader reader = cmd.ExecuteReader())
-                {
-                  
-                        status.Add(new Status
-                        {
-                          Name = reader.GetString("Name"),
-                          Skill = reader.GetString("Skill")
-                        });
-                    
-                }
-            }
-
-            return status;
-
-        }
-        */
-
 
 
         internal class Models

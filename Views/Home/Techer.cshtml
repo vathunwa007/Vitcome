@@ -1,5 +1,7 @@
 @model List<Techer>
-
+@{
+    var count = 1;
+ }
 <style>
     body {
         /* background-image: url('https://images.pexels.com/photos/875858/pexels-photo-875858.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');*/
@@ -58,7 +60,7 @@
                                 <tr onclick="teacherpass();">
                                     <!--<tr>-->
                                     <!-- <th scope="row"><input type="checkbox" name="check" value="item.Id"aria-label="Checkbox for following text input"> </th>-->
-                                    <td>@item.Id</td>
+                                    <td>@count</td>
                                     <td>@item.Name</td>
                                     <td>@item.Skill</td>
                                     @if (@item.Status >= 5)
@@ -70,6 +72,8 @@
                                         <td><p style="color:blue;">@item.Status/5</p></td>
                                     }
                                 </tr>
+                                count = count + 1;
+
                             }
 
                         }
@@ -82,7 +86,7 @@
                                     <tr onclick="fullteacher();">
                                         <!--<tr>-->
                                         <!-- <th scope="row"><input type="checkbox" name="check" value="item.Id"aria-label="Checkbox for following text input"> </th>-->
-                                        <td>@item.Id</td>
+                                        <td>@count</td>
                                         <td>@item.Name</td>
                                         <td>@item.Skill</td>
                                         @if (@item.Status >= 5)
@@ -98,10 +102,10 @@
                                 }
                                 else
                                 {
-                                    <tr onclick="window.open('../Teacher?id=@item.Id ','_self','');">
+                                    <tr onclick="window.open('../Teacher?id=@count&idteacher=@count','_self','');">
                                         <!--<tr>-->
                                         <!-- <th scope="row"><input type="checkbox" name="check" value="item.Id"aria-label="Checkbox for following text input"> </th>-->
-                                        <td>@item.Id</td>
+                                        <td>@count</td>
                                         <td>@item.Name</td>
                                         <td>@item.Skill</td>
                                         @if (@item.Status >= 5)
@@ -114,6 +118,7 @@
                                         }
                                     </tr>
                                 }
+                                count = count + 1;
                             }
                         }
                     }
@@ -127,7 +132,7 @@
                             <tr onclick="noPass();">
                                 <!--<tr>-->
                                 <!-- <th scope="row"><input type="checkbox" name="check" value="item.Id"aria-label="Checkbox for following text input"> </th>-->
-                                <td>@item.Id</td>
+                                <td>@count</td>
                                 <td>@item.Name</td>
                                 <td>@item.Skill</td>
                                 @if (@item.Status >= 5)
@@ -139,6 +144,8 @@
                                     <td><p style="color:blue;">@item.Status/5</p></td>
                                 }
                             </tr>
+                           count = count + 1;
+
                         }
                     }
 
