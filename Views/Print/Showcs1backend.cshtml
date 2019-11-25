@@ -1,0 +1,133 @@
+﻿@model FormCs1Model
+<style>
+    input {
+        font-family: 'TH SarabunPSK';
+        font-size: 16pt;
+    }
+
+    @@media print {
+        footer {
+            display: none !important;
+        }
+    }
+</style>
+<script>
+    window.print();
+
+</script>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div>
+        <p style="text-align:right;">แบบCS1</p>
+        <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:18pt;">
+            <span style="height:0pt; text-align:left; display:block; position:absolute; z-index:0;">
+
+            </span><strong><span style="font-family:'TH SarabunPSK';">&nbsp;</span></strong><strong><span style="font-family:'TH SarabunPSK';">แบบเสนอหัวข้องานวิจัยทางเทคโนโลยีสารสนเทศ</span></strong>
+        </p>
+
+
+        <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:18pt;"><strong><span style="font-family:'TH SarabunPSK';">คณะวิทยาศาสตร์ &nbsp;มหาวิทยาลัยราชภัฏจันทรเกษม</span></strong></p>
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;">
+            <span style="font-family:'TH SarabunPSK';">1.&nbsp;</span><span style="font-family:'TH SarabunPSK';">รหัสประจำตัว</span><span style="font-family:'TH SarabunPSK';">&nbsp;</span><input style="border:none;width:100px;" type="text" name="" value="@Model.idstudent">
+            <span style="font-family:'TH SarabunPSK';">&nbsp; &nbsp;</span><span style="font-family:'TH SarabunPSK';">&nbsp;</span><span style="font-family:'TH SarabunPSK';">ชื่อ</span><span style="font-family:'TH SarabunPSK';">-</span><span style="font-family:'TH SarabunPSK';">สกุล</span>
+            <span style="font-family:'TH SarabunPSK';">&nbsp;</span><input style="border:none;width:200px;" type="text" value="@Model.name &nbsp; @Model.lastname">
+        </p>
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;">
+            <span style="font-family:'TH SarabunPSK';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'TH SarabunPSK';">นักศึกษา</span><span style="width:24.66pt; display:inline-block;">&nbsp;</span>
+            <strong><span style="font-family:Webdings; font-size:15pt;">☑</span></strong><strong><span style="font-family:'TH SarabunPSK'; font-size:10pt;">&nbsp;</span></strong>
+            <span style="font-family:'TH SarabunPSK';">@Model.sector</span>
+
+            <span style="font-family:'TH SarabunPSK';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'TH SarabunPSK';">ชั้นปี&nbsp;4&nbsp;หมู่เรียน&nbsp;วทบ.591(4)/2 &nbsp;</span><span style="font-family:'TH SarabunPSK';">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+        </p>
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">2.&nbsp;</span><span style="font-family:'TH SarabunPSK';">ชื่อหัวข้อที่นำเสนอ</span></p>
+        <p style="margin-top:0pt;margin-left:70.9pt;margin-bottom:0pt;text-indent:-70.9pt;font-size: 16pt;">
+            <span style="font-family:'TH SarabunPSK';">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'TH SarabunPSK';">ภาษาไทย</span><span style="font-family:'TH SarabunPSK';">&nbsp;</span><span style="width:16.74pt; text-indent:0pt; display:inline-block;">&nbsp;</span>
+            <input style="border:none;width:500px;" type="text" name="" value="@Model.title">
+        </p>
+        <p style="margin-top:0pt; margin-left:70.9pt; margin-bottom:0pt; text-indent:-70.9pt; font-size:16pt;">
+            <span style="font-family:'TH SarabunPSK';">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'TH SarabunPSK';">ภาษาอังกฤษ</span><span style="font-family:'TH SarabunPSK';">&nbsp;</span>&nbsp;<input style="border:none;width:500px;" type="text" name="" value="@Model.titleEng">
+        </p>
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">3.&nbsp;</span><span style="font-family:'TH SarabunPSK';">ความเป็นมาและความสำคัญของปัญหา</span></p>
+        <p style="text-indent: 0px; margin-top: 0pt; margin-bottom: 0pt; font-size: 16pt;"><span style="font-family: &quot;TH SarabunPSK&quot;; font-size: 16pt; text-indent: 35.3pt;">&nbsp; &nbsp; @Model.importance </span></p>
+
+        <p style="margin-top:0pt; margin-bottom:0pt; text-indent:35.45pt; text-align:justify; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">4.</span><span style="font-family:'TH SarabunPSK';">วัตถุประสงค์</span></p>
+        <p style="text-indent: 0px; margin-top: 0pt; margin-bottom: 0pt; font-size: 16pt;"><span style="font-family: &quot;TH SarabunPSK&quot;; font-size: 16pt; text-indent: 35.3pt;">&nbsp; &nbsp; @Model.objective </span></p>
+
+
+        <p style="margin-top:0pt; margin-bottom:0pt; text-indent:35.45pt; text-align:justify; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">4.</span><span style="font-family:'TH SarabunPSK';">หลักการ ทฤษฏีและเหตุผล</span></p>
+        <p style="text-indent: 0px; margin-top: 0pt; margin-bottom: 0pt; font-size: 16pt;"><span style="font-family: &quot;TH SarabunPSK&quot;; font-size: 16pt; text-indent: 35.3pt;">&nbsp; &nbsp; @Model.importance </span></p>
+
+
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+        <table cellpadding="0" cellspacing="0" style="width:524.6pt; margin-right:9pt; margin-left:9pt; border:0.75pt solid #000000; border-collapse:collapse; float:left;">
+        </table>
+        <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">6.&nbsp;</span><span style="font-family:'TH SarabunPSK';">ระยะเวลาดำเนินการ</span></p>
+
+        <img src="~/img/@ViewBag.timeimage" class="card-img-top" alt="image plane CS1">
+
+    </div>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">7.&nbsp;</span><span style="font-family:'TH SarabunPSK';">แผนการดำเนินงาน</span><span style="font-family:'TH SarabunPSK';">&nbsp;</span><span style="font-family:'TH SarabunPSK';">ขอบเขตการศึกษา</span></p>
+    <p style="text-indent: 0px; margin-top: 0pt; margin-bottom: 0pt; font-size: 16pt;"><span style="font-family: &quot;TH SarabunPSK&quot;; font-size: 16pt; text-indent: 35.3pt;">&nbsp; &nbsp; @Model.scope </span></p>
+
+
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><br></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">9</span><span style="font-family:'TH SarabunPSK';">.&nbsp;</span><span style="font-family:'TH SarabunPSK';">ความคิดเห็นของอาจารย์ที่ปรึกษา</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">..............................................................................................................................................</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+    <p style="text-align:center;margin-top:0pt; margin-bottom:0pt; font-size:16pt;">
+        <span style="width:36pt; display:inline-block;">&nbsp;</span><span style="width:36pt; display:inline-block;">&nbsp;</span><span style="width:36pt; display:inline-block;">&nbsp;</span><span style="font-family:'TH SarabunPSK';">ลงชื่อ</span>
+        <span style="font-family:'TH SarabunPSK';">.....................................................</span><span style="font-family:'TH SarabunPSK';">อาจารย์ที่ปรึกษา</span>
+    </p>
+    <p style="text-align:center;margin-top:0pt;margin-bottom:0pt;font-size: 12pt;">
+        <span style="width:108.94pt; display:inline-block;"></span><span style="font-family:'TH SarabunPSK';">&nbsp; (</span>
+        <input style="border:none" type="text" name="" value="@Model.studentid">
+
+        <span style="font-family:'TH SarabunPSK';">&nbsp;)</span>
+    </p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">11.&nbsp;</span><span style="font-family:'TH SarabunPSK';">ความเห็นของประธานหลักสูตร</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:16pt;"><span style="font-family:'TH SarabunPSK';">&nbsp;</span></p>
+    <p style="text-align:center;margin-top:0pt; margin-bottom:0pt; font-size:16pt;">
+        <span style="width:36pt; display:inline-block;">&nbsp;</span><span style="width:36pt; display:inline-block;">&nbsp;</span><strong><span style="font-family:Webdings; font-size:14pt;"></span></strong><strong><span style="font-family:'TH SarabunPSK';">&nbsp;</span></strong><strong><span style="font-family:'TH SarabunPSK';">&nbsp;</span></strong>
+        <span style="font-family:'TH SarabunPSK';">อนุมัติ</span><span style="font-family:'TH SarabunPSK';">&nbsp;&nbsp;&nbsp;</span><span style="width:30.88pt; display:inline-block;">&nbsp;</span><span style="width:36pt; display:inline-block;">&nbsp;</span><strong><span style="font-family:Webdings; font-size:14pt;"></span></strong><strong><span style="font-family:'TH SarabunPSK';">&nbsp;</span></strong><strong><span style="font-family:'TH SarabunPSK';">&nbsp;</span></strong>
+        <span style="font-family:'TH SarabunPSK';">ไม่อนุมัติ</span>
+    </p>
+    <h1 style="margin-top:0pt; margin-bottom:0pt; page-break-after:avoid; font-size:16pt;"><span style="font-family:'TH SarabunPSK'; font-weight:normal;">&nbsp;</span></h1>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span style="font-family:'Times New Roman';">&nbsp;</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span style="font-family:'Times New Roman';">&nbsp;</span></p>
+    <h1 style="text-align:center;margin-top:0pt; margin-bottom:0pt; page-break-after:avoid; font-size:16pt;">
+        <span style="font-family:'TH SarabunPSK'; font-weight:normal;">&nbsp;&nbsp;&nbsp;</span><span style="font-family:'TH SarabunPSK'; font-weight:normal;">&nbsp;&nbsp;</span><span style="width:110pt; display:inline-block;">&nbsp;</span><span style="font-family:'TH SarabunPSK'; font-weight:normal;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span style="font-family:'TH SarabunPSK'; font-weight:normal;">ลงชื่อ</span><span style="font-family:'TH SarabunPSK';">.....................................................</span>
+        <span style="font-family:'TH SarabunPSK'; font-weight:normal;">ประธานหลักสูตร</span>
+    </h1>
+    <p style="text-align:center;margin-top:0pt; margin-bottom:0pt; font-size:16pt;">
+        <span style="width:28.35pt; display:inline-block;">&nbsp;</span><span style="font-family:'TH SarabunPSK';">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span style="font-family:'TH SarabunPSK';">(</span>
+        <input style="border:none" type="text" name="" value="@Model.studentid"><span style="font-family:'TH SarabunPSK';">&nbsp;)</span>
+    </p>
+    </div>
+
+
+</body>
+
+</html>

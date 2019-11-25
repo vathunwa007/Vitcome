@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAro9QfYUZnkKGr+pAlbkXmQAAAAACAAAAAAAQZgAAAAEAACAAAADK7dlgOaSqwWvkGbjOZTwt8pS6sjk9I90zAr8XKcQfyAAAAAAOgAAAAAIAACAAAADg5wKi5MedjfxKRPBBn72mR3ja84CFT6Xfgs02rBR2UCAAAACOCHUD96oqv01dHDmRCeCijvZzIUUOUdqVyquNgjZZk0AAAADTa68iFw9cAKw0YenNdtAnzzbH6TU+JT9jUkVWg7fhLoq+6oqYHKvyuhRoD/iH9bWXUenS2QSknU020niM+K4A</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>server=remotemysql.com%3bport=3306%3bdatabase=ULHWnv9pZS%3buser=ULHWnv9pZS%3bpassword=888n6QZPAX%3bcharset=utf8</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
