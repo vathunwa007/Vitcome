@@ -16,6 +16,8 @@
     <DefineConstants></DefineConstants>
     <Optimize>false</Optimize>
     <DocumentationFile></DocumentationFile>
+	 
+
   </PropertyGroup>
 
 
@@ -38,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Identity\" />
     <Folder Include="Views\Teacher\" />
   </ItemGroup>
   <ItemGroup>
@@ -53,33 +56,10 @@
     <None Remove="README.md" />
   </ItemGroup>
 
-<ItemGroup>
+	<ItemGroup>
   <None Update="log4net.config">
     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-  </None>
-  <None Update="wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dll">
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-  </None>
-  <None Update="wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dylib">
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-  </None>
-  <None Update="wkhtmltox\v0.12.4\32 bit\libwkhtmltox.so">
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </None>
-  <None Update="wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dll">
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-  </None>
-  <None Update="wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dylib">
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-  </None>
-  <None Update="wkhtmltox\v0.12.4\64 bit\libwkhtmltox.so">
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </None>
   <None Update="wwwroot\**\*">
      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

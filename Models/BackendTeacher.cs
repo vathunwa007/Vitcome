@@ -15,7 +15,8 @@ namespace netcore.Models
         public string username { get; set; }
         public string title { get; set; }
         public string timeimage { get; set; }
-        
+        public string comment { get; set; }
+
 
     }
 }

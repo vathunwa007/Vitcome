@@ -1,29 +1,41 @@
 ﻿
 @{
     ViewData["Title"] = "index";
-    
+
 }
     <style>
         body {
-        background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
     </style>
-<h2 style="text-align:center; color:white;">เช็คสถานะการรับของอาจารย์ที่ปรึกษา</h2>
+<h2 style="text-align:center; color:black;">เช็คสถานะการรับของอาจารย์ที่ปรึกษา</h2>
 <div class="row"style="padding-top:50px;">
-
-    <div class="card mb-3" style="width: 100%;">
+    @if (ViewBag.teacherid == null) {
+        <h2 style="color:red;">คุณยังไม่ได้เลือกอาจารย์ที่ปรึกษาในขณะนี้กรุณาไปหน้าเลือกอาจารย์ที่ปรึกษา</h2>
+    }
+    else { 
+    <div class="card mb-3" style="width: 100%;height:400px;">
         <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="https://pickaface.net/assets/images/slides/slide2.png" class="card-img" alt="..."asp-append-version="true">
+            <div class="col-4">
+                <img src="@ViewBag.teacherimage" class="card-img" alt="..."asp-append-version="true" height="400px;">
             </div>
-            <div class="col-md-8">
-                <div class="card-body"style=" position:absolute;bottom:70px;left:50px;">
-                    <h5 class="card-title">ชื่ออาจารย์ : เบิดร์  ธงไทย</h5>
-                    <p class="card-text">ความถนัดพิเศษ :  javaprogramming และ Algrolithem.</p>
-                    <p>สถานะการตอบรับ :<a href="#">ยังไม่ตอบรับ</a></p>
+            <div class="col-8">
+                <div class="card-body" style=" bottom:70px;left:50px; margin-left:auto;">
+                    <h5 class="card-title">ชื่ออาจารย์ : @ViewBag.teachername</h5>
+                    <p class="card-text">ความถนัดพิเศษ : @ViewBag.teacherskill</p>
+                    @if (ViewBag.teacherstatus == "0")
+                    {
+                        <p>สถานะการตอบรับ :<a href="#">ยังไม่ตอบรับ</a></p>
+                    }
+                    else
+                    {
+                        <p>สถานะการตอบรับ :<a href="#">ตอบรับเรียบร้อยแล้ว</a></p>
+
+                    }
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
         </div>
     </div>
+    }
 </div>

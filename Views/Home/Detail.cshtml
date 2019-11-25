@@ -1,88 +1,240 @@
 
-@model FormCs1Model 
+@model FormCs1Model
+<script>
+    function findGetParameter(parameterName) {
+        var result = null,
+            tmp = [];
+        location.search
+            .substr(1)
+            .split("&")
+            .forEach(function (item) {
+                tmp = item.split("=");
+                if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+            });
+        return result;
+    }
+    var update = findGetParameter('update');
+    var savecs1 = findGetParameter('savecs1');
+    if (update == "success") {
+        swal("อัพเดทแบบฟอร์มสำเร็จแล้วครับ", "กรุณกดปุ่มข้างล่างเพื่อดำเนินการต่อ!", "success");
+    }
+    if (savecs1 == "success") {
+        swal("บันทึกแบบฟอร์มสำเร็จแล้วครับ", "กรุณกดปุ่มข้างล่างเพื่อดำเนินการต่อ!", "success");
+    }
+</script>
 <style>
     .form-check {
         display: inline;
     }
 </style>
-<h3 style="text-align:center;"><b>แบบฟอร์มยืนหัวข้องานวิจัยทางเทคโนโลยีสารสนเทศ <br>คณะวิทยาศาสตร์ มหาวิทยาลัยราชภัฎจันทรเกษม</h3>
-<div class="card-body card ">
-    <form asp-action="SaveCs1" method="get">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">ชื่อ</label>
-                <input type="text" asp-for="name" class="form-control" name="name" placeholder="ชื่อ">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">นามสกุล</label>
-                <input type="text" asp-for="lastname" class="form-control" name="lastname" placeholder="นามสกุล">
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-lg-6">
-                <label for="inputAddress">รหัสนักศึกษา</label>
-                <input type="text" class="form-control "asp-for="idstudent" name="idstudent" placeholder="รหัสนักศึกษา">
-            </div>
-            <div class="form-group col-lg-6" style="display:inline-block;padding-top:3%;">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="sector"id="gridCheck"value="ภาคในเวลา">
-                    <label class="form-check-label" for="gridCheck">
-                        ภาคในเวลา
-                    </label>
+@if (ViewBag.name != null)
+{
+    <h3 style="text-align:center;"><b>แบบฟอร์มยืนหัวข้องานวิจัยทางเทคโนโลยีสารสนเทศ <br>คณะวิทยาศาสตร์ มหาวิทยาลัยราชภัฎจันทรเกษม</h3>
+    <div class="card-body card ">
+        <form asp-action="updatecs1" asp-controller="Home" method="post" enctype="multipart/form-data">
 
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">ชื่อ</label>
+                    <input type="text" asp-for="name" class="form-control" name="name" placeholder="ชื่อ" value="@ViewBag.name">
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="sector"id="gridCheck"value="ภาคนอกเวลา">
-                    <label class="form-check-label" for="gridCheck">
-                        ภาคนอกเวลา
-                    </label>
-
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">นามสกุล</label>
+                    <input type="text" asp-for="lastname" class="form-control" name="lastname" placeholder="นามสกุล" value="@ViewBag.lastname">
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-lg-6">
-                <label for="inputAddress2">ชื่อหัวข้อที่นำเสนอ</label>
-                <input type="text" class="form-control"asp-for="title" placeholder="กรุณาใส่ชื่อหัวข้อ">
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label for="inputAddress">รหัสนักศึกษา</label>
+                    <input type="text" class="form-control " asp-for="idstudent" name="idstudent" placeholder="รหัสนักศึกษา" value="@ViewBag.idstudent">
+                </div>
+                <div class="form-group col-lg-6" style="display:inline-block;padding-top:3%;">
+                    @if (ViewBag.sector == "ภาคในเวลา")
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="sector" id="gridCheck" value="ภาคในเวลา" checked>
+                            <label class="form-check-label" for="gridCheck">
+                                ภาคในเวลา
+                            </label>
+
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="sector" id="gridCheck" value="ภาคนอกเวลา">
+                            <label class="form-check-label" for="gridCheck">
+                                ภาคนอกเวลา
+                            </label>
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="sector" id="gridCheck" value="ภาคในเวลา">
+                            <label class="form-check-label" for="gridCheck">
+                                ภาคในเวลา
+                            </label>
+
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="sector" id="gridCheck" value="ภาคนอกเวลา" checked>
+                            <label class="form-check-label" for="gridCheck">
+                                ภาคนอกเวลา
+                            </label>
+
+                        </div>
+                    }
+                </div>
             </div>
-            <div class="form-group col-lg-6">
-                <label for="inputAddress2">ชื่อหัวข้อที่นำเสนอภาษาอังกฤษ</label>
-                <input type="text" class="form-control" asp-for="titleEng" placeholder="กรุณาใส่ชื่อหัวข้อภาษาอังกฤษ">
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label for="inputAddress2">ชื่อหัวข้อที่นำเสนอ</label>
+                    <input type="text" class="form-control" asp-for="title" placeholder="กรุณาใส่ชื่อหัวข้อ" value="@ViewBag.title">
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="inputAddress2">ชื่อหัวข้อที่นำเสนอภาษาอังกฤษ</label>
+                    <input type="text" class="form-control" asp-for="titleEng" placeholder="กรุณาใส่ชื่อหัวข้อภาษาอังกฤษ" value="@ViewBag.titleEng">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="inputAddress2">ความเป็นมาและความสำคัญ</label>
-            <textarea class="form-control"asp-for="importance" aria-label="With textarea" placeholder="กรุณาใส่ความเป็นมาและความสำคัญ"></textarea>
+            <div class="form-group">
+                <label for="inputAddress2">ความเป็นมาและความสำคัญ</label>
+                <textarea class="form-control" aria-label="With textarea" name="importance" placeholder="กรุณาใส่ความเป็นมาและความสำคัญ">@ViewBag.importance</textarea>
 
-        </div>
-        <div class="form-group">
-            <label for="inputAddress2">วัตถุประสงค์</label>
-            <textarea class="form-control"asp-for="objective" aria-label="With textarea" placeholder="กรุณาใส่วัตถุประสงค์"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">วัตถุประสงค์</label>
+                <textarea class="form-control" name="objective" aria-label="With textarea" placeholder="กรุณาใส่วัตถุประสงค์">@ViewBag.objective</textarea>
 
-        </div>
-        <div class="form-group">
-            <label for="inputAddress2">หลักการทถษฏีและเหตุผล</label>
-            <textarea class="form-control" asp-for="reasoning"id="With textarea"  placeholder="กรุณาใส่หลักการทฤษฏีและเหตุผล"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">หลักการทถษฏีและเหตุผล</label>
+                <textarea class="form-control" name="reasoning" id="With textarea" placeholder="กรุณาใส่หลักการทฤษฏีและเหตุผล">@ViewBag.reasoning</textarea>
 
-        </div>
-        <label for="inputAddress2">ระยะเวลาดำเนินการ</label>
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile01"asp-for="timeimage" aria-describedby="inputGroupFileAddon01">
-            <label class="custom-file-label" for="inputGroupFile01">กรุณาใส่แผนภาพGantChart หรือไฟล์.CSV</label>
-        </div>
-        <div class="form-group">
-            <label for="inputAddress2">แผนการดำเนินงาน ขอบเขตการศึกษา</label>
-            <textarea class="form-control"asp-for="scope" aria-label="With textarea" placeholder="กรุณาใส่แผนการดำเนินงาน และขอบเขตการศึกษา"></textarea>
+            </div>
+            <label for="inputAddress2">ระยะเวลาดำเนินการ</label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="timeimage" asp-for="timeimage" aria-describedby="inputGroupFileAddon01" value="@ViewBag.timeimage">
+                <label class="custom-file-label" for="inputGroupFile01">กรุณาใส่แผนภาพGantChart หรือไฟล์.CSV  </label>
+            </div>
+            <div>
+                <img src="~/img/@ViewBag.timeimage" class="card-img-top" alt="image plane CS1">
 
-        </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">แผนการดำเนินงาน ขอบเขตการศึกษา</label>
+                <textarea class="form-control" name="scope" aria-label="With textarea" placeholder="กรุณาใส่แผนการดำเนินงาน และขอบเขตการศึกษา">@ViewBag.scope</textarea>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-info btn-lg btn-block" style="color:white;">อัพเดทข้อมูล CS1</button>
+
+
+            <a href="../Print/Index" target="_blank" class=" btn-lg btn btn-success btn-lg btn-block">Print</a>
+
+        </form>
+
+    </div>
+    <br>
+}
+else
+{
+
+
+    <h3 style="text-align:center;"><b>แบบฟอร์มยืนหัวข้องานวิจัยทางเทคโนโลยีสารสนเทศ <br>คณะวิทยาศาสตร์ มหาวิทยาลัยราชภัฎจันทรเกษม</h3>
+    <div class="card-body card ">
+        <form asp-action="SaveCs1" asp-controller="Home" method="post" enctype="multipart/form-data">
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">ชื่อ</label>
+                    <input type="text" asp-for="name" class="form-control" name="name" placeholder="ชื่อ" value="@ViewBag.name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">นามสกุล</label>
+                    <input type="text" asp-for="lastname" class="form-control" name="lastname" placeholder="นามสกุล" value="@ViewBag.lastname">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label for="inputAddress">รหัสนักศึกษา</label>
+                    <input type="text" class="form-control " asp-for="idstudent" name="idstudent" placeholder="รหัสนักศึกษา" value="@ViewBag.idstudent">
+                </div>
+                <div class="form-group col-lg-6" style="display:inline-block;padding-top:3%;">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="sector" id="gridCheck" value="ภาคในเวลา">
+                        <label class="form-check-label" for="gridCheck">
+                            ภาคในเวลา
+                        </label>
+
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="sector" id="gridCheck" value="ภาคนอกเวลา">
+                        <label class="form-check-label" for="gridCheck">
+                            ภาคนอกเวลา
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label for="inputAddress2">ชื่อหัวข้อที่นำเสนอ</label>
+                    <input type="text" class="form-control" asp-for="title" placeholder="กรุณาใส่ชื่อหัวข้อ" value="@ViewBag.title">
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="inputAddress2">ชื่อหัวข้อที่นำเสนอภาษาอังกฤษ</label>
+                    <input type="text" class="form-control" asp-for="titleEng" placeholder="กรุณาใส่ชื่อหัวข้อภาษาอังกฤษ" value="@ViewBag.titleEng">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">ความเป็นมาและความสำคัญ</label>
+                <textarea class="form-control" aria-label="With textarea" name="importance" placeholder="กรุณาใส่ความเป็นมาและความสำคัญ">@ViewBag.importance</textarea>
+
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">วัตถุประสงค์</label>
+                <textarea class="form-control" name="objective" aria-label="With textarea" placeholder="กรุณาใส่วัตถุประสงค์">@ViewBag.objective</textarea>
+
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">หลักการทถษฏีและเหตุผล</label>
+                <textarea class="form-control" name="reasoning" id="With textarea" placeholder="กรุณาใส่หลักการทฤษฏีและเหตุผล">@ViewBag.reasoning</textarea>
+
+            </div>
+            <label for="inputAddress2">ระยะเวลาดำเนินการ</label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01" asp-for="timeimage" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="inputGroupFile01">กรุณาใส่แผนภาพGantChart หรือไฟล์.CSV  </label>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAddress2">แผนการดำเนินงาน ขอบเขตการศึกษา</label>
+                <textarea class="form-control" name="scope" aria-label="With textarea" placeholder="กรุณาใส่แผนการดำเนินงาน และขอบเขตการศึกษา">@ViewBag.scope</textarea>
+
+            </div>
 
 
 
-        <button type="submit" class="btn btn-info btn-lg btn-block" style="color:white;">บันทึกฟอร์ม CS1</button>
-    </form>
-    <a  href="CreatePDF"target="_blank">Print</a>
-    <p>@ViewBag.showsession</p>
-</div>
-<br>
+            <button type="submit" class="btn btn-info btn-lg btn-block" style="color:white;">บันทึกฟอร์ม CS1</button>
 
+
+            <a href="../Print/Index" target="_blank" class=" btn-lg btn btn-success btn-lg btn-block">Print</a>
+
+        </form>
+
+
+    </div>
+    <br>
+}
+
+<script type="text/javascript">
+    $(function () {
+
+        $("#inputGroupFile01").on("change", function () {
+            var _fileName = $(this).val();
+            $(this).next(".custom-file-label").text(_fileName);
+        });
+
+    });
+</script>
 

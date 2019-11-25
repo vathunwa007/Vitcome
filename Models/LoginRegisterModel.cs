@@ -9,6 +9,7 @@ namespace netcore.Models
     {
         public LoginModel login{get;set;}
         public Register regis { get; set; }
+        public Registerteacher registeacher { get; set; }
 
 
 

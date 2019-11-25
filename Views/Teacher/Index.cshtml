@@ -13,7 +13,7 @@
                     swal("คุณได้ทำการส่งฟอร์มCS1เรียบร้อยแล้วครับ!", {
                         icon: "success",
                     });
-                    window.location.assign("home/index")
+                    document.getElementById("myForm").submit();
 
 
                 } else {
@@ -22,16 +22,36 @@
             });
     }
 </script>
-<h3 style="text-align:center;">เลือก อ.ที่ปรึกษา </h3>
-<p>ลำดับที่ @ViewBag.Id</p>
-<p>@Model[@ViewBag.Id-1].Name</p>
+<h3 style="text-align:center;">อาจารย์ที่ปรึกษา </h3>
 
-<form asp-action="Detail" name="myform" method="POST">
-    <div class="form-group card-body card">
-        <span>ชื่อเรื่องวิจัย</span><input class="form-control" type="text" name="idstudent" value="">
-        <span>แนบฟอร์ม CS1 </span>
-        <input class="form-control" type="file" name="file" id="">
-</form>
+
+<form asp-action="saveidteacher" name="myForm" id="myForm" method="POST">
+
+    <div class="card" style="">
+        <div class="card-header">
+            ประวัติข้อมูลของอาจารย์ที่ปรึกษา
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                    <img src="@Model[@ViewBag.Id - 1].image" alt="Alternate Text" width="250" height="250" style="display:inline" />
+
+                </div>
+                <div class="col-6">
+                    <input type="hidden" name="idteacher" value="@ViewBag.idteacher" />
+                    <p>ลำดับที่ @ViewBag.Id</p>
+                    <p>ชื่ออาจารย์ : @Model[@ViewBag.Id - 1].Name</p>
+                    <p>ความถนัดด้านภาษา : @Model[@ViewBag.Id - 1].Skill</p>
+                    <span>ชื่อเรื่องวิจัยของคุณ</span>
+                    <span>@ViewBag.title @ViewBag.titleEng</span><br />
+                    <span>แนบฟอร์ม CS1 </span>
+                    <a href="../Print/Index" target="_blank" class=" btn-lg btn btn-info btn-warning btn-block">ดูฟอร์มCS1ของคุณ</a>
+                </div>
+            </div>
+            <button type="button" class="btn btn-info btn-lg btn-block" onclick="checksent()">ส่งเอกสารยื่นหัวข้อCS1</button>
+
+        </div>
 
     </div>
-<button type="button" class="btn btn-info btn-lg btn-block" onclick="checksent()">ส่งเอกสารยื่นหัวข้อCS1</button>
+
+</form>

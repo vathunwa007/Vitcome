@@ -17,6 +17,7 @@ using LoggerFactory = Microsoft.Extensions.Logging.LoggerFactory;
 using netcore.Controllers;
 using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace netcore
 {
@@ -44,15 +45,16 @@ namespace netcore
         public void ConfigureServices(IServiceCollection services)
         {
 
-            var architectureFolder = (IntPtr.Size == 8) ? "64 bit" : "32 bit";
-            var wkHtmlToPdfPath = Path.Combine(_hostingEnvironment.ContentRootPath, $"wkhtmltox\\v0.12.4\\{architectureFolder}\\libwkhtmltox");
-            CustomAssemblyLoadContext context1 = new CustomAssemblyLoadContext();
-            context1.LoadUnmanagedLibrary(wkHtmlToPdfPath);
-            services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+           
             //-------------------------------------------------------------------------------------------
             services.AddMvc(options =>
             {
                 options.Filters.Add(new AuthorizeFilter());
+                options.MaxModelValidationErrors = 50;
+                options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(
+          (_) => "The field is required.");
+                options.AllowValidatingTopLevelNodes = false;
+
             });
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
@@ -91,15 +93,20 @@ namespace netcore
                 {
                     options.LoginPath = "/Home/Index";
                     // options.LoginPath = new PathString("/Home");
-                      options.Cookie.Name = "SimpleTalk.AuthCookieAspNetCore";
+                    options.Cookie.Name = "SimpleTalk.AuthCookieAspNetCore";
+                    options.LogoutPath = "/Home/Logout";
+                    options.AccessDeniedPath = "/Home/Privacy";
 
-                      options.LogoutPath = "/Home/Logout";
-                      options.Cookie.HttpOnly = true;
-                      options.Cookie.SecurePolicy = _hostingEnvironment.IsDevelopment()
-                        ? CookieSecurePolicy.None : CookieSecurePolicy.Always;
-                      options.Cookie.SameSite = SameSiteMode.Lax;
+                    options.Cookie.HttpOnly = true;
+                    options.Cookie.SecurePolicy = _hostingEnvironment.IsDevelopment()
+                      ? CookieSecurePolicy.None : CookieSecurePolicy.Always;
+                    options.Cookie.SameSite = SameSiteMode.Lax;
+                    options.Cookie.Expiration = TimeSpan.FromMinutes(10);
+                    options.Cookie.MaxAge = TimeSpan.FromDays(2);
+
                 });
-
+            
+            //-----------------------------------------------------------------------------------------------------------
             services.AddSingleton<RequestHandler>();
             services.AddHttpContextAccessor();
 
@@ -122,7 +129,6 @@ namespace netcore
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
